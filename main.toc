@@ -1,0 +1,187 @@
+\babel@toc {french}{}\relax 
+\contentsline {chapter}{Dédicaces}{i}{chapter*.1}%
+\contentsline {chapter}{Remerciements}{ii}{chapter*.2}%
+\contentsline {chapter}{Résumé}{iii}{chapter*.3}%
+\contentsline {chapter}{Abstract}{iv}{chapter*.4}%
+\contentsline {chapter}{Liste des acronymes}{xii}{chapter*.8}%
+\contentsline {chapter}{Glossaire}{xiv}{chapter*.9}%
+\contentsline {chapter}{Introduction}{1}{chapter*.10}%
+\contentsline {part}{I\hspace {1em}Cadre théorique et méthodologique}{5}{part.1}%
+\contentsline {chapter}{\numberline {1}Contexte de l'étude}{6}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Le corridor Dakar–Bamako : enjeux logistiques et économiques}{6}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Géographie et importance stratégique du corridor}{6}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Les acteurs clés de la chaîne logistique}{7}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Contraintes opérationnelles et vulnérabilités numériques}{8}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}Les défis de gestion pour les PME de transport}{9}{subsection.1.1.4}%
+\contentsline {section}{\numberline {1.2}La société SOYAFF : organisation et processus opérationnels}{9}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Identification et activité de la société}{9}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Structure organisationnelle et acteurs clés}{9}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Cartographie des processus opérationnels quotidiens}{10}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Outils technologiques en usage}{10}{subsection.1.2.4}%
+\contentsline {section}{\numberline {1.3}Diagnostic du système d'information existant}{10}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Flux d'information actuel et rupture de saisie}{10}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Analyse ancrée : Les contraintes macro du corridor face au micro-système}{11}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Typologie des limites observées}{11}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}Conséquences financières et organisationnelles}{12}{subsection.1.3.4}%
+\contentsline {section}{\numberline {1.4}Synthèse du diagnostic et positionnement du projet}{12}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Objectifs de l'étude}{13}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Méthodologie de recherche}{14}{section.1.6}%
+\contentsline {part}{II\hspace {1em}Cadre conceptuel}{15}{part.2}%
+\contentsline {chapter}{\numberline {2}État de l'art}{16}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Digitalisation des PME en Afrique subsaharienne}{16}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Le paradoxe macro-économique : connectivité infrastructurelle versus « digital divide »}{16}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Modélisation théorique de l'adoption technologique : TAM et UTAUT en environnement contraint}{16}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Analyse empirique de la maturité numérique des PME et le déploiement des ERP}{17}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Barrières à l'adoption, facteurs clés de succès et le risque de colonialisme numérique}{17}{subsection.2.1.4}%
+\contentsline {section}{\numberline {2.2}Architectures ETL et pipelines de données}{18}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Concepts fondamentaux du Data Engineering : de l'ETL traditionnel à l'ELT}{18}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Outils d'orchestration modernes : analyse comparative des frameworks}{19}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Enjeux spécifiques des données hétérogènes en contexte PME}{20}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Synthèse critique et justification du choix technologique}{20}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}Systèmes RAG et IA générative}{20}{section.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.0.1}De l'architecture attentionnelle aux Large Language Models}{20}{subsubsection.2.3.0.1}%
+\contentsline {subsubsection}{\numberline {2.3.0.2}Le paradigme originel du Retrieval-Augmented Generation (RAG)}{21}{subsubsection.2.3.0.2}%
+\contentsline {subsubsection}{\numberline {2.3.0.3}Évolution des architectures : de Naive RAG aux configurations avancées}{22}{subsubsection.2.3.0.3}%
+\contentsline {subsubsection}{\numberline {2.3.0.4}Arbitrage infrastructurel : Cloud souverain versus Inférence locale}{22}{subsubsection.2.3.0.4}%
+\contentsline {section}{\numberline {2.4}Souveraineté numérique et contraintes africaines}{23}{section.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.0.1}Le concept de souveraineté numérique : dimensions théoriques et initiatives mondiales}{23}{subsubsection.2.4.0.1}%
+\contentsline {subsubsection}{\numberline {2.4.0.2}Le paysage juridique et réglementaire en Afrique de l'Ouest}{24}{subsubsection.2.4.0.2}%
+\contentsline {subsubsection}{\numberline {2.4.0.3}Contraintes structurelles et environnementales du contexte subsaharien}{24}{subsubsection.2.4.0.3}%
+\contentsline {subsubsection}{\numberline {2.4.0.4}Synthèse critique et justification de l'architecture logicielle hybride}{25}{subsubsection.2.4.0.4}%
+\contentsline {section}{\numberline {2.5}Synthèse et positionnement}{25}{section.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.0.1}Synthèse des acquis de la littérature}{25}{subsubsection.2.5.0.1}%
+\contentsline {subsubsection}{\numberline {2.5.0.2}Identification des lacunes de la recherche}{25}{subsubsection.2.5.0.2}%
+\contentsline {subsubsection}{\numberline {2.5.0.3}Positionnement de la contribution}{26}{subsubsection.2.5.0.3}%
+\contentsline {chapter}{\numberline {3}Conception de la solution}{27}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Analyse des besoins}{27}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Démarche d'analyse et recueil des besoins}{27}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Parties prenantes et personas}{28}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Besoins fonctionnels}{29}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Besoins non fonctionnels}{34}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5}Synthèse et matrice de traçabilité}{36}{subsection.3.1.5}%
+\contentsline {section}{\numberline {3.2}Modélisation du système (UML)}{38}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Vue des cas d'utilisation}{38}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Modèle de classes du domaine}{40}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Comportements dynamiques}{43}{subsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.3.1}Séquence de saisie d'une dépense avec contrôles}{43}{subsubsection.3.2.3.1}%
+\contentsline {subsubsection}{\numberline {3.2.3.2}Séquence de requête RAG avec routage hybride}{45}{subsubsection.3.2.3.2}%
+\contentsline {subsection}{\numberline {3.2.4}Workflow de validation}{47}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}Architecture de la solution (C4 et ADR)}{50}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Vue de contexte}{50}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Vue de conteneurs}{51}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Vue de composants : service RAG local}{54}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Déploiement}{55}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Registre des décisions architecturales (ADR)}{58}{subsection.3.3.5}%
+\contentsline {part}{III\hspace {1em}Mise en œuvre}{61}{part.3}%
+\contentsline {chapter}{\numberline {4}Réalisation de la solution}{62}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Environnement de réalisation}{62}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Pipeline ETL (Apache Airflow)}{64}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Architecture du pipeline et granularité d'orchestration}{65}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Extraction : absorber l'hétérogénéité des sources}{67}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Transformation et normalisation}{67}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Chargement idempotent}{67}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Vectorisation du batch ETL au corpus RAG}{68}{subsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.2.6}Validation du pipeline}{69}{subsection.4.2.6}%
+\contentsline {subsection}{\numberline {4.2.7}Synthèse et transition}{70}{subsection.4.2.7}%
+\contentsline {section}{\numberline {4.3}Application web full-stack}{71}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Architecture applicative générale}{71}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Parcours de l'utilisateur}{71}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Authentification et gestion de session}{74}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Intégrité des données : le calcul du solde}{74}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Contrôle des délais de saisie}{75}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.6}Contrôle d'accès (RBAC) et audit}{75}{subsection.4.3.6}%
+\contentsline {subsection}{\numberline {4.3.7}Reporting et export}{78}{subsection.4.3.7}%
+\contentsline {subsection}{\numberline {4.3.8}Fonctionnalités cibles non déployées}{78}{subsection.4.3.8}%
+\contentsline {subsection}{\numberline {4.3.9}Synthèse et transition}{79}{subsection.4.3.9}%
+\contentsline {section}{\numberline {4.4}Module d'IA générative hybride (RAG local et agent cloud)}{79}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Architecture d'ensemble du module conversationnel hybride}{79}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Le service RAG local souverain}{80}{subsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.1}Le retrieval : SQL exact d'abord, vectoriel en dernier recours}{80}{subsubsection.4.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.4.2.2}La génération}{81}{subsubsection.4.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.3}Les points d'entrée}{81}{subsubsection.4.4.2.3}%
+\contentsline {subsection}{\numberline {4.4.3}Le chemin cloud}{81}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Le routage par sensibilité}{82}{subsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.4.5}Citation des sources et journalisation}{84}{subsection.4.4.5}%
+\contentsline {subsection}{\numberline {4.4.6}Écarts, dettes et cohérence}{85}{subsection.4.4.6}%
+\contentsline {subsection}{\numberline {4.4.7}Synthèse et transition}{85}{subsection.4.4.7}%
+\contentsline {section}{\numberline {4.5}Infrastructure DevOps et observabilité}{86}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Conteneurisation et déploiement mono-hôte}{86}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Intégration et déploiement continus (CI/CD GitLab)}{87}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Observabilité : métriques, journaux et alertes}{89}{subsection.4.5.3}%
+\contentsline {subsection}{\numberline {4.5.4}Sécurité opérationnelle et sauvegarde}{92}{subsection.4.5.4}%
+\contentsline {subsection}{\numberline {4.5.5}Écarts, dettes et cohérence}{94}{subsection.4.5.5}%
+\contentsline {subsection}{\numberline {4.5.6}Synthèse et transition}{94}{subsection.4.5.6}%
+\contentsline {chapter}{\numberline {5}Évaluation et résultats}{95}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Validation fonctionnelle : test hybride de bout en bout}{95}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Question non sensible : route cloud}{95}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Question sensible : route locale}{96}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Tentative d'écriture : refus}{97}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Synthèse du test}{98}{subsection.5.1.4}%
+\contentsline {section}{\numberline {5.2}Benchmark comparatif RAG local / cloud (H2)}{98}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Protocole expérimental}{98}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Résultats globaux}{99}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Résultats détaillés}{100}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Diagnostic : pourquoi le service local échoue}{101}{subsection.5.2.4}%
+\contentsline {subsubsection}{\numberline {5.2.4.1}Un calcul SQL rapide, mais souvent mal ciblé}{101}{subsubsection.5.2.4.1}%
+\contentsline {subsubsection}{\numberline {5.2.4.2}Un modèle de langage qui s'abstient ou invente}{101}{subsubsection.5.2.4.2}%
+\contentsline {subsubsection}{\numberline {5.2.4.3}Une latence incompatible avec l'usage}{102}{subsubsection.5.2.4.3}%
+\contentsline {subsection}{\numberline {5.2.5}Limites méthodologiques}{102}{subsection.5.2.5}%
+\contentsline {subsection}{\numberline {5.2.6}Ce qu'il reste à mesurer}{102}{subsection.5.2.6}%
+\contentsline {subsection}{\numberline {5.2.7}Synthèse et transition}{102}{subsection.5.2.7}%
+\contentsline {section}{\numberline {5.3}Mesure de l'impact métier avant/après (H3, H1)}{102}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Protocole de mesure}{103}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Gain de temps (H3, volet temps)}{103}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Réduction des erreurs (H3, volet erreurs)}{104}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Latence d'information et bénéfice de réactivité}{104}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}Limites de la mesure}{104}{subsection.5.3.5}%
+\contentsline {subsection}{\numberline {5.3.6}Coût réel de la plateforme et disponibilité (H1, \texttt {ENF-DISP-02})}{105}{subsection.5.3.6}%
+\contentsline {section}{\numberline {5.4}Étude d'adoption utilisateur (SUS)}{105}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Méthode : instrument, population, passation}{106}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Résultats du questionnaire SUS}{106}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Analyse qualitative : ce que disent les entretiens}{106}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.4}Biais et limites}{107}{subsection.5.4.4}%
+\contentsline {subsection}{\numberline {5.4.5}Synthèse et transition}{107}{subsection.5.4.5}%
+\contentsline {section}{\numberline {5.5}Analyse de généralisation par ligne de produits logiciels (H4)}{107}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Cadre d'analyse : la SPL appliquée à l'architecture SOYAFF}{108}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Le noyau invariant}{108}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Les points de variation}{109}{subsection.5.5.3}%
+\contentsline {subsection}{\numberline {5.5.4}Le modèle de caractéristiques (\textit {feature model})}{109}{subsection.5.5.4}%
+\contentsline {subsection}{\numberline {5.5.5}Instanciation illustrative : SODRAF SARL (Bamako, Mali)}{112}{subsection.5.5.5}%
+\contentsline {subsection}{\numberline {5.5.6}Portée, limites et verdict sur H4}{112}{subsection.5.5.6}%
+\contentsline {subsection}{\numberline {5.5.7}Synthèse et transition}{113}{subsection.5.5.7}%
+\contentsline {section}{\numberline {5.6}Retour sur investissement}{113}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Coûts}{113}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Gains}{113}{subsection.5.6.2}%
+\contentsline {subsection}{\numberline {5.6.3}Retour sur investissement}{114}{subsection.5.6.3}%
+\contentsline {section}{\numberline {5.7}Réponse à la problématique}{114}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Limites de la solution}{116}{section.5.8}%
+\contentsline {chapter}{\numberline {6}Discussion et perspectives}{118}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Discussion des résultats}{118}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Bilan croisé des quatre hypothèses}{118}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Le sens de la contribution : la thèse hybride à l'épreuve}{119}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Un risque de sécurité identifié, puis corrigé}{119}{subsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.1.4}Limites transversales de la démarche}{120}{subsection.6.1.4}%
+\contentsline {subsection}{\numberline {6.1.5}Menaces à la validité}{120}{subsection.6.1.5}%
+\contentsline {subsection}{\numberline {6.1.6}Synthèse et transition}{121}{subsection.6.1.6}%
+\contentsline {section}{\numberline {6.2}Perspectives}{121}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Court terme : consolider}{121}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Moyen terme : corriger l'architecture et étendre les fonctions}{122}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Long terme : valider et changer d'échelle}{122}{subsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.2.4}Synthèse}{123}{subsection.6.2.4}%
+\contentsline {chapter}{Conclusion}{124}{chapter*.23}%
+\contentsline {chapter}{Références bibliographiques}{xv}{chapter*.24}%
+\contentsline {part}{Annexes}{xx}{part*.25}%
+\contentsline {chapter}{\numberline {A}Corpus du benchmark RAG et vérité-terrain}{xx}{chapter.A}%
+\contentsline {section}{\numberline {A.1}Les 30 questions, par catégorie et type de vérité-terrain}{xx}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Vérité-terrain des questions T1 et T2}{xxii}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Grilles des questions T3}{xxiv}{section.A.3}%
+\contentsline {section}{\numberline {A.4}Verdicts par question}{xxv}{section.A.4}%
+\contentsline {chapter}{\numberline {B}Questionnaire d'utilisabilité SUS (français)}{xxvii}{chapter.B}%
+\contentsline {chapter}{\numberline {C}Grille d'entretien semi-directif}{xxviii}{chapter.C}%
+\contentsline {chapter}{\numberline {D}Procédure de déploiement et configuration}{xxix}{chapter.D}%
+\contentsline {section}{\numberline {D.1}Installation du serveur}{xxix}{section.D.1}%
+\contentsline {section}{\numberline {D.2}Préparation du système}{xxx}{section.D.2}%
+\contentsline {section}{\numberline {D.3}Déploiement de la pile IA/ETL}{xxx}{section.D.3}%
+\contentsline {section}{\numberline {D.4}Environnement de développement}{xxxi}{section.D.4}%
+\contentsline {section}{\numberline {D.5}Relevé des versions}{xxxii}{section.D.5}%
+\contentsline {section}{\numberline {D.6}Sauvegarde planifiée}{xxxii}{section.D.6}%

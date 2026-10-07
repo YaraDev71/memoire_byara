@@ -1,0 +1,24 @@
+Impact métier — Chapitre 11 · Collecte 1
+Chronométrage du temps de saisie
+Hypothèse H3 — volet temps
+Seuil visé ≥ 70 %
+Fige la tâche avant de chronométrer et garde-la identique sur toutes les sessions (même volume, même type d'opérations) — sinon les mesures ne sont pas comparables.
+
+Tâche unitaire retenue (ex. « saisir et consolider les opérations d'une journée type, 10-15 opérations »)
+Session	Monde	Date	Nb opérations	Temps total	Temps / opération	Remarques
+Après — plateforme (5 journées réelles saisie en parallèle sur les fichiers Excels et la plateforme )
+1	Après	24-07-2026  40operations              69munites     1.5munites/operation  en moyenne 				
+2	Après	27-07-2026  35operations	      76.3munites   2.18munites/operation en moyenne					
+3	Après	28-07-2026  14operations	      16.1munites   1.15munites/operation en moyenne				
+4	Après	29-07-2026  21operations              30.6munites   1.45munites/operation en moyenne				
+5	Après	30-07-2026  23operations              35munites     1.59munites/operation en moyenne				
+Avant — Excel, Option A rigoureuse (5 sessions rejouées)
+1	Avant	24-07-2026  40operations              480munites     12munites/operation  en moyenne 				
+2	Avant	27-07-2026  35operations	      360munites     11munites/operation en moyenne					
+3	Avant	28-07-2026  14operations	      112munites     8munites/operation en moyenne				
+4	Avant	29-07-2026  21operations              210munites     10munites/operation en moyenne				
+5	Avant	30-07-2026  23operations              322munites     14munites/operation en moyenne				
+ 	
+Remarque: Je dois preciser que la saisie des depenses depend de la categorie comme les categorie Autres, Appro, sont facile a saisir par rapport aux autres catgories, leur temps de saisie varie entre 1.15mun a 2mun il n'ont pas besoin des infos supplementaires comme bon de livraison, quantite produi. Ce pendant l'enregistrement des categorie Frais de route, carburant, maintenance et amande neccessite des infos supplementaire donc leur saisie varie de 2.30mun à 4mun.
+
+Une autre remarque que je trouve important de souligner c'est le fait qu'avant avec les fichiers Excels les jours avec des recap  de moins de 30 operations n'etait pas envoyer a bamako au chef logistique sonvent il faut cumuler plus de 72 d'aoperations pour l'envoyer.

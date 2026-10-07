@@ -1,0 +1,26 @@
+% --- RÉSUMÉ ET ABSTRACT (sans numérotation) ---
+\chapter*{Résumé}
+\addcontentsline{toc}{chapter}{Résumé}
+\label{chap:resume}
+
+Les PME représentent plus de 80~\% du tissu économique ouest-africain, mais leur digitalisation reste freinée par des budgets limités, une connexion instable et la crainte de confier leurs données à un tiers. Ce mémoire conçoit, déploie et évalue une architecture hybride pour une PME d'import-export du corridor Dakar--Bamako, SOYAFF. La plateforme comprend un pipeline ETL qui importe seize mois de fichiers Excel, une application web de saisie et de pilotage, et un assistant conversationnel. Chaque question posée à l'assistant est routée selon sa sensibilité : les questions sensibles restent sur le serveur (Mistral~7B), les questions d'analyse partent vers un modèle cloud.
+
+La plateforme tourne en production sur un seul serveur, pour 37,4~€ par mois. Ce coût répond à une réalité de terrain : une PME ouest-africaine n'est pas prête à payer lourdement pour sa digitalisation, quitte à rester sur Excel. Le temps de saisie d'une opération baisse d'environ 85~\%. En valorisant le temps libéré, l'investissement est amorti en 8,5 à 24 mois selon le scénario retenu.
+
+Le chemin local ne répond juste qu'à 20~\% des questions, contre 88,9~\% pour le cloud. Ce résultat apporte l'enseignement principal du travail : la recherche par similarité sémantique est inadaptée à des données relationnelles interrogées par des questions d'agrégat. La suite proposée est un agent \textit{text-to-SQL} exécuté sur le serveur.
+
+\medskip
+\noindent\textbf{Mots-clés :} digitalisation des PME, Afrique de l'Ouest, architecture hybride, RAG, \textit{text-to-SQL}, souveraineté des données, ETL.
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\label{chap:abstract}
+
+Small and medium-sized enterprises (SMEs) make up more than 80\% of the West African economy, but their digital transformation is slowed by small budgets, unstable internet access and the fear of giving their data to a third party. This thesis designs, deploys and evaluates a hybrid architecture for SOYAFF, an import-export SME working on the Dakar--Bamako corridor. The platform includes an ETL pipeline that imports sixteen months of Excel files, a web application for data entry and monitoring, and a conversational assistant. Each question sent to the assistant is routed according to its sensitivity: sensitive questions stay on the server (Mistral~7B), analysis questions go to a cloud model.
+
+The platform runs in production on a single server, for \texteuro{}37.4 per month. This cost matches the reality of the field: a West African SME is not willing to pay heavily for its digital transformation, even if it means staying on Excel. The time needed to enter one operation drops by about 85\%. When the saved time is given a value, the investment pays for itself in 8.5 to 24 months, depending on the scenario.
+
+The local path gives the right answer to only 20\% of the questions, against 88.9\% for the cloud. This result is the main lesson of the work: semantic similarity search is not suited to relational data queried with aggregation questions. The proposed next step is a text-to-SQL agent running on the server.
+
+\medskip
+\noindent\textbf{Keywords:} SME digital transformation, West Africa, hybrid architecture, RAG, text-to-SQL, data sovereignty, ETL.

@@ -1,0 +1,55 @@
+\section{Perspectives}
+\label{chap:perspectives}
+
+Cette section transforme les résultats et les limites de ce travail en programme de travail. Chaque piste part d'un résultat mesuré, d'une dette nommée ou d'une demande des utilisateurs. Nous les organisons en trois horizons : consolider (§\ref{sec:persp_court}), corriger et étendre (§\ref{sec:persp_moyen}), valider et changer d'échelle (§\ref{sec:persp_long}).
+
+\subsection{Court terme : consolider}
+\label{sec:persp_court}
+
+Les pistes de court terme se traitent par de la mesure, de la configuration ou un développement limité, sans remettre en cause l'architecture. Le Tableau~\ref{tab:persp_court} les résume.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{Pistes à court terme}
+\label{tab:persp_court}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{5.0cm}|>{\raggedright\arraybackslash}p{2.8cm}|>{\raggedright\arraybackslash}p{2.4cm}|>{\raggedright\arraybackslash}p{2.0cm}|}
+\hline
+\rowcolor[HTML]{EFEFEF}
+\textbf{Piste} & \textbf{Origine} & \textbf{Effort} & \textbf{Priorité} \\ \hline
+Corriger les règles SQL du chemin local, puis rejouer le benchmark & §\ref{sec:bench_dettes} & Petit développement & \textbf{1} \\ \hline
+Chiffrer la copie de sauvegarde hors site (\texttt{rclone crypt}) & §\ref{sec:devops_dettes} & Configuration & \textbf{1} \\ \hline
+Mesurer la disponibilité (\texttt{ENF-DISP-02}) sur les sondes existantes & §\ref{sec:impact_cout} & Mesure & 2 \\ \hline
+Mesurer la précision du classifieur de sensibilité & §\ref{sec:ia_routage} & Mesure & 2 \\ \hline
+Faire annoter le benchmark par un second évaluateur & §\ref{sec:bench_limites} & Mesure & 2 \\ \hline
+Mesurer la couverture des tests Node en CI & §\ref{sec:devops_dettes} & Configuration & 3 \\ \hline
+Versionner la configuration Nginx du serveur & §\ref{sec:devops_dettes} & Configuration & 3 \\ \hline
+Prévoir un retour arrière automatique au déploiement & §\ref{sec:devops_dettes} & Petit développement & 3 \\ \hline
+Abstraire l'interface d'inférence locale (\texttt{ENF-MAINT-01}) & §\ref{sec:ia_dettes} & Petit développement & 3 \\ \hline
+\end{tabular}
+\end{table}
+
+\textbf{Corriger ce que le benchmark a révélé.} La piste la plus rentable est aussi la plus simple. Seize questions sur trente passent déjà par le calcul SQL du chemin local, et onze de ces réponses sont fausses pour trois raisons identifiées (§\ref{sec:bench_diagnostic}) : distinguer une question de comptage d'une question de somme, combiner le filtre sur la plaque avec le mot-clé, filtrer sur la catégorie de l'opération plutôt que sur les libellés. Ces corrections ne touchent pas au modèle de langage. Le benchmark, rejoué dans les mêmes conditions, dira ce qu'elles valent.
+
+\textbf{Protéger et mesurer.} La sauvegarde est en place, mais sa copie hors site, qui contient des données personnelles, n'est pas chiffrée : le script prévoit déjà le chiffrement côté client, il reste à l'activer. La disponibilité, la précision du classifieur et l'accord entre deux annotateurs du benchmark sont des mesures sans développement : l'instrumentation et les données existent.
+
+\subsection{Moyen terme : corriger l'architecture et étendre les fonctions}
+\label{sec:persp_moyen}
+
+\textbf{Un \textit{text-to-SQL} local : la perspective phare.} Le benchmark a montré qu'une recherche par similarité sémantique était inadaptée à des données relationnelles interrogées par agrégats (§\ref{sec:disc_sens}). L'agent cloud réussit parce qu'il traduit la question en requête SQL et l'exécute sur toute la base. Nous proposons de donner cette capacité au chemin local : un modèle exécuté sur le serveur génère la requête SQL, qui s'exécute avec un rôle en lecture seule, comme celui de l'agent cloud. Les règles SQL corrigées à court terme resteraient en première ligne pour les questions simples ; le \textit{text-to-SQL} prendrait le relais pour les autres. C'est un développement réel, pas un correctif : il touche le cœur du service local, exige un modèle capable de produire du SQL correct sur processeur, et appelle une nouvelle campagne de mesure. Il ne cherche pas à contourner la réfutation de H2 : il la remettrait en jeu, dans une architecture corrigée.
+
+\textbf{Des fonctions réclamées par les utilisateurs.} Les entretiens (§\ref{sec:adoption_qualitatif}) ont fait remonter des demandes qui recoupent des exigences déjà spécifiées : le circuit de validation numérique (\texttt{EF-VAL-02}), réclamé par le chef de bureau pour valider les dépenses avant leur enregistrement ; le mode hors-ligne (\texttt{ENF-DISP-01}), réclamé par l'agent de saisie pour ne plus dépendre du réseau ; une alerte de seuil de caisse, extension du suivi de caisse (\texttt{EF-DSH-01}) ; un filtre avancé pour les camions particuliers (\texttt{EF-DSH-03}, \texttt{EF-DSH-04}), réclamé par le chef logistique. Le mode hors-ligne mérite une attention particulière : la connectivité est une contrainte du terrain posée dès la problématique.
+
+\textbf{Un choix de périmètre : \texttt{EF-DSH-05}.} Le signalement automatique des dépenses anormales (dérive de coût par camion, montant aberrant) a été spécifié dès l'analyse des besoins, classé \textit{Could have} et renvoyé aux perspectives. Ce n'est pas un manque réclamé à l'usage, mais une extension naturelle une fois les données consolidées.
+
+\subsection{Long terme : valider et changer d'échelle}
+\label{sec:persp_long}
+
+\textbf{Un second déploiement, chez SODRAF.} L'analyse par lignes de produits logiciels a étayé H4 sur le papier (§\ref{sec:spl_instanciation}). Le temps a manqué pour aller plus loin. La suite logique est de déployer réellement la plateforme chez SODRAF SARL, entreprise partenaire de SOYAFF à Bamako. Ce déploiement mesurerait ce que l'analyse ne peut pas établir : la charge réelle de reconfiguration du schéma de la base, le point de variation le plus large (§\ref{sec:spl_variation}). C'est un projet à part entière, avec son recueil de besoins, sa migration de données et son accompagnement au changement.
+
+\textbf{Vers une plateforme SaaS multi-tenant.} La plateforme actuelle sert une seule entreprise. Une version mutualisée servirait plusieurs PME, en isolant strictement les données de chacune. L'analyse SPL en donne le plan : le noyau invariant (\S\ref{sec:spl_invariants}) deviendrait le socle commun, et les points de variation (\S\ref{sec:spl_variation}) les paramètres de chaque client. Cette trajectoire implique cependant une refonte : isolation des données par schéma ou par base, cloisonnement des embeddings, modèle d'accès intégrant la notion de client (le RBAC actuel à trois rôles ne la prévoit pas) et modèle économique à définir.
+
+\subsection{Synthèse}
+\label{sec:persp_synthese}
+
+Ce programme suit trois temps : consolider ce qui est construit mais pas encore assez mesuré ou protégé, corriger le chemin local et étendre les fonctions demandées par les utilisateurs, puis valider l'architecture sur un second cas avant de la mutualiser. Chaque étape part de ce que ce travail a mesuré ou recueilli. La conclusion referme le mémoire, du diagnostic initial à ce programme.

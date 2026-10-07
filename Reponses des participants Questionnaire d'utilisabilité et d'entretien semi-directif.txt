@@ -1,0 +1,409 @@
+Reponses des participants:
+
+Étude d'adoption utilisateur — Chapitre 12
+Questionnaire d'utilisabilité (SUS)
+Plateforme SOYAFF
+Passation anonyme
+Ce questionnaire porte sur votre expérience de la plateforme que vous utilisez pour la saisie et le suivi des opérations. Il n'y a pas de bonne ou de mauvaise réponse : votre avis sincère, y compris critique, est ce qui a le plus de valeur ici.
+
+Merci de répondre seul(e), sans qu'on vous souffle les réponses. Le questionnaire est anonyme — n'inscrivez pas votre nom, seulement votre rôle ci-dessous. Les réponses négatives sont attendues et utiles : elles permettent d'améliorer l'outil.
+Rôle (Agent de saisie — Dakar)
+Date 22-07-2026
+Passation
+Auto-administrée (seul·e) OUI 
+Assistée (items lus par un tiers)
+Pour chaque affirmation, entourez le chiffre qui correspond le mieux à votre avis.
+
+1 = Pas du tout d'accord
+5 = Tout à fait d'accord
+01
+Je pense que j'utiliserai ce système fréquemment. La reponse cocher est 5 
+1
+2
+3
+4
+5
+02
+Je trouve ce système inutilement complexe. La reponse cocher est 1
+1
+2
+3
+4
+5
+03
+Je trouve ce système facile à utiliser. La reponse cocher est 5 
+1
+2
+3
+4
+5
+04
+Je pense que j'aurais besoin de l'aide d'une personne technique pour pouvoir utiliser ce système. La reponse cocher est 1 
+1
+2
+3
+4
+5
+05
+Je trouve que les différentes fonctions de ce système sont bien intégrées. La reponse cocher est 5 
+1
+2
+3
+4
+5
+06
+Je trouve qu'il y a trop d'incohérences dans ce système. La reponse cocher est 1 
+1
+2
+3
+4
+5
+07
+Je suppose que la plupart des gens apprendraient à utiliser ce système très rapidement. La reponse cocher est 5 
+1
+2
+3
+4
+5
+08
+Je trouve ce système très lourd à utiliser. La reponse cocher est 1 
+1
+2
+3
+4
+5
+09
+Je me sens très en confiance en utilisant ce système. La reponse cocher est 4 
+1
+2
+3
+4
+5
+10
+J'ai eu besoin d'apprendre beaucoup de choses avant de pouvoir utiliser ce système. La reponse cocher est 2 
+1
+2
+3
+4
+5
+Merci de votre participation. Score calculé séparément : items impairs = (réponse − 1), items pairs = (5 − réponse), somme × 2,5 → score sur 100.
+
+Étude d'adoption utilisateur — Chapitre 12
+Guide d'entretien semi-directif
+Complément qualitatif au SUS
+Usage interne — collecte
+À mener juste après le questionnaire SUS, en tête-à-tête, 5 à 10 minutes. Noter les réponses le plus fidèlement possible — les formulations exactes (verbatims) comptent davantage que le résumé.
+
+Rôle
+Agent de saisie 
+Date 22-07-2026 
+Question 1 — gain
+« Qu'est-ce qui vous fait gagner le plus de temps ? »
+Reponses: J'ai plus besoin de copier-coller les fichiers recap-journalier dans le fichiers recap-mensuel pour le récapitulatif du mois, plus besoin d'envoyer les différents recap par WhatsApp vu que c'est automatique avec la plateforme assistant soyaff.  
+Question 2 — friction
+« Qu'est-ce qui vous gêne ou vous manque ? »
+REPONSE: Ce qui me gene c'est le fait de dependre d'une connexion internet pour pouvoir enregistrer des depenses alors qu'avec Excel j'en avais pas besoin.
+Question 3 — confiance
+« Referiez-vous confiance à un chiffre du tableau de bord sans vérifier l'Excel ? »
+Reponse: OUI je ferais confiance.
+
+Rôle (Assistant principal — Dakar)
+Date 22-07-2026
+Passation
+Auto-administrée (seul·e) OUI 
+Assistée (items lus par un tiers)
+Pour chaque affirmation, entourez le chiffre qui correspond le mieux à votre avis.
+
+1 = Pas du tout d'accord
+5 = Tout à fait d'accord
+01
+Je pense que j'utiliserai ce système fréquemment. La reponse cocher est 5 
+1
+2
+3
+4
+5
+02
+Je trouve ce système inutilement complexe. La reponse cocher est 1
+1
+2
+3
+4
+5
+03
+Je trouve ce système facile à utiliser. La reponse cocher est 4 
+1
+2
+3
+4
+5
+04
+Je pense que j'aurais besoin de l'aide d'une personne technique pour pouvoir utiliser ce système. La reponse cocher est 2 
+1
+2
+3
+4
+5
+05
+Je trouve que les différentes fonctions de ce système sont bien intégrées. La reponse cocher est 4 
+1
+2
+3
+4
+5
+06
+Je trouve qu'il y a trop d'incohérences dans ce système. La reponse cocher est 1 
+1
+2
+3
+4
+5
+07
+Je suppose que la plupart des gens apprendraient à utiliser ce système très rapidement. La reponse cocher est 5 
+1
+2
+3
+4
+5
+08
+Je trouve ce système très lourd à utiliser. La reponse cocher est 1 
+1
+2
+3
+4
+5
+09
+Je me sens très en confiance en utilisant ce système. La reponse cocher est 5 
+1
+2
+3
+4
+5
+10
+J'ai eu besoin d'apprendre beaucoup de choses avant de pouvoir utiliser ce système. La reponse cocher est 2 
+1
+2
+3
+4
+5
+Merci de votre participation. Score calculé séparément : items impairs = (réponse − 1), items pairs = (5 − réponse), somme × 2,5 → score sur 100.
+
+Étude d'adoption utilisateur — Chapitre 12
+Guide d'entretien semi-directif
+Complément qualitatif au SUS
+Usage interne — collecte
+À mener juste après le questionnaire SUS, en tête-à-tête, 5 à 10 minutes. Noter les réponses le plus fidèlement possible — les formulations exactes (verbatims) comptent davantage que le résumé.
+
+Rôle
+Assistant principale--Dakar
+Date 22-07-2026 
+Question 1 — gain
+« Qu'est-ce qui vous fait gagner le plus de temps ? »
+Reponses: Meme quant je suis pas present au bureau j'ai une vue globale de la journée, j'ai pas besoin d'appeler l'agent de saisie ou de regarder sur son ordinateur le solde restant dans la caisse.  
+Question 2 — friction
+« Qu'est-ce qui vous gêne ou vous manque ? »
+REPONSE: Ce qui me gene c'est que j'ai pas une alerte de la plateforme en me disant que le solde de la caisse est inferieur à une certaine seuil.
+Question 3 — confiance
+« Referiez-vous confiance à un chiffre du tableau de bord sans vérifier l'Excel ? »
+Reponse: OUI franchement car j'en ai parlé avec l'administrateur il m'as expliqué comment ça ce passe.
+
+
+Rôle (Chef de bureau — Dakar)
+Date 22-07-2026
+Passation
+Auto-administrée (seul·e) OUI 
+Assistée (items lus par un tiers)
+Pour chaque affirmation, entourez le chiffre qui correspond le mieux à votre avis.
+
+1 = Pas du tout d'accord
+5 = Tout à fait d'accord
+01
+Je pense que j'utiliserai ce système fréquemment. La reponse cocher est 5 
+1
+2
+3
+4
+5
+02
+Je trouve ce système inutilement complexe. La reponse cocher est 1
+1
+2
+3
+4
+5
+03
+Je trouve ce système facile à utiliser. La reponse cocher est 3 
+1
+2
+3
+4
+5
+04
+Je pense que j'aurais besoin de l'aide d'une personne technique pour pouvoir utiliser ce système. La reponse cocher est 2 
+1
+2
+3
+4
+5
+05
+Je trouve que les différentes fonctions de ce système sont bien intégrées. La reponse cocher est 3 
+1
+2
+3
+4
+5
+06
+Je trouve qu'il y a trop d'incohérences dans ce système. La reponse cocher est 1 
+1
+2
+3
+4
+5
+07
+Je suppose que la plupart des gens apprendraient à utiliser ce système très rapidement. La reponse cocher est 5 
+1
+2
+3
+4
+5
+08
+Je trouve ce système très lourd à utiliser. La reponse cocher est 3 
+1
+2
+3
+4
+5
+09
+Je me sens très en confiance en utilisant ce système. La reponse cocher est 4 
+1
+2
+3
+4
+5
+10
+J'ai eu besoin d'apprendre beaucoup de choses avant de pouvoir utiliser ce système. La reponse cocher est 2 
+1
+2
+3
+4
+5
+Merci de votre participation. Score calculé séparément : items impairs = (réponse − 1), items pairs = (5 − réponse), somme × 2,5 → score sur 100.
+
+Étude d'adoption utilisateur — Chapitre 12
+Guide d'entretien semi-directif
+Complément qualitatif au SUS
+Usage interne — collecte
+À mener juste après le questionnaire SUS, en tête-à-tête, 5 à 10 minutes. Noter les réponses le plus fidèlement possible — les formulations exactes (verbatims) comptent davantage que le résumé.
+
+Rôle
+Chef de bureau — Dakar
+Date 22-07-2026 
+Question 1 — gain
+« Qu'est-ce qui vous fait gagner le plus de temps ? »
+Reponses: Vision globale sur les dépenses instantanément, verification par moi meme sans passe par l'agent de saisie ou les fichiers que je recois par WhatsApp .  
+Question 2 — friction
+« Qu'est-ce qui vous gêne ou vous manque ? »
+REPONSE: Ce qui me gene c'est le fait que les depenses saisie par agent sont directement enregistrer sans mon validation.
+Question 3 — confiance
+« Referiez-vous confiance à un chiffre du tableau de bord sans vérifier l'Excel ? »
+Reponse: Absolument.
+
+Rôle (Chef logistique — Bamako)
+Date 24-07-2026
+Passation
+Auto-administrée (seul·e)  
+Assistée (items lus par un tiers) Appel/telephonique
+Pour chaque affirmation, entourez le chiffre qui correspond le mieux à votre avis.
+
+1 = Pas du tout d'accord
+5 = Tout à fait d'accord
+01
+Je pense que j'utiliserai ce système fréquemment. La reponse cocher est 5 
+1
+2
+3
+4
+5
+02
+Je trouve ce système inutilement complexe. La reponse cocher est 1
+1
+2
+3
+4
+5
+03
+Je trouve ce système facile à utiliser. La reponse cocher est 5 
+1
+2
+3
+4
+5
+04
+Je pense que j'aurais besoin de l'aide d'une personne technique pour pouvoir utiliser ce système. La reponse cocher est 1 
+1
+2
+3
+4
+5
+05
+Je trouve que les différentes fonctions de ce système sont bien intégrées. La reponse cocher est 4 
+1
+2
+3
+4
+5
+06
+Je trouve qu'il y a trop d'incohérences dans ce système. La reponse cocher est 3 
+1
+2
+3
+4
+5
+07
+Je suppose que la plupart des gens apprendraient à utiliser ce système très rapidement. La reponse cocher est 5 
+1
+2
+3
+4
+5
+08
+Je trouve ce système très lourd à utiliser. La reponse cocher est 1 
+1
+2
+3
+4
+5
+09
+Je me sens très en confiance en utilisant ce système. La reponse cocher est 4 
+1
+2
+3
+4
+5
+10
+J'ai eu besoin d'apprendre beaucoup de choses avant de pouvoir utiliser ce système. La reponse cocher est 1 
+1
+2
+3
+4
+5
+Merci de votre participation. Score calculé séparément : items impairs = (réponse − 1), items pairs = (5 − réponse), somme × 2,5 → score sur 100.
+
+Étude d'adoption utilisateur — Chapitre 12
+Guide d'entretien semi-directif
+Complément qualitatif au SUS
+Usage interne — collecte
+À mener juste après le questionnaire SUS, en tête-à-tête, 5 à 10 minutes. Noter les réponses le plus fidèlement possible — les formulations exactes (verbatims) comptent davantage que le résumé.
+
+Rôle
+Chef logistique — Bamako 
+Date 24-07-2026 
+Question 1 — gain
+« Qu'est-ce qui vous fait gagner le plus de temps ? »
+Reponses: J'ai plus besoin d'attendre les fichiers Excels pour les ressaisir, j'ai tout automatiquement dans la plateforme, je peux foire maintenent mes analyse avec les donnees en temps reel c'est a dire informations fraichement enregistrer.  
+Question 2 — friction
+« Qu'est-ce qui vous gêne ou vous manque ? »
+REPONSE: Ce qui me gene c'est le manque de la filtre avancée pour les camions particuliers.
+Question 3 — confiance
+« Referiez-vous confiance à un chiffre du tableau de bord sans vérifier l'Excel ? »
+Reponse: OUI.

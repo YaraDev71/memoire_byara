@@ -1,0 +1,43 @@
+\babel@toc {french}{}\relax 
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {1.1}{\ignorespaces Synthèse des processus opérationnels et volumétries chez SOYAFF}}{10}{table.1.1}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Tableau comparatif des frameworks d'orchestration modernes}}{19}{table.2.1}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Analyse comparative des infrastructures d'inférence pour l'IA générative}}{23}{table.2.2}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Cartographie des acteurs et profils numériques du corridor SOYAFF}}{29}{table.3.1}%
+\contentsline {table}{\numberline {3.2}{Matrice de spécification des exigences fonctionnelles (SOYAFF)}}{29}{table.3.2}%
+\contentsline {table}{\numberline {3.3}{Matrice des exigences non fonctionnelles (Qualité et Contraintes)}}{34}{table.3.3}%
+\contentsline {table}{\numberline {3.4}{Matrice de traçabilité macroscopique du cahier des charges}}{37}{table.3.4}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Caractéristiques du serveur de production}}{62}{table.4.1}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Composants logiciels en production (relevé du 27~septembre~2026)}}{64}{table.4.2}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Validation du pipeline : chargement initial (04/05/2026) et rejeu de contrôle (10/07/2026)}}{70}{table.4.3}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Couverture des exigences applicatives par la réalisation (état au 27~septembre~2026)}}{72}{table.4.4}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Inventaire des conteneurs de production, par plan fonctionnel (état au 27~septembre~2026)}}{86}{table.4.5}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces Jobs de test des deux pipelines (état au 27~septembre~2026)}}{87}{table.4.6}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Test hybride de bout en bout du 27~septembre~2026}}{98}{table.5.1}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Conditions d'exécution du benchmark (27~septembre~2026)}}{99}{table.5.2}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Résultats globaux du benchmark (90 réponses par système)}}{100}{table.5.3}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Exactitude stricte et latence médiane par type de question}}{100}{table.5.4}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Réponses du service local selon le mode de traitement}}{101}{table.5.5}%
+\contentsline {table}{\numberline {5.6}{\ignorespaces Chronométrage apparié du temps de saisie, 5 sessions}}{103}{table.5.6}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces Taux d'erreur par classe, échantillon de 1~240 lignes (4 fichiers RECAP-MENSUEL, graine 2026)}}{104}{table.5.7}%
+\contentsline {table}{\numberline {5.8}{\ignorespaces Coût mensuel récurrent de la plateforme en production}}{105}{table.5.8}%
+\contentsline {table}{\numberline {5.9}{\ignorespaces Scores SUS individuels, recensement des quatre utilisateurs métier}}{106}{table.5.9}%
+\contentsline {table}{\numberline {5.10}{Le noyau invariant (\textit {commonality}) de la ligne de produits SOYAFF}}{108}{table.5.10}%
+\contentsline {table}{\numberline {5.11}{Les points de variation (\textit {variability}) de la ligne de produits SOYAFF}}{109}{table.5.11}%
+\contentsline {table}{\numberline {5.12}{\ignorespaces Coûts mensuels de fonctionnement de la plateforme}}{113}{table.5.12}%
+\contentsline {table}{\numberline {5.13}{\ignorespaces Retour sur investissement selon deux scénarios (297 opérations par mois)}}{114}{table.5.13}%
+\contentsline {table}{\numberline {5.14}{\ignorespaces Projection financière sur trois ans (agent à 450~000~FCFA par mois)}}{114}{table.5.14}%
+\contentsline {table}{\numberline {5.15}{\ignorespaces Réponse aux questions de recherche}}{115}{table.5.15}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {6.1}{\ignorespaces Pistes à court terme}}{121}{table.6.1}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {A.1}{Corpus des 30 questions métier du benchmark}}{xx}{table.A.1}%
+\contentsline {table}{\numberline {A.2}{Vérité-terrain SQL des questions T1 et T2 (base de production, 27~septembre~2026)}}{xxii}{table.A.2}%
+\contentsline {table}{\numberline {A.3}{Verdicts du benchmark par question (27~septembre~2026)}}{xxv}{table.A.3}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

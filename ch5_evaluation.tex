@@ -1,0 +1,232 @@
+\chapter{Évaluation et résultats}
+\label{chap:evaluation}
+
+Ce chapitre confronte la plateforme à ses hypothèses. Il commence par un test de bout en bout sur le système déployé, puis évalue successivement H2 (benchmark), H3 et H1 (impact métier), l'adoption par les utilisateurs et H4 (généralisation). Il se termine par le retour sur investissement, la réponse à la problématique et les limites.
+
+\section{Validation fonctionnelle : test hybride de bout en bout}
+\label{sec:test_bout_en_bout}
+
+Avant de mesurer, nous vérifions que la chaîne complète fonctionne sur le système déployé. Le test porte sur ce qui distingue la plateforme : le routage hybride. Il a été mené le 27~septembre~2026 en production, depuis l'interface web, comme le ferait un utilisateur. Trois requêtes ont été soumises, chacune visant un comportement attendu :
+
+\begin{itemize}
+    \item une question d'analyse sans donnée nominative, qui doit partir vers le cloud ;
+    \item une question portant sur un camion identifié, qui doit rester en local ;
+    \item une demande d'écriture en base, qui doit être refusée.
+\end{itemize}
+
+\subsection{Question non sensible : route cloud}
+\label{sec:test_cloud}
+
+À 11:24:54, l'utilisateur demande « Combien de camions sont actifs ? ». La question ne contient ni terme d'identité, ni plaque, ni montant nominatif : le classifieur la juge non sensible et le workflow l'oriente vers l'agent cloud (Figure~\ref{fig:test_exec_cloud}). L'agent génère une requête SQL sur les vues métier, l'exécute avec le rôle en lecture seule et formule la réponse. L'exécution n8n n°6 se termine avec succès en 2,59~secondes. La réponse, « 316 camions actifs », s'affiche avec l'étiquette « Traité via cloud » et propose trois pistes d'analyse complémentaires (Figure~\ref{fig:test_session}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/captures/test_exec_cloud.png}
+    \caption{Exécution n8n n°6 (11:24:54) : question non sensible, branche cloud, succès en 2,59~s}
+    \label{fig:test_exec_cloud}
+\end{figure}
+
+\subsection{Question sensible : route locale}
+\label{sec:test_local}
+
+À 11:26:24, l'utilisateur demande « Total des dépenses du camion AA~076~AH ». Le classifieur détecte une plaque d'immatriculation : la question est sensible, quel que soit son caractère agrégé. Le workflow l'envoie au service RAG local par une requête HTTP authentifiée ; la branche cloud reste inactive (Figure~\ref{fig:test_exec_local}). Le service reconnaît une demande de total : il calcule la somme en SQL sur toutes les opérations du camion et répond sans appeler le modèle de langage. L'exécution n8n n°7 se termine en 61~millisecondes. La réponse, « 2~378~000~FCFA sur 43 transaction(s) », s'affiche avec l'étiquette « Traité en local (souverain) ».
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/captures/test_exec_local.png}
+    \caption{Exécution n8n n°7 (11:26:24) : question sensible, branche locale, succès en 61~ms}
+    \label{fig:test_exec_local}
+\end{figure}
+
+La Figure~\ref{fig:test_session} montre les deux échanges tels que l'utilisateur les voit, dans le panneau conversationnel. Aucune donnée du camion AA~076~AH n'a quitté le serveur.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/captures/test_session_chat.png}
+    \caption{Session du 27~septembre~2026 vue par l'utilisateur : réponse cloud, puis réponse locale}
+    \label{fig:test_session}
+\end{figure}
+
+\subsection{Tentative d'écriture : refus}
+\label{sec:test_refus}
+
+L'utilisateur demande ensuite « supprime les transactions de janvier ». La question, sans donnée nominative, part vers l'agent cloud. L'agent refuse et explique pourquoi : son accès est limité à la lecture, par le rôle \texttt{soyaff\_agent\_ro} (Figure~\ref{fig:test_refus}). Il oriente l'utilisateur vers la procédure légitime : un compte disposant des droits d'écriture, une sauvegarde préalable et une trace pour l'audit.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/captures/test_refus_suppression.png}
+    \caption{Demande de suppression refusée par l'agent : accès en lecture seule}
+    \label{fig:test_refus}
+\end{figure}
+
+Ce refus est formulé par le modèle, mais il ne dépend pas de sa bonne volonté. Même si l'agent générait une requête \texttt{DELETE}, PostgreSQL la rejetterait : les sessions du rôle sont en lecture seule par défaut et le rôle n'a reçu que le droit \texttt{SELECT} (§\ref{sec:ia_cloud}). La protection est portée par la base, pas par le \textit{prompt}.
+
+\subsection{Synthèse du test}
+\label{sec:test_synthese}
+
+Le Tableau~\ref{tab:test_bout_en_bout} résume les trois cas. Chaque requête a suivi le chemin attendu et produit le résultat attendu.
+
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Test hybride de bout en bout du 27~septembre~2026}
+\label{tab:test_bout_en_bout}
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}X|l|l|l|>{\raggedright\arraybackslash}p{3.8cm}|}
+\hline
+\rowcolor[HTML]{EFEFEF}
+\textbf{Requête} & \textbf{Classement} & \textbf{Chemin} & \textbf{Durée n8n} & \textbf{Résultat} \\ \hline
+« Combien de camions sont actifs ? » & non sensible & cloud & 2,59~s & 316 camions actifs, pistes d'analyse \\ \hline
+« Total des dépenses du camion AA~076~AH » & sensible (plaque) & local & 0,061~s & 2~378~000~FCFA sur 43 opérations, sans appel au LLM \\ \hline
+« supprime les transactions de janvier » & non sensible & cloud & --- & refus, accès en lecture seule \\ \hline
+\end{tabularx}
+\end{table}
+
+Deux remarques bornent la portée de ce test. D'abord, les durées sont celles de l'exécution du workflow n8n ; elles n'incluent ni le trajet réseau du client ni le rendu dans le navigateur. Ensuite, la réponse locale est quasi instantanée parce qu'elle relève du calcul SQL direct : une question ouverte, confiée à Mistral~7B sur le processeur du serveur, prend plusieurs dizaines de secondes. Cette latence est mesurée à la section~\ref{chap:benchmark_rag}. Le test établit que le routage fonctionne ; il ne mesure ni l'exactitude des réponses ni la précision du classifieur sur un grand nombre de questions. C'est l'objet des sections qui suivent.
+
+\input{benchmark_rag}
+\input{impact_metier}
+\input{adoption}
+\input{generalisation_spl}
+
+\section{Retour sur investissement}
+\label{sec:roi}
+
+Cette section chiffre ce que la plateforme rapporte à SOYAFF, en FCFA. Nous ne valorisons pas des suppressions de postes : aucun emploi n'est supprimé. Le gain est du temps de travail libéré, valorisé au coût de la personne qui le récupère. Nous distinguons ce qui a été mesuré de ce qui est déclaré.
+
+\subsection{Coûts}
+\label{sec:roi_couts}
+
+\textbf{Investissement initial.} Nous avons proposé à SOYAFF de facturer le développement de la plateforme 2~000~000~FCFA. Cette proposition n'est pas encore conclue ; nous la retenons comme valeur de l'investissement, celle qu'une entreprise paierait pour un projet équivalent.
+
+\textbf{Coûts de fonctionnement.} Le Tableau~\ref{tab:roi_couts} détaille les dépenses mensuelles, converties au taux du 27~septembre~2026 (1~USD~=~598,02~FCFA).
+
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Coûts mensuels de fonctionnement de la plateforme}
+\label{tab:roi_couts}
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}X|r|r|}
+\hline
+\rowcolor[HTML]{EFEFEF}
+\textbf{Poste} & \textbf{Montant facturé} & \textbf{Coût mensuel (FCFA)} \\ \hline
+Serveur dédié OneProvider (sauvegarde de 100~Go incluse) & 30,23~USD par mois & 18~078 \\ \hline
+API Anthropic (chemin cloud) & $\approx$~10~USD par mois & 5~980 \\ \hline
+Nom de domaine & 10~USD par an & 498 \\ \hline
+Logiciels (PostgreSQL, Airflow, n8n, Grafana, Docker\ldots) & 0 & 0 \\ \hline
+\textbf{Total mensuel} & \textbf{41,06~USD} & \textbf{24~557} \\ \hline
+\textbf{Total annuel} & & \textbf{294~680} \\ \hline
+\end{tabularx}
+\end{table}
+
+\subsection{Gains}
+\label{sec:roi_gains}
+
+\textbf{Gain mesuré : la saisie à Dakar.} Le chronométrage du §\ref{sec:impact_temps} établit qu'une opération prend 11,16~minutes dans Excel et 1,71~minute sur la plateforme, soit 9,45~minutes gagnées. La base de production compte 4~756 transactions sur seize mois, soit environ 297 opérations par mois. L'agent de saisie récupère donc près de 47~heures par mois. Payé 400~000 à 500~000~FCFA par mois pour 173~heures de travail, son heure coûte 2~308 à 2~885~FCFA. Le temps libéré vaut ainsi \textbf{108~000 à 135~000~FCFA par mois}.
+
+\textbf{Gain déclaré : la fin de la double saisie à Bamako.} Le chef logistique ne ressaisit plus les récapitulatifs envoyés de Dakar. Ce gain n'a pas été chronométré. Le chef logistique l'estime à deux heures par jour : la ressaisie lui prenait, selon ses mots, une bonne partie de la journée. Payé plus de 500~000~FCFA par mois, il récupère environ 43~heures mensuelles, soit au moins \textbf{125~000~FCFA par mois}. Nous présentons ce gain comme une estimation déclarée, non comme une mesure.
+
+\subsection{Retour sur investissement}
+\label{sec:roi_calcul}
+
+Le Tableau~\ref{tab:roi_scenarios} présente deux scénarios. Le scénario~A ne retient que le gain mesuré à Dakar : c'est le plancher, que le jury peut vérifier sur les données du §\ref{sec:impact_temps}. Le scénario~B y ajoute le gain déclaré à Bamako.
+
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Retour sur investissement selon deux scénarios (297 opérations par mois)}
+\label{tab:roi_scenarios}
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}X|r|r|}
+\hline
+\rowcolor[HTML]{EFEFEF}
+\textbf{Indicateur (FCFA)} & \textbf{A : mesuré} & \textbf{B : mesuré + déclaré} \\ \hline
+Gain mensuel & 108~000 à 135~000 & 233~000 à 260~000 \\ \hline
+Coût mensuel & 24~557 & 24~557 \\ \hline
+\textbf{Gain net mensuel} & \textbf{83~000 à 110~000} & \textbf{208~000 à 235~000} \\ \hline
+\textbf{Amortissement de 2~000~000~FCFA} & \textbf{18 à 24 mois} & \textbf{8,5 à 9,6 mois} \\ \hline
+\end{tabularx}
+\end{table}
+
+Dans les deux scénarios, la plateforme rapporte plus qu'elle ne coûte dès le premier mois d'exploitation : le gain mensuel représente quatre à dix fois le coût de fonctionnement. Ce qui varie, c'est le délai pour rembourser l'investissement initial : moins de dix mois si l'on compte le gain de Bamako, un an et demi à deux ans sur le seul gain mesuré.
+
+\textbf{Projection sur trois ans.} Le Tableau~\ref{tab:roi_projection} suit les deux scénarios année par année, pour un agent payé 450~000~FCFA (milieu de la fourchette).
+
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Projection financière sur trois ans (agent à 450~000~FCFA par mois)}
+\label{tab:roi_projection}
+\begin{tabular}{|l|r|r|r|r|}
+\hline
+\rowcolor[HTML]{EFEFEF}
+\textbf{Année} & \textbf{Investissement} & \textbf{Coûts} & \textbf{Bilan cumulé A} & \textbf{Bilan cumulé B} \\ \hline
+Année 1 & 2~000~000 & 294~680 & $-$837~381 & 662~619 \\ \hline
+Année 2 & 0 & 294~680 & 325~237 & 3~325~237 \\ \hline
+Année 3 & 0 & 294~680 & 1~487~856 & 5~987~856 \\ \hline
+\end{tabular}
+\end{table}
+
+Sur trois ans, le bilan cumulé atteint environ 1,49~million de FCFA dans le scénario~A et 5,99~millions dans le scénario~B. Le volume d'opérations joue fortement : avec les 438 opérations de mars~2026 au lieu de la moyenne de 297, l'amortissement du scénario~B tombe à 7,2~mois.
+
+\textbf{Ce que ce calcul ne compte pas.} Trois bénéfices ne sont pas valorisés, faute de mesure fiable : la réduction des erreurs de saisie (§\ref{sec:impact_erreurs}), la disponibilité de l'information en temps réel pour les décideurs, et le temps gagné par l'assistant conversationnel sur les analyses. Le retour sur investissement présenté ici est donc un minimum. À l'inverse, il suppose que le temps libéré est réemployé à des tâches utiles ; s'il ne l'est pas, le gain reste réel pour les personnes, mais pas pour la trésorerie.
+
+\section{Réponse à la problématique}
+\label{sec:reponse_problematique}
+
+La problématique posée en introduction demandait comment concevoir, déployer et valider une architecture logicielle hybride et réplicable pour digitaliser une PME d'import-export ouest-africaine, sous des contraintes de budget, de connectivité et de souveraineté des données. Le Tableau~\ref{tab:reponse_questions} reprend les quatre questions de recherche qui la déclinent ; les paragraphes qui suivent y répondent une à une.
+
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Réponse aux questions de recherche}
+\label{tab:reponse_questions}
+\begin{tabularx}{\linewidth}{|l|>{\raggedright\arraybackslash}X|l|}
+\hline
+\rowcolor[HTML]{EFEFEF}
+\textbf{Question} & \textbf{Réponse établie} & \textbf{Hypothèse} \\ \hline
+Q1 : quelle architecture ? & Une plateforme mono-serveur (ETL, application web, IA hybride, DevOps), en production, pour 37,4~€ par mois & H1 confirmée \\ \hline
+Q2 : le RAG local vaut-il le cloud ? & Non : 20~\% d'exactitude contre 88,9~\% & H2 réfutée \\ \hline
+Q3 : quel impact métier, à quel coût ? & Environ 85~\% de temps de saisie en moins, investissement amorti en 8,5 à 24 mois & H3 confirmée (volet temps) \\ \hline
+Q4 : l'architecture se réplique-t-elle ? & Un noyau invariant et des points de variation identifiés, sans second déploiement & H4 étayée analytiquement \\ \hline
+\end{tabularx}
+\end{table}
+
+\textbf{D'une chaîne de fichiers Excel à une plateforme d'aide à la décision.} Le point de départ était une chaîne de fichiers. L'agent de Dakar saisissait les opérations dans un récapitulatif journalier, les recopiait dans un récapitulatif mensuel, puis envoyait le fichier par WhatsApp. À Bamako, le chef logistique attendait ce fichier, le ressaisissait dans ses propres tableaux, et les deux bureaux s'appelaient longuement pour lever les incohérences. Le point d'arrivée est une plateforme où chaque opération est saisie une seule fois, contrôlée au moment de la saisie et visible aussitôt dans les deux bureaux, avec un assistant qui répond en langage naturel sur l'ensemble des données. C'est la première réponse à la problématique : l'architecture a été conçue et déployée, et elle tourne en production.
+
+\textbf{Q1 et H1 : une architecture frugale et complète.} Un seul serveur dédié porte le pipeline ETL, l'application web, les deux chemins d'IA, l'intégration continue et la supervision, pour 41,06~USD par mois, soit 37,4~€ (§\ref{sec:impact_cout}). Le seuil de 50~€ est respecté avec une marge d'un quart. La contrainte budgétaire n'a donc pas imposé de renoncer à l'une des briques. La contrainte de connectivité, elle, n'est que partiellement traitée : l'application exige une connexion, et le mode hors-ligne reste à construire (§\ref{sec:limites_solution}).
+
+\textbf{Q3 et H3 : un impact mesuré sur le travail quotidien.} Le temps de saisie d'une opération passe de 11,16 à 1,71~minutes, soit une réduction de l'ordre de 85~\% (§\ref{sec:impact_temps}). Les utilisateurs le formulent plus simplement. L'agent de saisie ne saisit plus qu'une fois : fini la copie du journalier vers le mensuel et l'envoi par WhatsApp. Le chef logistique n'attend plus de fichier pour travailler : il voit chaque opération dès qu'elle est saisie. Le score d'utilisabilité de 88,1 (§\ref{sec:adoption_resultats}) et les entretiens confirment cette utilité perçue. En valorisant le temps libéré, l'investissement de 2~000~000~FCFA est amorti en 8,5 à 24 mois selon le scénario retenu (§\ref{sec:roi}).
+
+\textbf{Q2 et H2 : la souveraineté tient, l'exactitude locale non.} Le benchmark a été la principale déception de ce travail. Le RAG local n'atteint que 20~\% d'exactitude, loin des 88,9~\% du cloud (§\ref{sec:bench_resultats_globaux}), et H2 est réfutée. Ce résultat ne remet pas en cause le principe de souveraineté : le routage hybride fonctionne de bout en bout, et les questions sensibles ne quittent pas le serveur (§\ref{sec:test_bout_en_bout}). Ce qu'il remet en cause, c'est la méthode de récupération du chemin local. Chercher par similarité sémantique dans des données relationnelles, pour répondre à des questions d'agrégat, était inadapté : le diagnostic le montre question par question (§\ref{sec:bench_diagnostic}). La réponse n'est pas d'abandonner le chemin local, mais de lui donner la méthode qui réussit côté cloud : générer une requête SQL à partir de la question (\textit{text-to-SQL}), avec un modèle exécuté sur le serveur. C'est la principale perspective de ce travail.
+
+\textbf{Q4 et H4 : une réplicabilité étayée, pas encore démontrée.} L'analyse par lignes de produits logiciels distingue un noyau invariant, valable pour toute PME du même type (le pipeline ETL, l'IA hybride, le déploiement frugal sur un seul serveur), et des points de variation configurables (le schéma de la base, les rôles d'accès, une partie des règles métier) (§\ref{sec:spl_invariants}, §\ref{sec:spl_variation}). La dérivation vers SODRAF, entreprise partenaire de SOYAFF, est restée sur le papier : le temps a manqué pour la déployer. H4 est donc étayée par le raisonnement, pas encore par un second cas réel.
+
+\textbf{En réponse à la problématique.} Une PME d'import-export ouest-africaine peut être digitalisée par une architecture hybride conçue pour ses contraintes : le système existe, il est utilisé, il fait gagner du temps et il coûte moins de 50~€ par mois. L'hybride tient comme principe de souveraineté. Il ne tient pas encore comme promesse d'exactitude sur le chemin local, et le benchmark indique précisément quoi changer pour y parvenir.
+
+\section{Limites de la solution}
+\label{sec:limites_solution}
+
+Les résultats de ce chapitre valent dans des limites que nous rassemblons ici. Chacune est détaillée dans la section qui l'a établie ; le chapitre~\ref{chap:discussion_perspectives} en tire les conséquences sans les répéter.
+
+\textbf{Limites techniques.}
+\begin{itemize}
+    \item \textbf{Le chemin local n'est pas fiable pour l'analyse.} Il atteint 20~\% d'exactitude, et ses réponses SQL directes peuvent être fausses tout en paraissant certaines : une somme à la place d'un comptage, une plaque qui fait ignorer le reste de la question (§\ref{sec:bench_diagnostic}). H2 est réfutée.
+    \item \textbf{Le classifieur de sensibilité reste lexical.} Un nom de chauffeur cité seul, sans le mot « chauffeur » ni plaque, n'est pas détecté et part vers le cloud. Le rôle en lecture seule de l'agent, qui n'a pas accès à la table \texttt{chauffeurs}, borne ce risque sans le supprimer (§\ref{sec:ia_routage}). La précision du classifieur n'a pas été mesurée.
+    \item \textbf{Un seul serveur.} Une panne arrête tous les services ; le déploiement n'a pas de retour arrière automatique (§\ref{sec:devops_dettes}).
+    \item \textbf{Deux exigences restent à construire} : le mode hors-ligne (\texttt{ENF-DISP-01}), alors que la connectivité est une contrainte du terrain, et le circuit de validation numérique (\texttt{EF-VAL-02}) (§\ref{sec:webapp_fonctionnalites_cibles_non_deployees}).
+\end{itemize}
+
+\textbf{Limites de la mesure.}
+\begin{itemize}
+    \item \textbf{Le benchmark a été exécuté sur le serveur lui-même.} Ses latences n'incluent pas le trajet réseau jusqu'au poste de l'utilisateur. Les verdicts ont été attribués par un seul annotateur, sur un corpus rédigé par le concepteur du système (§\ref{sec:bench_limites}).
+    \item \textbf{Le gain de temps repose sur cinq sessions rejouées} par un seul agent, avec un effet d'observation possible (§\ref{sec:impact_limites}). Le volet erreurs de H3 n'est que partiellement étayé : le seuil de 80~\% n'a pas pu être vérifié (§\ref{sec:impact_erreurs}).
+    \item \textbf{L'adoption porte sur quatre utilisateurs.} C'est un recensement de tous les utilisateurs métier, pas un échantillon : le score SUS de 88,1 décrit ce cas, il ne se généralise pas (§\ref{sec:adoption_biais}).
+    \item \textbf{Le gain de Bamako est déclaré, non mesuré}, et le retour sur investissement suppose que le temps libéré est réemployé (§\ref{sec:roi}).
+    \item \textbf{La disponibilité est mesurable mais n'a pas été mesurée} sur une période significative (§\ref{sec:impact_cout}).
+\end{itemize}
+
+\textbf{Limites de contexte.}
+\begin{itemize}
+    \item \textbf{Un seul cas.} Toutes les mesures portent sur SOYAFF. H4 est étayée par un raisonnement sur les lignes de produits logiciels et une dérivation sur le papier vers une seconde PME, pas par un second déploiement (§\ref{sec:spl_limites}).
+    \item \textbf{Des coûts en dollars.} Le serveur et l'API sont facturés en USD, alors que le franc CFA est arrimé à l'euro : le coût mensuel varie avec le taux de change.
+    \item \textbf{Des données personnelles hors du serveur.} La copie de sauvegarde hors site n'est pas encore chiffrée (§\ref{sec:devops_dettes}), et les questions non sensibles, avec les résultats de l'agent, sont traitées par un service tiers.
+\end{itemize}

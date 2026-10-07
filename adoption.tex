@@ -1,0 +1,65 @@
+\section{Étude d'adoption utilisateur (SUS)}
+\label{chap:adoption}
+
+Cette section mesure l'impact humain : la plateforme est-elle acceptée par ceux qui l'utilisent chaque jour ? Nous avons utilisé le questionnaire \textit{System Usability Scale} (SUS) \cite{brookeSUSAQuickDirty1996}, complété par des entretiens. Avec quatre répondants, l'étude ne permet aucune généralisation. Mais quatre est aussi le nombre total d'utilisateurs métier de la plateforme : il ne s'agit pas d'un échantillon, mais d'un \textbf{recensement} de cette population.
+
+\subsection{Méthode : instrument, population, passation}
+\label{sec:adoption_methode}
+
+\textbf{L'instrument.} Le SUS compte dix items notés de 1 (pas du tout d'accord) à 5 (tout à fait d'accord), alternant formulations positives et négatives. Le score obtenu est ramené sur 100. Le seuil d'acceptabilité usuel est d'environ 68 ; la cible de ce mémoire (\texttt{ENF-ERG-02}) est de 70. Nous avons utilisé une traduction française des items (Annexe~\ref{annexe:sus}), qui n'a pas été revalidée formellement.
+
+\textbf{La population.} Les répondants sont les quatre utilisateurs réels : le chef de bureau, l'assistant principal et l'agent de saisie à Dakar, le chef logistique à Bamako. L'auteur, concepteur du système, s'est exclu de l'étude.
+
+\textbf{La passation.} À Dakar, les trois répondants ont rempli le questionnaire eux-mêmes, de façon anonyme. À Bamako, le chef logistique a répondu par téléphone, les items lui étant lus par l'auteur. Cette différence est un biais potentiel, discuté au §\ref{sec:adoption_biais}. Chaque questionnaire a été suivi de trois questions ouvertes (Annexe~\ref{annexe:entretien}) : ce qui fait gagner le plus de temps, ce qui gêne ou manque, et si le répondant ferait confiance à un chiffre du tableau de bord sans vérifier l'Excel.
+
+\subsection{Résultats du questionnaire SUS}
+\label{sec:adoption_resultats}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{Scores SUS individuels, recensement des quatre utilisateurs métier}
+\label{tab:adoption_sus}
+\begin{tabular}{|l|r|}
+\hline
+\rowcolor[HTML]{EFEFEF}
+\textbf{Rôle} & \textbf{Score SUS~/100} \\ \hline
+Agent de saisie (Dakar) & 95,0 \\ \hline
+Assistant principal (Dakar) & 90,0 \\ \hline
+Chef logistique (Bamako) & 90,0 \\ \hline
+Chef de bureau (Dakar) & 77,5 \\ \hline
+\textbf{Moyenne (n=4)} & \textbf{88,1} \\ \hline
+\end{tabular}
+\end{table}
+
+La moyenne de 88,1 dépasse largement le seuil de 68 et la cible de 70 (Tableau~\ref{tab:adoption_sus}). Les quatre scores, de 77,5 à 95,0, sont tous au-dessus de ces repères. Le score le plus bas, celui du chef de bureau, correspond à une critique précise formulée en entretien (l'absence de validation avant enregistrement) : il traduit un manque fonctionnel identifié, pas une difficulté d'usage.
+
+\subsection{Analyse qualitative : ce que disent les entretiens}
+\label{sec:adoption_qualitatif}
+
+\textbf{Ce que le système apporte.} Les quatre répondants décrivent, chacun à sa façon, ce que mesure la section~\ref{chap:impact_metier}. L'agent de saisie ne recopie plus le journalier dans le mensuel et n'envoie plus de fichier par WhatsApp. Le chef logistique n'a « plus besoin d'attendre les fichiers Excel » pour les ressaisir et dispose de « données en temps réel » : c'est la fin de la double saisie, dite par celui qui la subissait. Le chef de bureau et l'assistant principal voient l'activité et le solde de caisse sans passer par l'agent. La mesure chiffrée et les témoignages disent la même chose, de façon indépendante.
+
+\textbf{Les manques signalés.} Les quatre critiques recueillies correspondent à des exigences déjà identifiées et reportées lors de l'analyse des besoins :
+\begin{itemize}
+    \item le chef de bureau voudrait valider les dépenses avant leur enregistrement : c'est \texttt{EF-VAL-02}, non déployée (\S\ref{sec:webapp_fonctionnalites_cibles_non_deployees}) ;
+    \item l'agent de saisie dépend de la connexion, contrairement à Excel : c'est le mode hors-ligne \texttt{ENF-DISP-01} ;
+    \item l'assistant principal voudrait une alerte quand le solde passe sous un seuil, extension du suivi de caisse ;
+    \item le chef logistique voudrait un filtre avancé pour les camions particuliers.
+\end{itemize}
+Les utilisateurs réclament spontanément ce que l'analyse des besoins avait classé comme cible : c'est une validation de cette analyse. Ces demandes alimentent les perspectives (section~\ref{chap:perspectives}).
+
+\textbf{La confiance.} Les quatre répondants font confiance à un chiffre du tableau de bord sans revérifier l'Excel. La plateforme est devenue leur source de référence, et non un système parallèle qu'on contrôle par prudence. L'assistant principal précise que sa confiance vient en partie des explications reçues sur le fonctionnement du système : la confiance se construit aussi par l'accompagnement.
+
+\subsection{Biais et limites}
+\label{sec:adoption_biais}
+
+\textbf{Biais de complaisance.} L'auteur est le concepteur du système et le collègue quotidien des répondants, ce qui favorise des réponses indulgentes. Trois faits limitent ce risque sans l'écarter : les scores sont dispersés (de 77,5 à 95,0) ; les entretiens contiennent quatre critiques précises ; le score le plus bas va avec la critique la plus concrète.
+
+\textbf{Passation lue par l'auteur.} Pour le chef logistique, le questionnaire a été lu par l'auteur. Son score (90,0) est comparable à ceux des répondants de Dakar, et sa critique est aussi concrète que les leurs. Aucun signe d'inflation n'apparaît, mais cela ne prouve pas l'absence de biais.
+
+\textbf{Autres limites.} Quatre répondants interdisent toute généralisation au-delà de SOYAFF. La traduction du SUS n'a pas été revalidée. Les répondants n'ont pas tous la même aisance avec le numérique, ce qui a pu influer sur leur lecture de certains items.
+
+\subsection{Synthèse et transition}
+\label{sec:adoption_synthese}
+
+L'adoption est forte : un score moyen de 88,1 sur la totalité des utilisateurs, une confiance unanime dans le tableau de bord, et la fin de la double saisie confirmée par la personne qui la subissait. Les manques relevés recoupent les cibles déjà identifiées. Il reste à éprouver H4, la réplicabilité, par le raisonnement : c'est l'objet de la section suivante.

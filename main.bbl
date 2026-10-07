@@ -1,0 +1,1609 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{fatimaAfriqueLOuestPME}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=a1ccdbccd5d6eeb79da2d62152672680}{%
+           family={Fatima},
+           familyi={F\bibinitperiod},
+           given={Bandia},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{a1ccdbccd5d6eeb79da2d62152672680}
+      \strng{fullhash}{a1ccdbccd5d6eeb79da2d62152672680}
+      \strng{fullhashraw}{a1ccdbccd5d6eeb79da2d62152672680}
+      \strng{bibnamehash}{a1ccdbccd5d6eeb79da2d62152672680}
+      \strng{authorbibnamehash}{a1ccdbccd5d6eeb79da2d62152672680}
+      \strng{authornamehash}{a1ccdbccd5d6eeb79da2d62152672680}
+      \strng{authorfullhash}{a1ccdbccd5d6eeb79da2d62152672680}
+      \strng{authorfullhashraw}{a1ccdbccd5d6eeb79da2d62152672680}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://digital.itmobileafrique.com/post/afrique-de-l-ouest-les-pme-et-le-digital-une-histoire-d-opportunit\%C3\%A9s-manqu\%C3\%A9es}
+      \field{title}{Afrique de l'{{Ouest}} : Les {{PME}} et Le Digital, Une Histoire d'opportunités Manquées}
+      \field{urlday}{1}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+    \endentry
+    \entry{cariolleInfrastructuresEconomieNumeriques2018}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=83923f70d7be9c178d22a09a5969e1ea}{%
+           family={Cariolle},
+           familyi={C\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=c8b2ca973960a50ea6281e04e3c22ca2}{%
+           family={Goujon},
+           familyi={G\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{17e5121013cd9cde465f93e0cde1f5dc}
+      \strng{fullhash}{17e5121013cd9cde465f93e0cde1f5dc}
+      \strng{fullhashraw}{17e5121013cd9cde465f93e0cde1f5dc}
+      \strng{bibnamehash}{17e5121013cd9cde465f93e0cde1f5dc}
+      \strng{authorbibnamehash}{17e5121013cd9cde465f93e0cde1f5dc}
+      \strng{authornamehash}{17e5121013cd9cde465f93e0cde1f5dc}
+      \strng{authorfullhash}{17e5121013cd9cde465f93e0cde1f5dc}
+      \strng{authorfullhashraw}{17e5121013cd9cde465f93e0cde1f5dc}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{journaltitle}{FERDI Report}
+      \field{shorttitle}{Infrastructures et Économie Numériques En {{Afrique}} Subsaharienne et Dans l'{{UEMOA}}}
+      \field{title}{Infrastructures et Économie Numériques En {{Afrique}} Subsaharienne et Dans l'{{UEMOA}}: {{Etat}} Des Lieux, Vulnérabilités et Perspectives de Croissance}
+      \field{year}{2018}
+      \verb{file}
+      \verb C:\Users\byara\Zotero\storage\CI498MU3\Cariolle and Goujon - 2018 - Infrastructures et économie numériques en Afrique subsaharienne et dans l’UEMOA Etat des lieux, vul.pdf
+      \endverb
+    \endentry
+    \entry{byiersActeursInteretsLong2022}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=4dd02ecdb60f379c422e04f259da87ae}{%
+           family={Byiers},
+           familyi={B\bibinitperiod},
+           given={Bruce},
+           giveni={B\bibinitperiod}}}%
+        {{hash=e8ed57d7c2a30dff63d0912063514668}{%
+           family={Karkare},
+           familyi={K\bibinitperiod},
+           given={Poorva},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{665b937e6608302aab453ecb540846bd}
+      \strng{fullhash}{665b937e6608302aab453ecb540846bd}
+      \strng{fullhashraw}{665b937e6608302aab453ecb540846bd}
+      \strng{bibnamehash}{665b937e6608302aab453ecb540846bd}
+      \strng{authorbibnamehash}{665b937e6608302aab453ecb540846bd}
+      \strng{authornamehash}{665b937e6608302aab453ecb540846bd}
+      \strng{authorfullhash}{665b937e6608302aab453ecb540846bd}
+      \strng{authorfullhashraw}{665b937e6608302aab453ecb540846bd}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Les Acteurs et Intérêts Le Long Du Corridor {{Dakar-Bamako}}}
+      \field{year}{2022}
+      \verb{file}
+      \verb C:\Users\byara\Zotero\storage\MYG958UE\Byiers and Karkare - 2022 - Les acteurs et intérêts le long du corridor Dakar-Bamako.pdf
+      \endverb
+    \endentry
+    \entry{fix_kebeDiagnosticEntravesImportance2023}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=e97291a2a7f11fb92e6730a7092d1209}{%
+           family={Kebe},
+           familyi={K\bibinitperiod},
+           given={El\bibnamedelima hadj\bibnamedelimb Abdou\bibnamedelima Karim},
+           giveni={E\bibinitperiod\bibinitdelim h\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=91fa0517908b1f418ccd693eab50f425}{%
+           family={GOMIS},
+           familyi={G\bibinitperiod},
+           given={Joseph\bibnamedelima Samba},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=b87cc66e04005d14122f81bb9584ec55}{%
+           family={DANGOURA},
+           familyi={D\bibinitperiod},
+           given={Mouhamed},
+           giveni={M\bibinitperiod}}}%
+        {{hash=dd2824a4ab5ec0cf3ae22baae0f7e16e}{%
+           family={CISSE},
+           familyi={C\bibinitperiod},
+           given={Idrissa},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{4cea839d4e8ac77662781dd37f4c8286}
+      \strng{fullhash}{aefa5e841871bea4b59a1e1332f727f5}
+      \strng{fullhashraw}{aefa5e841871bea4b59a1e1332f727f5}
+      \strng{bibnamehash}{aefa5e841871bea4b59a1e1332f727f5}
+      \strng{authorbibnamehash}{aefa5e841871bea4b59a1e1332f727f5}
+      \strng{authornamehash}{4cea839d4e8ac77662781dd37f4c8286}
+      \strng{authorfullhash}{aefa5e841871bea4b59a1e1332f727f5}
+      \strng{authorfullhashraw}{aefa5e841871bea4b59a1e1332f727f5}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{journaltitle}{Revue Internationale de la Recherche Scientifique (Revue-IRS)}
+      \field{number}{2}
+      \field{shorttitle}{Diagnostic, Entraves et Importance Des Corridors de Transport Routier Dans Le Processus d'intégration Régionale En {{Afrique}} de l'{{Ouest}}}
+      \field{title}{Diagnostic, Entraves et Importance Des Corridors de Transport Routier Dans Le Processus d'intégration Régionale En {{Afrique}} de l'{{Ouest}}: Le Cas Du {{Sénégal}} et Ses Pays Voisins}
+      \field{volume}{1}
+      \field{year}{2023}
+      \field{pages}{181\bibrangedash 189}
+      \range{pages}{9}
+    \endentry
+    \entry{sigueTransportRoutierMarchandises2017}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=5b552b368166aa06fb23e465ec3f83b9}{%
+           family={Sigué},
+           familyi={S\bibinitperiod},
+           given={Ousseny},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{5b552b368166aa06fb23e465ec3f83b9}
+      \strng{fullhash}{5b552b368166aa06fb23e465ec3f83b9}
+      \strng{fullhashraw}{5b552b368166aa06fb23e465ec3f83b9}
+      \strng{bibnamehash}{5b552b368166aa06fb23e465ec3f83b9}
+      \strng{authorbibnamehash}{5b552b368166aa06fb23e465ec3f83b9}
+      \strng{authornamehash}{5b552b368166aa06fb23e465ec3f83b9}
+      \strng{authorfullhash}{5b552b368166aa06fb23e465ec3f83b9}
+      \strng{authorfullhashraw}{5b552b368166aa06fb23e465ec3f83b9}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{journaltitle}{Lettres, Sciences sociales et humaines}
+      \field{number}{2}
+      \field{shorttitle}{Transport Routier de Marchandises et Intégration Dans l'espace {{CEDEAO}}}
+      \field{title}{Transport Routier de Marchandises et Intégration Dans l'espace {{CEDEAO}}: Enjeux et Contraintes}
+      \field{volume}{33}
+      \field{year}{2017}
+      \verb{file}
+      \verb C:\Users\byara\Zotero\storage\KGC8FLSY\Sigué - 2017 - Transport routier de marchandises et intégration dans l’espace CEDEAO enjeux et contraintes.pdf
+      \endverb
+    \endentry
+    \entry{uemoaOPA2017}{report}{}{}
+      \name{author}{1}{}{%
+        {{hash=143245038dc571df5995592c418bcf7c}{%
+           family={{UEMOA, Commission de l'}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Commission de l'Union Économique et Monétaire Ouest Africaine (UEMOA)}%
+      }
+      \strng{namehash}{143245038dc571df5995592c418bcf7c}
+      \strng{fullhash}{143245038dc571df5995592c418bcf7c}
+      \strng{fullhashraw}{143245038dc571df5995592c418bcf7c}
+      \strng{bibnamehash}{143245038dc571df5995592c418bcf7c}
+      \strng{authorbibnamehash}{143245038dc571df5995592c418bcf7c}
+      \strng{authornamehash}{143245038dc571df5995592c418bcf7c}
+      \strng{authorfullhash}{143245038dc571df5995592c418bcf7c}
+      \strng{authorfullhashraw}{143245038dc571df5995592c418bcf7c}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{note}{Restitution et diffusion le 29 mai 2018 à Ouagadougou. Données de référence utilisées : nombre de postes de contrôle, perceptions illicites et temps d'arrêt sur les corridors de l'espace UEMOA, dont le corridor Dakar--Bamako}
+      \field{title}{Rapport annuel 2017 de l'{Observatoire} des {Pratiques} {Anormales} ({OPA}) dans les États membres de l'{UEMOA} : persistance de la tracasserie routière}
+      \field{type}{techreport}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb http://www.uemoa.int/fr/rapport-annuel-2017-de-lobservatoire-des-pratiques-anormales-opa-dans-les-etats-membres-de-luemoa
+      \endverb
+      \verb{url}
+      \verb http://www.uemoa.int/fr/rapport-annuel-2017-de-lobservatoire-des-pratiques-anormales-opa-dans-les-etats-membres-de-luemoa
+      \endverb
+    \endentry
+    \entry{REGLEMENTNdeg142005}{misc}{}{}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://e-docucenter.uemoa.int/fr/reglement-ndeg142005cmuemoa-relatif-lharmonisation-des-normes-et-des-procedures-du-controle-du}
+      \field{title}{{{REGLEMENT N}}{$^\circ$}14/2005/{{CM}}/{{UEMOA RELATIF A L}}'{{HARMONISATION DES NORMES ET DES PROCEDURES DU CONTROLE DU GABARIT}}, {{DU POIDS}}, {{ET DE LA CHARGE A L}}'{{ESSIEU DES VEHICULES LOURDS DE TRANSPORT DE MARCHANDISES DANS LES ÉTATS MEMBRES DE L}}'{{UNION ECONOMIQUE ET MONETAIRE OU}} |{} {{E-DOCUCENTER UEMOA}}}
+      \field{urlday}{2}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb C:\Users\byara\Zotero\storage\UCQR69V9\reglement-ndeg142005cmuemoa-relatif-lharmonisation-des-normes-et-des-procedures-du-controle-du.html
+      \endverb
+    \endentry
+    \entry{ControlesRoutiersAu2026}{misc}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Le ministre de l'Intérieur et de la Sécurité publique, Ahmadou Bamba Cissé, a adressé une instruction au Haut-commandant de la Gendarmerie nationale et au}
+      \field{chapter}{Politique}
+      \field{howpublished}{https://www.senenews.com/actualites/controles-routiers-au-senegal-le-ministre-de-linterieur-donne-de-nouvelles-instructions-fermes\_582444.html}
+      \field{journaltitle}{SeneNews}
+      \field{langid}{french}
+      \field{month}{4}
+      \field{shorttitle}{{Contrôles routiers au Sénégal}}
+      \field{title}{{Contrôles routiers au Sénégal : Le ministre de l'Intérieur donne de nouvelles instructions fermes}}
+      \field{urlday}{2}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb C:\Users\byara\Zotero\storage\RLITJB5P\controles-routiers-au-senegal-le-ministre-de-linterieur-donne-de-nouvelles-instructions-fermes_.html
+      \endverb
+    \endentry
+    \entry{brookeSUSAQuickDirty1996}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=813064283275c281401d7a7483420c67}{%
+           family={Brooke},
+           familyi={B\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {London, England}%
+      }
+      \strng{namehash}{813064283275c281401d7a7483420c67}
+      \strng{fullhash}{813064283275c281401d7a7483420c67}
+      \strng{fullhashraw}{813064283275c281401d7a7483420c67}
+      \strng{bibnamehash}{813064283275c281401d7a7483420c67}
+      \strng{authorbibnamehash}{813064283275c281401d7a7483420c67}
+      \strng{authornamehash}{813064283275c281401d7a7483420c67}
+      \strng{authorfullhash}{813064283275c281401d7a7483420c67}
+      \strng{authorfullhashraw}{813064283275c281401d7a7483420c67}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Usability evaluation in industry}
+      \field{number}{194}
+      \field{title}{{{SUS-A}} Quick and Dirty Usability Scale}
+      \field{volume}{189}
+      \field{year}{1996}
+      \field{pages}{4\bibrangedash 7}
+      \range{pages}{4}
+      \verb{file}
+      \verb C:\Users\byara\Zotero\storage\GH79XBQ8\Brooke - 1996 - SUS-A quick and dirty usability scale.pdf
+      \endverb
+    \endentry
+    \entry{lewisRetrievalaugmentedGenerationKnowledgeintensive2020}{article}{}{}
+      \name{author}{10}{}{%
+        {{hash=ecbe786a5668bf643d74bb24fe1c3cfe}{%
+           family={Lewis},
+           familyi={L\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod}}}%
+        {{hash=79978685fd7b37606022b06c0f6419a1}{%
+           family={Perez},
+           familyi={P\bibinitperiod},
+           given={Ethan},
+           giveni={E\bibinitperiod}}}%
+        {{hash=d205faec67355b6e0ec49f82a492324c}{%
+           family={Piktus},
+           familyi={P\bibinitperiod},
+           given={Aleksandra},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e1c32989a78998fe3c03c981d0da2dc7}{%
+           family={Petroni},
+           familyi={P\bibinitperiod},
+           given={Fabio},
+           giveni={F\bibinitperiod}}}%
+        {{hash=b24392ebfb2c0a35979fc689c389c649}{%
+           family={Karpukhin},
+           familyi={K\bibinitperiod},
+           given={Vladimir},
+           giveni={V\bibinitperiod}}}%
+        {{hash=78a420900f50a8470ad085fb05231bf6}{%
+           family={Goyal},
+           familyi={G\bibinitperiod},
+           given={Naman},
+           giveni={N\bibinitperiod}}}%
+        {{hash=4eadcf26f55e11fe4be834b52d9b7fdf}{%
+           family={Küttler},
+           familyi={K\bibinitperiod},
+           given={Heinrich},
+           giveni={H\bibinitperiod}}}%
+        {{hash=c97f53fdeeb04c28de19e3324cb4bc0a}{%
+           family={Lewis},
+           familyi={L\bibinitperiod},
+           given={Mike},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d4d56d3d370b3afd4ad2ebf985fbd3f8}{%
+           family={Yih},
+           familyi={Y\bibinitperiod},
+           given={Wen-tau},
+           giveni={W\bibinithyphendelim t\bibinitperiod}}}%
+        {{hash=b3ff4029884ead9928954ea33714192c}{%
+           family={Rocktäschel},
+           familyi={R\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{f238c3bfc4b30650dd17e65c4aadfc66}
+      \strng{fullhash}{4d8109207f0c6bf14126fca3ae1956a0}
+      \strng{fullhashraw}{4d8109207f0c6bf14126fca3ae1956a0}
+      \strng{bibnamehash}{f238c3bfc4b30650dd17e65c4aadfc66}
+      \strng{authorbibnamehash}{f238c3bfc4b30650dd17e65c4aadfc66}
+      \strng{authornamehash}{f238c3bfc4b30650dd17e65c4aadfc66}
+      \strng{authorfullhash}{4d8109207f0c6bf14126fca3ae1956a0}
+      \strng{authorfullhashraw}{4d8109207f0c6bf14126fca3ae1956a0}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in neural information processing systems}
+      \field{title}{Retrieval-Augmented Generation for Knowledge-Intensive Nlp Tasks}
+      \field{volume}{33}
+      \field{year}{2020}
+      \field{pages}{9459\bibrangedash 9474}
+      \range{pages}{16}
+      \verb{file}
+      \verb C:\Users\byara\Zotero\storage\ZYYC6PAQ\Lewis et al. - 2020 - Retrieval-augmented generation for knowledge-intensive nlp tasks.pdf
+      \endverb
+    \endentry
+    \entry{gaoRetrievalAugmentedGenerationLarge2024}{misc}{}{}
+      \name{author}{10}{}{%
+        {{hash=572def57560315de76cedfc3e17c2eb2}{%
+           family={Gao},
+           familyi={G\bibinitperiod},
+           given={Yunfan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=bdc1e50b7faa4f8d1a9844199179e6c2}{%
+           family={Xiong},
+           familyi={X\bibinitperiod},
+           given={Yun},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=03e7985fe5e84b74e9f01c4cdbaaee9c}{%
+           family={Gao},
+           familyi={G\bibinitperiod},
+           given={Xinyu},
+           giveni={X\bibinitperiod}}}%
+        {{hash=16ccf3d9ea55a78a7d3dfea173515f1f}{%
+           family={Jia},
+           familyi={J\bibinitperiod},
+           given={Kangxiang},
+           giveni={K\bibinitperiod}}}%
+        {{hash=fd6e4a40c152c7e39a43964918a2c4a5}{%
+           family={Pan},
+           familyi={P\bibinitperiod},
+           given={Jinliu},
+           giveni={J\bibinitperiod}}}%
+        {{hash=efef66e4d4bad100544cfae4a2b3104b}{%
+           family={Bi},
+           familyi={B\bibinitperiod},
+           given={Yuxi},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=f59ef2d4288d687c75882fd75c94cd09}{%
+           family={Dai},
+           familyi={D\bibinitperiod},
+           given={Yi},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=5541cd69dde50ba09f8968212da6602c}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Jiawei},
+           giveni={J\bibinitperiod}}}%
+        {{hash=00b734eb3fb588e4c6c94e4271080d0b}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Meng},
+           giveni={M\bibinitperiod}}}%
+        {{hash=9cca37a322a37778f7e30f057e2c2f90}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Haofen},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{f1678cfa142d8029151d4faacf40f176}
+      \strng{fullhash}{0ac64c8a2a8c144751e6f1d6573b5725}
+      \strng{fullhashraw}{0ac64c8a2a8c144751e6f1d6573b5725}
+      \strng{bibnamehash}{f1678cfa142d8029151d4faacf40f176}
+      \strng{authorbibnamehash}{f1678cfa142d8029151d4faacf40f176}
+      \strng{authornamehash}{f1678cfa142d8029151d4faacf40f176}
+      \strng{authorfullhash}{0ac64c8a2a8c144751e6f1d6573b5725}
+      \strng{authorfullhashraw}{0ac64c8a2a8c144751e6f1d6573b5725}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Large Language Models (LLMs) showcase impressive capabilities but encounter challenges like hallucination, outdated knowledge, and non-transparent, untraceable reasoning processes. Retrieval-Augmented Generation (RAG) has emerged as a promising solution by incorporating knowledge from external databases. This enhances the accuracy and credibility of the generation, particularly for knowledge-intensive tasks, and allows for continuous knowledge updates and integration of domain-specific information. RAG synergistically merges LLMs' intrinsic knowledge with the vast, dynamic repositories of external databases. This comprehensive review paper offers a detailed examination of the progression of RAG paradigms, encompassing the Naive RAG, the Advanced RAG, and the Modular RAG. It meticulously scrutinizes the tripartite foundation of RAG frameworks, which includes the retrieval, the generation and the augmentation techniques. The paper highlights the state-of-the-art technologies embedded in each of these critical components, providing a profound understanding of the advancements in RAG systems. Furthermore, this paper introduces up-to-date evaluation framework and benchmark. At the end, this article delineates the challenges currently faced and points out prospective avenues for research and development.}
+      \field{eprintclass}{cs.CL}
+      \field{eprinttype}{arXiv}
+      \field{month}{3}
+      \field{number}{arXiv:2312.10997}
+      \field{shorttitle}{Retrieval-{{Augmented Generation}} for {{Large Language Models}}}
+      \field{title}{Retrieval-{{Augmented Generation}} for {{Large Language Models}}: {{A Survey}}}
+      \field{urlday}{2}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2312.10997
+      \endverb
+      \verb{eprint}
+      \verb 2312.10997
+      \endverb
+      \verb{file}
+      \verb C:\Users\byara\Zotero\storage\Y4HKATAZ\Gao et al. - 2024 - Retrieval-Augmented Generation for Large Language Models A Survey.pdf
+      \endverb
+      \keyw{Computer Science - Artificial Intelligence,Computer Science - Computation and Language}
+    \endentry
+    \entry{artpNOTETRIMESTRIELLELINDICE2026}{report}{}{}
+      \name{author}{2}{}{%
+        {{hash=3acf00fafba6f4bea2d371ea5e758321}{%
+           family={{artp}},
+           familyi={a\bibinitperiod}}}%
+        {{hash=53f07468488faf5942b4b72f895fdb74}{%
+           family={{ansd}},
+           familyi={a\bibinitperiod}}}%
+      }
+      \strng{namehash}{5574f3d24908501adcd592c89f7e04b0}
+      \strng{fullhash}{5574f3d24908501adcd592c89f7e04b0}
+      \strng{fullhashraw}{5574f3d24908501adcd592c89f7e04b0}
+      \strng{bibnamehash}{5574f3d24908501adcd592c89f7e04b0}
+      \strng{authorbibnamehash}{5574f3d24908501adcd592c89f7e04b0}
+      \strng{authornamehash}{5574f3d24908501adcd592c89f7e04b0}
+      \strng{authorfullhash}{5574f3d24908501adcd592c89f7e04b0}
+      \strng{authorfullhashraw}{5574f3d24908501adcd592c89f7e04b0}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{{NOTE TRIMESTRIELLE DE L}}'{{INDICE DES PRIX DES SERVICES MOBILES}} ({{IPSM}}) {{Premier}} Trimestre 2026}
+      \field{type}{techreport}
+      \field{year}{2026}
+      \verb{file}
+      \verb C:\Users\byara\Zotero\storage\RUL6PEW9\IPSM NOTE T1 2026 VF_5.pdf
+      \endverb
+    \endentry
+    \entry{worldbankgroupWorldDevelopmentReport2016}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=9b5e537ed38a7fe62c86b6145bfb37d3}{%
+           family={{World Bank Group}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Washington, DC: World Bank}%
+      }
+      \strng{namehash}{9b5e537ed38a7fe62c86b6145bfb37d3}
+      \strng{fullhash}{9b5e537ed38a7fe62c86b6145bfb37d3}
+      \strng{fullhashraw}{9b5e537ed38a7fe62c86b6145bfb37d3}
+      \strng{bibnamehash}{9b5e537ed38a7fe62c86b6145bfb37d3}
+      \strng{authorbibnamehash}{9b5e537ed38a7fe62c86b6145bfb37d3}
+      \strng{authornamehash}{9b5e537ed38a7fe62c86b6145bfb37d3}
+      \strng{authorfullhash}{9b5e537ed38a7fe62c86b6145bfb37d3}
+      \strng{authorfullhashraw}{9b5e537ed38a7fe62c86b6145bfb37d3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{eprinttype}{hdl}
+      \field{isbn}{978-1-4648-0671-1}
+      \field{langid}{french}
+      \field{month}{1}
+      \field{shorttitle}{{World Development Report 2016}}
+      \field{title}{{World Development Report 2016: Digital Dividends}}
+      \field{year}{2016}
+      \verb{doi}
+      \verb 10.1596/978-1-4648-0671-1
+      \endverb
+      \verb{eprint}
+      \verb 10986/23347
+      \endverb
+      \verb{file}
+      \verb C:\Users\byara\Zotero\storage\C72TI6AW\World Bank Group - 2016 - World Development Report 2016 Digital Dividends.pdf
+      \endverb
+    \endentry
+    \entry{AccelererRevolutionNumerique}{misc}{}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Alors que 60 \% de la population du continent a moins de 25 ans, le numérique est clé pour stimuler l'emploi et la croissance, plaident le ministre de l'Économie et des Finances du Bénin, Romuald Wadagni, et le vice-président de la Banque mondiale pour l'Afrique de l'Ouest et l'Afrique centrale, Ousmane Diagana.}
+      \field{howpublished}{https://blogs.worldbank.org/fr/voices/accelerer-revolution-numerique-afrique-emploi-croissance}
+      \field{journaltitle}{Blogs de la Banque mondiale}
+      \field{langid}{french}
+      \field{title}{{Accélérer la révolution numérique de l'Afrique pour stimuler l'emploi et la croissance}}
+      \field{urlday}{2}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb C:\Users\byara\Zotero\storage\KV32WHZS\accelerer-revolution-numerique-afrique-emploi-croissance.html
+      \endverb
+    \endentry
+    \entry{davisTechnologyAcceptanceModel1989}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=dcb59a9c9bf67cc1c74d13fb3a9f33a7}{%
+           family={Davis},
+           familyi={D\bibinitperiod},
+           given={Fred\bibnamedelima D.},
+           giveni={F\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{dcb59a9c9bf67cc1c74d13fb3a9f33a7}
+      \strng{fullhash}{dcb59a9c9bf67cc1c74d13fb3a9f33a7}
+      \strng{fullhashraw}{dcb59a9c9bf67cc1c74d13fb3a9f33a7}
+      \strng{bibnamehash}{dcb59a9c9bf67cc1c74d13fb3a9f33a7}
+      \strng{authorbibnamehash}{dcb59a9c9bf67cc1c74d13fb3a9f33a7}
+      \strng{authornamehash}{dcb59a9c9bf67cc1c74d13fb3a9f33a7}
+      \strng{authorfullhash}{dcb59a9c9bf67cc1c74d13fb3a9f33a7}
+      \strng{authorfullhashraw}{dcb59a9c9bf67cc1c74d13fb3a9f33a7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{journaltitle}{Al-Suqri, MN, Al-Aufi, AS: Information seeking behavior and technology adoption}
+      \field{number}{219}
+      \field{shorttitle}{Technology Acceptance Model}
+      \field{title}{Technology Acceptance Model: {{TAM}}}
+      \field{volume}{205}
+      \field{year}{1989}
+      \field{pages}{5}
+      \range{pages}{1}
+      \verb{file}
+      \verb C:\Users\byara\Zotero\storage\68NCYRAP\Davis - 1989 - Technology acceptance model TAM.pdf
+      \endverb
+    \endentry
+    \entry{venkateshUserAcceptanceInformation2003}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=f13fa051c2955b3440b2021e4d99806e}{%
+           family={Venkatesh},
+           familyi={V\bibinitperiod},
+           given={Viswanath},
+           giveni={V\bibinitperiod}}}%
+        {{hash=ee75a345ff97bd746c38802e3c42931d}{%
+           family={Morris},
+           familyi={M\bibinitperiod},
+           given={Michael\bibnamedelima G.},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=d2c8281723cc309c9a0ca78c64e1eb12}{%
+           family={Davis},
+           familyi={D\bibinitperiod},
+           given={Gordon\bibnamedelima B.},
+           giveni={G\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=dcb59a9c9bf67cc1c74d13fb3a9f33a7}{%
+           family={Davis},
+           familyi={D\bibinitperiod},
+           given={Fred\bibnamedelima D.},
+           giveni={F\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Management Information Systems Research Center, University of Minnesota}%
+      }
+      \strng{namehash}{d089f8599fb5c4e21641f0a612a29d31}
+      \strng{fullhash}{f79e058f787d9e3fde994c690963e5af}
+      \strng{fullhashraw}{f79e058f787d9e3fde994c690963e5af}
+      \strng{bibnamehash}{f79e058f787d9e3fde994c690963e5af}
+      \strng{authorbibnamehash}{f79e058f787d9e3fde994c690963e5af}
+      \strng{authornamehash}{d089f8599fb5c4e21641f0a612a29d31}
+      \strng{authorfullhash}{f79e058f787d9e3fde994c690963e5af}
+      \strng{authorfullhashraw}{f79e058f787d9e3fde994c690963e5af}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{journaltitle}{MIS quarterly}
+      \field{number}{3}
+      \field{shorttitle}{User Acceptance of Information Technology}
+      \field{title}{User Acceptance of Information Technology: {{Toward}} a Unified View1}
+      \field{volume}{27}
+      \field{year}{2003}
+      \field{pages}{425\bibrangedash 478}
+      \range{pages}{54}
+    \endentry
+    \entry{IMPACTLADOPTIONTECHNOLOGIES2025}{article}{}{}
+      \list{publisher}{1}{%
+        {OBSERVATOIRE DE LA FRANCOPHONIE ÉCONOMIQUE}%
+      }
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{title}{{{IMPACT DE L}}'{{ADOPTION DES TECHNOLOGIES NUMÉRIQUES SUR LA}} {{COMPÉTITIVITÉ DES PME EN AFRIQUE FRANCOPHONE}}}
+      \field{year}{2025}
+      \verb{file}
+      \verb C:\Users\byara\Zotero\storage\TTTLWWHD\Note-strategique-OFE-PME_compétitivité-2025.pdf
+      \endverb
+    \endentry
+    \entry{tadjuidjeTechnologiesLeadershipRevolutionner2024}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=5ede88c97edf449da63412db0efc4100}{%
+           family={Tadjuidje},
+           familyi={T\bibinitperiod},
+           given={Gilles\bibnamedelima Teuguia},
+           giveni={G\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{5ede88c97edf449da63412db0efc4100}
+      \strng{fullhash}{5ede88c97edf449da63412db0efc4100}
+      \strng{fullhashraw}{5ede88c97edf449da63412db0efc4100}
+      \strng{bibnamehash}{5ede88c97edf449da63412db0efc4100}
+      \strng{authorbibnamehash}{5ede88c97edf449da63412db0efc4100}
+      \strng{authornamehash}{5ede88c97edf449da63412db0efc4100}
+      \strng{authorfullhash}{5ede88c97edf449da63412db0efc4100}
+      \strng{authorfullhashraw}{5ede88c97edf449da63412db0efc4100}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{journaltitle}{International Journal of Financial Accountability, Economics, Management, and Auditing}
+      \field{shorttitle}{Technologies et {{Leadership}}}
+      \field{title}{Technologies et {{Leadership}}: {{Révolutionner}} Le {{Contrôle}} de {{Gestion}} Dans Les {{PME Africaines}}}
+      \field{year}{2024}
+      \verb{file}
+      \verb C:\Users\byara\Zotero\storage\M9EX5C9G\Tadjuidje - 2024 - Technologies et Leadership Révolutionner le Contrôle de Gestion dans les PME Africaines.pdf
+      \endverb
+    \endentry
+    \entry{nothiasIntellectualHistoryDigital2025}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=9a592e460ade219e704db77366dd2999}{%
+           family={Nothias},
+           familyi={N\bibinitperiod},
+           given={Toussaint},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{9a592e460ade219e704db77366dd2999}
+      \strng{fullhash}{9a592e460ade219e704db77366dd2999}
+      \strng{fullhashraw}{9a592e460ade219e704db77366dd2999}
+      \strng{bibnamehash}{9a592e460ade219e704db77366dd2999}
+      \strng{authorbibnamehash}{9a592e460ade219e704db77366dd2999}
+      \strng{authornamehash}{9a592e460ade219e704db77366dd2999}
+      \strng{authorfullhash}{9a592e460ade219e704db77366dd2999}
+      \strng{authorfullhashraw}{9a592e460ade219e704db77366dd2999}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Communication}
+      \field{number}{5}
+      \field{title}{An Intellectual History of Digital Colonialism}
+      \field{volume}{75}
+      \field{year}{2025}
+      \field{pages}{385\bibrangedash 397}
+      \range{pages}{13}
+      \verb{file}
+      \verb C:\Users\byara\Zotero\storage\EL7MYPLT\Nothias - 2025 - An intellectual history of digital colonialism.pdf
+      \endverb
+    \endentry
+    \entry{reisFundamentalsDataEngineering2022}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=400a386a9b748fbd18e87e7adfbc7e44}{%
+           family={Reis},
+           familyi={R\bibinitperiod},
+           given={Joe},
+           giveni={J\bibinitperiod}}}%
+        {{hash=83410206f9fb9c3c8d22d2022263d74a}{%
+           family={Housley},
+           familyi={H\bibinitperiod},
+           given={Matt},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {"O'Reilly Media, Inc."}%
+      }
+      \strng{namehash}{6bb90c3bdd33592fa226bd69e42733a9}
+      \strng{fullhash}{6bb90c3bdd33592fa226bd69e42733a9}
+      \strng{fullhashraw}{6bb90c3bdd33592fa226bd69e42733a9}
+      \strng{bibnamehash}{6bb90c3bdd33592fa226bd69e42733a9}
+      \strng{authorbibnamehash}{6bb90c3bdd33592fa226bd69e42733a9}
+      \strng{authornamehash}{6bb90c3bdd33592fa226bd69e42733a9}
+      \strng{authorfullhash}{6bb90c3bdd33592fa226bd69e42733a9}
+      \strng{authorfullhashraw}{6bb90c3bdd33592fa226bd69e42733a9}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Data engineering has grown rapidly in the past decade, leaving many software engineers, data scientists, and analysts looking for a comprehensive view of this practice. With this practical book, you'll learn how to plan and build systems to serve the needs of your organization and customers by evaluating the best technologies available through the framework of the data engineering lifecycle. Authors Joe Reis and Matt Housley walk you through the data engineering lifecycle and show you how to stitch together a variety of cloud technologies to serve the needs of downstream data consumers. You'll understand how to apply the concepts of data generation, ingestion, orchestration, transformation, storage, and governance that are critical in any data environment regardless of the underlying technology. This book will help you: Get a concise overview of the entire data engineering landscape Assess data engineering problems using an end-to-end framework of best practices Cut through marketing hype when choosing data technologies, architecture, and processes Use the data engineering lifecycle to design and build a robust architecture Incorporate data governance and security across the data engineering lifecycle}
+      \field{isbn}{978-1-0981-0827-4}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{shorttitle}{Fundamentals of {{Data Engineering}}}
+      \field{title}{Fundamentals of {{Data Engineering}}: {{Plan}} and {{Build Robust Data Systems}}}
+      \field{year}{2022}
+      \keyw{Computers / Business & Productivity Software / Databases,Computers / Data Science / Data Analytics,Computers / Data Science / Data Modeling & Design,Computers / Data Science / General}
+    \endentry
+    \entry{kimballDataWarehouseToolkit2013}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=6ec3b140429bc59ad63c593b172f665c}{%
+           family={Kimball},
+           familyi={K\bibinitperiod},
+           given={Ralph},
+           giveni={R\bibinitperiod}}}%
+        {{hash=257f73b4d408fcd5e8d4a110ef8c8f49}{%
+           family={Ross},
+           familyi={R\bibinitperiod},
+           given={Margy},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley \& Sons}%
+      }
+      \strng{namehash}{c18f3b1557ab75000609609691801c5b}
+      \strng{fullhash}{c18f3b1557ab75000609609691801c5b}
+      \strng{fullhashraw}{c18f3b1557ab75000609609691801c5b}
+      \strng{bibnamehash}{c18f3b1557ab75000609609691801c5b}
+      \strng{authorbibnamehash}{c18f3b1557ab75000609609691801c5b}
+      \strng{authornamehash}{c18f3b1557ab75000609609691801c5b}
+      \strng{authorfullhash}{c18f3b1557ab75000609609691801c5b}
+      \strng{authorfullhashraw}{c18f3b1557ab75000609609691801c5b}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Data Warehouse Toolkit: {{The}} Definitive Guide to Dimensional Modeling}
+      \field{year}{2013}
+      \verb{file}
+      \verb C:\Users\byara\Zotero\storage\QZWTNCBW\The Data Warehouse Toolkit - Kimball.pdf
+      \endverb
+    \endentry
+    \entry{fix_airflowDocumentation2026}{misc}{}{}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{title}{Qu'est-ce qu'{Airflow}®{} ? {Documentation} {Airflow} 3.2.2}
+      \field{urlday}{2}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://airflow.apache.org/docs/apache-airflow/stable/index.html
+      \endverb
+      \verb{url}
+      \verb https://airflow.apache.org/docs/apache-airflow/stable/index.html
+      \endverb
+    \endentry
+    \entry{pervaizUnderstandingChallengesData2019}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=4c7c0ed28993045f2a01bee89f9432e9}{%
+           family={Pervaiz},
+           familyi={P\bibinitperiod},
+           given={Fahad},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{4c7c0ed28993045f2a01bee89f9432e9}
+      \strng{fullhash}{4c7c0ed28993045f2a01bee89f9432e9}
+      \strng{fullhashraw}{4c7c0ed28993045f2a01bee89f9432e9}
+      \strng{bibnamehash}{4c7c0ed28993045f2a01bee89f9432e9}
+      \strng{authorbibnamehash}{4c7c0ed28993045f2a01bee89f9432e9}
+      \strng{authornamehash}{4c7c0ed28993045f2a01bee89f9432e9}
+      \strng{authorfullhash}{4c7c0ed28993045f2a01bee89f9432e9}
+      \strng{authorfullhashraw}{4c7c0ed28993045f2a01bee89f9432e9}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Understanding Challenges in the Data Pipeline for Development Data}
+      \field{type}{phdthesis}
+      \field{year}{2019}
+      \verb{file}
+      \verb C:\Users\byara\Zotero\storage\53IAJTAE\Pervaiz - 2019 - Understanding challenges in the data pipeline for development data.pdf
+      \endverb
+    \endentry
+    \entry{vaswaniAttentionAllYou2017}{article}{}{}
+      \name{author}{8}{}{%
+        {{hash=7f28e84700536646dd6620a0db07ad09}{%
+           family={Vaswani},
+           familyi={V\bibinitperiod},
+           given={Ashish},
+           giveni={A\bibinitperiod}}}%
+        {{hash=62efade83d70f0323fe248755e6c90c5}{%
+           family={Shazeer},
+           familyi={S\bibinitperiod},
+           given={Noam},
+           giveni={N\bibinitperiod}}}%
+        {{hash=06649ebab1ea5cac0250746a19764975}{%
+           family={Parmar},
+           familyi={P\bibinitperiod},
+           given={Niki},
+           giveni={N\bibinitperiod}}}%
+        {{hash=831027ee0ebf22375e2a86afc1881909}{%
+           family={Uszkoreit},
+           familyi={U\bibinitperiod},
+           given={Jakob},
+           giveni={J\bibinitperiod}}}%
+        {{hash=2fd2982e30ebcec93ec1cf76e0d797fd}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={Llion},
+           giveni={L\bibinitperiod}}}%
+        {{hash=27b07e4eacbf4ef7a1438e3badb7dd8d}{%
+           family={Gomez},
+           familyi={G\bibinitperiod},
+           given={Aidan\bibnamedelima N.},
+           giveni={A\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=540fcd72e1fa4bbed46604f4e6cff817}{%
+           family={Kaiser},
+           familyi={K\bibinitperiod},
+           given={{Ł}ukasz},
+           giveni={Ł\bibinitperiod}}}%
+        {{hash=95595a0fefb86187cbc36e551017d332}{%
+           family={Polosukhin},
+           familyi={P\bibinitperiod},
+           given={Illia},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{ee273ab30cfb889666f8c4d806eb9ce7}
+      \strng{fullhash}{cb26e47f6b8133865271fc8483132297}
+      \strng{fullhashraw}{cb26e47f6b8133865271fc8483132297}
+      \strng{bibnamehash}{ee273ab30cfb889666f8c4d806eb9ce7}
+      \strng{authorbibnamehash}{ee273ab30cfb889666f8c4d806eb9ce7}
+      \strng{authornamehash}{ee273ab30cfb889666f8c4d806eb9ce7}
+      \strng{authorfullhash}{cb26e47f6b8133865271fc8483132297}
+      \strng{authorfullhashraw}{cb26e47f6b8133865271fc8483132297}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in neural information processing systems}
+      \field{title}{Attention Is All You Need}
+      \field{volume}{30}
+      \field{year}{2017}
+    \endentry
+    \entry{brownLanguageModelsAre2020}{article}{}{}
+      \name{author}{10}{}{%
+        {{hash=0a51ba5d8e7a6dadadec1b86c05a4f5f}{%
+           family={Brown},
+           familyi={B\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=d4543c3bcd6aaf414da4296b349603e5}{%
+           family={Mann},
+           familyi={M\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=9ac58bd43db2434e8e1ffd6182c3fcda}{%
+           family={Ryder},
+           familyi={R\bibinitperiod},
+           given={Nick},
+           giveni={N\bibinitperiod}}}%
+        {{hash=9ed243177743da3e650f1cff6376bb3c}{%
+           family={Subbiah},
+           familyi={S\bibinitperiod},
+           given={Melanie},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a685743a4dc39610e7bc83d058782274}{%
+           family={Kaplan},
+           familyi={K\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=6cb887834b0c671dbc14216ff5409fca}{%
+           family={Dhariwal},
+           familyi={D\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=f478793f08d5b98614e8d76d2b60cf2d}{%
+           family={Neelakantan},
+           familyi={N\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1ff56827c21055b216fdce971ffb6060}{%
+           family={Shyam},
+           familyi={S\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=0062d64c09126145e676e85f38b2a1c1}{%
+           family={Sastry},
+           familyi={S\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=f4c3b3762633da7ae44af31bbca2c002}{%
+           family={Askell},
+           familyi={A\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{6d1f0c9d8d01f66e502c0b6e1726b90d}
+      \strng{fullhash}{f470a3fb19a4c8c4a1e55b1d0dde02ec}
+      \strng{fullhashraw}{f470a3fb19a4c8c4a1e55b1d0dde02ec}
+      \strng{bibnamehash}{6d1f0c9d8d01f66e502c0b6e1726b90d}
+      \strng{authorbibnamehash}{6d1f0c9d8d01f66e502c0b6e1726b90d}
+      \strng{authornamehash}{6d1f0c9d8d01f66e502c0b6e1726b90d}
+      \strng{authorfullhash}{f470a3fb19a4c8c4a1e55b1d0dde02ec}
+      \strng{authorfullhashraw}{f470a3fb19a4c8c4a1e55b1d0dde02ec}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{arXiv preprint arXiv:2005.14165}
+      \field{title}{Language Models Are Few-Shot Learners ({{GPT-3}})}
+      \field{volume}{75}
+      \field{year}{2020}
+      \verb{eprint}
+      \verb 2005.14165
+      \endverb
+      \verb{file}
+      \verb C:\Users\byara\Zotero\storage\Z5S2LH4B\Brown et al. - 2020 - Language models are few-shot learners (GPT-3).pdf
+      \endverb
+    \endentry
+    \entry{touvronLlamaOpenEfficient2023}{article}{}{}
+      \name{author}{10}{}{%
+        {{hash=a2a13fcd633ec70c55a7f3f4812afdcf}{%
+           family={Touvron},
+           familyi={T\bibinitperiod},
+           given={Hugo},
+           giveni={H\bibinitperiod}}}%
+        {{hash=c641a91d616b6eda08cbbdca7b7eb186}{%
+           family={Lavril},
+           familyi={L\bibinitperiod},
+           given={Thibaut},
+           giveni={T\bibinitperiod}}}%
+        {{hash=a32ece3bc966e7e88747e905158c9a6a}{%
+           family={Izacard},
+           familyi={I\bibinitperiod},
+           given={Gautier},
+           giveni={G\bibinitperiod}}}%
+        {{hash=7222f9d76b0fff504f39e7c9c2a526be}{%
+           family={Martinet},
+           familyi={M\bibinitperiod},
+           given={Xavier},
+           giveni={X\bibinitperiod}}}%
+        {{hash=08284515d256b832e9dba10a88af84f4}{%
+           family={Lachaux},
+           familyi={L\bibinitperiod},
+           given={Marie-Anne},
+           giveni={M\bibinithyphendelim A\bibinitperiod}}}%
+        {{hash=1d29ae55d8d993d9f195b3c97bd34f7c}{%
+           family={Lacroix},
+           familyi={L\bibinitperiod},
+           given={Timothée},
+           giveni={T\bibinitperiod}}}%
+        {{hash=e0d9a8657c1043f53c54f3f5a6ff305f}{%
+           family={Rozière},
+           familyi={R\bibinitperiod},
+           given={Baptiste},
+           giveni={B\bibinitperiod}}}%
+        {{hash=78a420900f50a8470ad085fb05231bf6}{%
+           family={Goyal},
+           familyi={G\bibinitperiod},
+           given={Naman},
+           giveni={N\bibinitperiod}}}%
+        {{hash=00ce63f55ae2ce6ea638e5f991996584}{%
+           family={Hambro},
+           familyi={H\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=5373a3313da61427121b3e9733df1ed2}{%
+           family={Azhar},
+           familyi={A\bibinitperiod},
+           given={Faisal},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{c237483431fea681283a37adbb23a59f}
+      \strng{fullhash}{509c69afaad060e8776ac16d3ebeead1}
+      \strng{fullhashraw}{509c69afaad060e8776ac16d3ebeead1}
+      \strng{bibnamehash}{c237483431fea681283a37adbb23a59f}
+      \strng{authorbibnamehash}{c237483431fea681283a37adbb23a59f}
+      \strng{authornamehash}{c237483431fea681283a37adbb23a59f}
+      \strng{authorfullhash}{509c69afaad060e8776ac16d3ebeead1}
+      \strng{authorfullhashraw}{509c69afaad060e8776ac16d3ebeead1}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{arXiv preprint arXiv:2302.13971}
+      \field{shorttitle}{Llama}
+      \field{title}{Llama: {{Open}} and Efficient Foundation Language Models}
+      \field{year}{2023}
+      \verb{eprint}
+      \verb 2302.13971
+      \endverb
+      \verb{file}
+      \verb C:\Users\byara\Zotero\storage\2NY22XVK\Touvron et al. - 2023 - Llama Open and efficient foundation language models.pdf
+      \endverb
+    \endentry
+    \entry{fix_jiangMistral7B2023}{article}{}{}
+      \name{author}{18}{}{%
+        {{hash=a91e014a59af240c37c0fc26432a125b}{%
+           family={Jiang},
+           familyi={J\bibinitperiod},
+           given={Albert\bibnamedelima Q.},
+           giveni={A\bibinitperiod\bibinitdelim Q\bibinitperiod}}}%
+        {{hash=2b9ab922e693d9237ad952a8030eee9d}{%
+           family={Sablayrolles},
+           familyi={S\bibinitperiod},
+           given={Alexandre},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e9a587c57b1dcb4834850800386d8aca}{%
+           family={Mensch},
+           familyi={M\bibinitperiod},
+           given={Arthur},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5d11905f79ca61f62a93a43574139850}{%
+           family={Bamford},
+           familyi={B\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod}}}%
+        {{hash=d61a282b0086c5c4d52c371e7c748278}{%
+           family={Chaplot},
+           familyi={C\bibinitperiod},
+           given={Devendra\bibnamedelima Singh},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=af4c75452e1c1c77b8727f6dace64a42}{%
+           family={Casas},
+           familyi={C\bibinitperiod},
+           given={Diego},
+           giveni={D\bibinitperiod},
+           prefix={de\bibnamedelima las},
+           prefixi={d\bibinitperiod\bibinitdelim l\bibinitperiod}}}%
+        {{hash=dafbd4ebc73fd986f482b5cb24ed701d}{%
+           family={Bressand},
+           familyi={B\bibinitperiod},
+           given={Florian},
+           giveni={F\bibinitperiod}}}%
+        {{hash=a9285c2c0cdc863e02225039176bb017}{%
+           family={Lengyel},
+           familyi={L\bibinitperiod},
+           given={Gianna},
+           giveni={G\bibinitperiod}}}%
+        {{hash=56509a94ba6cdaf0c71304d6cf806cee}{%
+           family={Lample},
+           familyi={L\bibinitperiod},
+           given={Guillaume},
+           giveni={G\bibinitperiod}}}%
+        {{hash=1c3686dfd5bade81bcfe2f5c89d70465}{%
+           family={Saulnier},
+           familyi={S\bibinitperiod},
+           given={Lucile},
+           giveni={L\bibinitperiod}}}%
+        {{hash=f7808ab68c1e6e06aee1eb1c723ff6eb}{%
+           family={Lavaud},
+           familyi={L\bibinitperiod},
+           given={Lélio\bibnamedelima Renard},
+           giveni={L\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=08284515d256b832e9dba10a88af84f4}{%
+           family={Lachaux},
+           familyi={L\bibinitperiod},
+           given={Marie-Anne},
+           giveni={M\bibinithyphendelim A\bibinitperiod}}}%
+        {{hash=0af14ac84bf3a9d753c1ece79a50a55e}{%
+           family={Stock},
+           familyi={S\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod}}}%
+        {{hash=7cfeecd888d1cb971a1711b99011122e}{%
+           family={Le\bibnamedelima Scao},
+           familyi={L\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Teven},
+           giveni={T\bibinitperiod}}}%
+        {{hash=c641a91d616b6eda08cbbdca7b7eb186}{%
+           family={Lavril},
+           familyi={L\bibinitperiod},
+           given={Thibaut},
+           giveni={T\bibinitperiod}}}%
+        {{hash=7d3b9bf09e1fd7987770a8954ff63f3c}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=1d29ae55d8d993d9f195b3c97bd34f7c}{%
+           family={Lacroix},
+           familyi={L\bibinitperiod},
+           given={Timothée},
+           giveni={T\bibinitperiod}}}%
+        {{hash=42fdc62bb0e47670698a88ae2d31a450}{%
+           family={El\bibnamedelima Sayed},
+           familyi={E\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{066da2bf78c9b2e3d4c5f5a2cc6c4bff}
+      \strng{fullhash}{cf24fc475ab897f45909dd29dbaaa871}
+      \strng{fullhashraw}{cf24fc475ab897f45909dd29dbaaa871}
+      \strng{bibnamehash}{066da2bf78c9b2e3d4c5f5a2cc6c4bff}
+      \strng{authorbibnamehash}{066da2bf78c9b2e3d4c5f5a2cc6c4bff}
+      \strng{authornamehash}{066da2bf78c9b2e3d4c5f5a2cc6c4bff}
+      \strng{authorfullhash}{cf24fc475ab897f45909dd29dbaaa871}
+      \strng{authorfullhashraw}{cf24fc475ab897f45909dd29dbaaa871}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{arXiv preprint arXiv:2310.06825}
+      \field{title}{Mistral 7B}
+      \field{year}{2023}
+      \verb{eprint}
+      \verb 2310.06825
+      \endverb
+    \endentry
+    \entry{reimersSentencebertSentenceEmbeddings2019}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=da9947b27b0d1c4c912e2b391426d443}{%
+           family={Reimers},
+           familyi={R\bibinitperiod},
+           given={Nils},
+           giveni={N\bibinitperiod}}}%
+        {{hash=ea70b44be1920f6e8c379706bc7d047a}{%
+           family={Gurevych},
+           familyi={G\bibinitperiod},
+           given={Iryna},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{2466af6376c9c5e3658dcc6692351f3e}
+      \strng{fullhash}{2466af6376c9c5e3658dcc6692351f3e}
+      \strng{fullhashraw}{2466af6376c9c5e3658dcc6692351f3e}
+      \strng{bibnamehash}{2466af6376c9c5e3658dcc6692351f3e}
+      \strng{authorbibnamehash}{2466af6376c9c5e3658dcc6692351f3e}
+      \strng{authornamehash}{2466af6376c9c5e3658dcc6692351f3e}
+      \strng{authorfullhash}{2466af6376c9c5e3658dcc6692351f3e}
+      \strng{authorfullhashraw}{2466af6376c9c5e3658dcc6692351f3e}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{booktitle}{Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing ({{EMNLP-IJCNLP}})}
+      \field{shorttitle}{Sentence-Bert}
+      \field{title}{Sentence-Bert: {{Sentence}} Embeddings Using Siamese Bert-Networks}
+      \field{year}{2019}
+      \field{pages}{3982\bibrangedash 3992}
+      \range{pages}{11}
+      \verb{file}
+      \verb C:\Users\byara\Zotero\storage\GR2G9WWJ\Reimers and Gurevych - 2019 - Sentence-bert Sentence embeddings using siamese bert-networks.pdf
+      \endverb
+    \endentry
+    \entry{karpukhinDensePassageRetrieval2020}{inproceedings}{}{}
+      \name{author}{8}{}{%
+        {{hash=b24392ebfb2c0a35979fc689c389c649}{%
+           family={Karpukhin},
+           familyi={K\bibinitperiod},
+           given={Vladimir},
+           giveni={V\bibinitperiod}}}%
+        {{hash=36b7f762a5e5dbccbb0c83b8ec383cc6}{%
+           family={Oguz},
+           familyi={O\bibinitperiod},
+           given={Barlas},
+           giveni={B\bibinitperiod}}}%
+        {{hash=28789ec78f6ba72f59baf40dfb377588}{%
+           family={Min},
+           familyi={M\bibinitperiod},
+           given={Sewon},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ecbe786a5668bf643d74bb24fe1c3cfe}{%
+           family={Lewis},
+           familyi={L\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod}}}%
+        {{hash=9825446add26b320aea811f184ef643c}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Ledell},
+           giveni={L\bibinitperiod}}}%
+        {{hash=79caf76234e835df3dc38a785e0913e0}{%
+           family={Edunov},
+           familyi={E\bibinitperiod},
+           given={Sergey},
+           giveni={S\bibinitperiod}}}%
+        {{hash=aed188db3fc6855ac5666aa14e04a3bb}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Danqi},
+           giveni={D\bibinitperiod}}}%
+        {{hash=d4d56d3d370b3afd4ad2ebf985fbd3f8}{%
+           family={Yih},
+           familyi={Y\bibinitperiod},
+           given={Wen-tau},
+           giveni={W\bibinithyphendelim t\bibinitperiod}}}%
+      }
+      \strng{namehash}{95ef335ab136ed8801520b97e3354110}
+      \strng{fullhash}{e8e0e3674e964c98036eecbd11a7a03a}
+      \strng{fullhashraw}{e8e0e3674e964c98036eecbd11a7a03a}
+      \strng{bibnamehash}{95ef335ab136ed8801520b97e3354110}
+      \strng{authorbibnamehash}{95ef335ab136ed8801520b97e3354110}
+      \strng{authornamehash}{95ef335ab136ed8801520b97e3354110}
+      \strng{authorfullhash}{e8e0e3674e964c98036eecbd11a7a03a}
+      \strng{authorfullhashraw}{e8e0e3674e964c98036eecbd11a7a03a}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing ({{EMNLP}})}
+      \field{title}{Dense Passage Retrieval for Open-Domain Question Answering}
+      \field{year}{2020}
+      \field{pages}{6769\bibrangedash 6781}
+      \range{pages}{13}
+      \verb{file}
+      \verb C:\Users\byara\Zotero\storage\UXWH9SRK\Karpukhin et al. - 2020 - Dense passage retrieval for open-domain question answering.pdf
+      \endverb
+    \endentry
+    \entry{anssibsiCloudSovereignty2025}{report}{}{}
+      \name{author}{2}{}{%
+        {{hash=4c13de1b2831555c6563462e5de6942d}{%
+           family={{ANSSI}},
+           familyi={A\bibinitperiod}}}%
+        {{hash=44ea1b356dcd7bfe0ece54601fb6bcec}{%
+           family={{BSI}},
+           familyi={B\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Agence nationale de la sécurité des systèmes d'information (ANSSI) / Bundesamt für Sicherheit in der Informationstechnik (BSI)}%
+      }
+      \strng{namehash}{66a0c9bbfcf8397adb98510595b2ad0d}
+      \strng{fullhash}{66a0c9bbfcf8397adb98510595b2ad0d}
+      \strng{fullhashraw}{66a0c9bbfcf8397adb98510595b2ad0d}
+      \strng{bibnamehash}{66a0c9bbfcf8397adb98510595b2ad0d}
+      \strng{authorbibnamehash}{66a0c9bbfcf8397adb98510595b2ad0d}
+      \strng{authornamehash}{66a0c9bbfcf8397adb98510595b2ad0d}
+      \strng{authorfullhash}{66a0c9bbfcf8397adb98510595b2ad0d}
+      \strng{authorfullhashraw}{66a0c9bbfcf8397adb98510595b2ad0d}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{11}
+      \field{note}{Déclaration commune ANSSI--BSI sur les critères de souveraineté numérique du Cloud ; souligne la nécessité de renforcer la souveraineté numérique européenne face aux dépendances technologiques non européennes}
+      \field{title}{Joint Statement by {ANSSI} and {BSI} on {Cloud} {Sovereignty} {Criteria}}
+      \field{type}{techreport}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://cyber.gouv.fr/nous-connaitre/publications/publications-internationales/joint-statement-by-anssi-and-bsi-on-cloud-sovereignty-criteria/
+      \endverb
+      \verb{url}
+      \verb https://cyber.gouv.fr/nous-connaitre/publications/publications-internationales/joint-statement-by-anssi-and-bsi-on-cloud-sovereignty-criteria/
+      \endverb
+    \endentry
+    \entry{senegalLoi200812}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b985d8b7280385796109eac4643e57c2}{%
+           family={{République du Sénégal}},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{b985d8b7280385796109eac4643e57c2}
+      \strng{fullhash}{b985d8b7280385796109eac4643e57c2}
+      \strng{fullhashraw}{b985d8b7280385796109eac4643e57c2}
+      \strng{bibnamehash}{b985d8b7280385796109eac4643e57c2}
+      \strng{authorbibnamehash}{b985d8b7280385796109eac4643e57c2}
+      \strng{authornamehash}{b985d8b7280385796109eac4643e57c2}
+      \strng{authorfullhash}{b985d8b7280385796109eac4643e57c2}
+      \strng{authorfullhashraw}{b985d8b7280385796109eac4643e57c2}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Commission de protection des Données Personnelles (CDP)}
+      \field{note}{Institue la Commission de protection des Données Personnelles (CDP) comme autorité administrative indépendante ; encadre les transferts de données vers les pays tiers}
+      \field{title}{Loi n\textsuperscript{o}~2008-12 du 25~janvier~2008 sur la protection des données à caractère personnel}
+      \field{urlday}{5}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{year}{2008}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.cdp.sn/legislation/textes-legislatifs
+      \endverb
+      \verb{url}
+      \verb https://www.cdp.sn/legislation/textes-legislatifs
+      \endverb
+    \endentry
+    \entry{uaConventionMalabo2014}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=c7dec8a009b96692276075a3850bcaf7}{%
+           family={{Union africaine}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{c7dec8a009b96692276075a3850bcaf7}
+      \strng{fullhash}{c7dec8a009b96692276075a3850bcaf7}
+      \strng{fullhashraw}{c7dec8a009b96692276075a3850bcaf7}
+      \strng{bibnamehash}{c7dec8a009b96692276075a3850bcaf7}
+      \strng{authorbibnamehash}{c7dec8a009b96692276075a3850bcaf7}
+      \strng{authornamehash}{c7dec8a009b96692276075a3850bcaf7}
+      \strng{authorfullhash}{c7dec8a009b96692276075a3850bcaf7}
+      \strng{authorfullhashraw}{c7dec8a009b96692276075a3850bcaf7}
+      \field{extraname}{1}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Union africaine}
+      \field{note}{Adoptée en juin 2014 ; entrée en vigueur en juin 2023 après ratification du 15\textsuperscript{e} État membre}
+      \field{title}{Convention de l'{Union} africaine sur la cybersécurité et la protection des données personnelles ({Convention} de {Malabo})}
+      \field{urlday}{5}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://au.int/en/treaties/african-union-convention-cyber-security-and-personal-data-protection
+      \endverb
+      \verb{url}
+      \verb https://au.int/en/treaties/african-union-convention-cyber-security-and-personal-data-protection
+      \endverb
+    \endentry
+    \entry{akindemowoConceptualFrameworkAutomating2021}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=b8510fa7a56ed21af1c56eee6411bd5a}{%
+           family={Akindemowo},
+           familyi={A\bibinitperiod},
+           given={Ayorinde\bibnamedelima Olayiwola},
+           giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=4bca4c6d326cf2b789ab212ae9e2fd06}{%
+           family={Erigha},
+           familyi={E\bibinitperiod},
+           given={Eseoghene\bibnamedelima Daniel},
+           giveni={E\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=52a417e2f22d4143d0160e9988b070ae}{%
+           family={Obuse},
+           familyi={O\bibinitperiod},
+           given={Ehimah},
+           giveni={E\bibinitperiod}}}%
+        {{hash=2fb561cc1d24c649ffc105b60734a1f8}{%
+           family={Ajayi},
+           familyi={A\bibinitperiod},
+           given={Joshua\bibnamedelima Oluwagbenga},
+           giveni={J\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=e98822923f67161ecc95be79d4b5d4cd}{%
+           family={Adebayo},
+           familyi={A\bibinitperiod},
+           given={Ayobami},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8d03ef0194c3978a470df47f9ba951f3}{%
+           family={Afuwape},
+           familyi={A\bibinitperiod},
+           given={Afeez\bibnamedelima A.},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=17780446afd7398bcc7468dcd04455f4}{%
+           family={Adanyin},
+           familyi={A\bibinitperiod},
+           given={Anthonette},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{feffb7af594a698ac47c4a91411e2ab3}
+      \strng{fullhash}{8be970561b169a09278c96fb45aa401f}
+      \strng{fullhashraw}{8be970561b169a09278c96fb45aa401f}
+      \strng{bibnamehash}{feffb7af594a698ac47c4a91411e2ab3}
+      \strng{authorbibnamehash}{feffb7af594a698ac47c4a91411e2ab3}
+      \strng{authornamehash}{feffb7af594a698ac47c4a91411e2ab3}
+      \strng{authorfullhash}{8be970561b169a09278c96fb45aa401f}
+      \strng{authorfullhashraw}{8be970561b169a09278c96fb45aa401f}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Frontiers in Multidisciplinary Research}
+      \field{number}{1}
+      \field{title}{A {{Conceptual Framework}} for {{Automating Data Pipelines Using ELT Tools}} in {{Cloud-Native Environments}}}
+      \field{volume}{2}
+      \field{year}{2021}
+      \field{pages}{440\bibrangedash 452}
+      \range{pages}{13}
+    \endentry
+    \entry{clementsSoftwareProductLines2002}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=806866eee4e5b55ba7360bfe43f4f397}{%
+           family={Clements},
+           familyi={C\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Boston : Addison-Wesley}%
+      }
+      \strng{namehash}{806866eee4e5b55ba7360bfe43f4f397}
+      \strng{fullhash}{806866eee4e5b55ba7360bfe43f4f397}
+      \strng{fullhashraw}{806866eee4e5b55ba7360bfe43f4f397}
+      \strng{bibnamehash}{806866eee4e5b55ba7360bfe43f4f397}
+      \strng{authorbibnamehash}{806866eee4e5b55ba7360bfe43f4f397}
+      \strng{authornamehash}{806866eee4e5b55ba7360bfe43f4f397}
+      \strng{authorfullhash}{806866eee4e5b55ba7360bfe43f4f397}
+      \strng{authorfullhashraw}{806866eee4e5b55ba7360bfe43f4f397}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{xxx, 563 p. : 24 cm; Includes bibliographical references}
+      \field{isbn}{978-0-201-70332-0}
+      \field{langid}{english}
+      \field{shorttitle}{Software Product Lines}
+      \field{title}{Software Product Lines : Practices and Patterns}
+      \field{year}{2002}
+      \keyw{Computer software -- Development}
+    \endentry
+    \entry{fix_pohlSoftwareProductLines2018}{incollection}{}{}
+      \name{author}{2}{}{%
+        {{hash=f7ad85aae1881b93396a2b8c65130577}{%
+           family={Pohl},
+           familyi={P\bibinitperiod},
+           given={Klaus},
+           giveni={K\bibinitperiod}}}%
+        {{hash=758358bf5a2b9975ed3b3d6c6d5ece42}{%
+           family={Metzger},
+           familyi={M\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=5314b38cbdd72a16212f6c30e437b43e}{%
+           family={Gruhn},
+           familyi={G\bibinitperiod},
+           given={Volker},
+           giveni={V\bibinitperiod}}}%
+        {{hash=66844f7ffa1a97770969e5108963a875}{%
+           family={Striemer},
+           familyi={S\bibinitperiod},
+           given={Rüdiger},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{965622c08593069c56fc552919702187}
+      \strng{fullhash}{965622c08593069c56fc552919702187}
+      \strng{fullhashraw}{965622c08593069c56fc552919702187}
+      \strng{bibnamehash}{965622c08593069c56fc552919702187}
+      \strng{authorbibnamehash}{965622c08593069c56fc552919702187}
+      \strng{authornamehash}{965622c08593069c56fc552919702187}
+      \strng{authorfullhash}{965622c08593069c56fc552919702187}
+      \strng{authorfullhashraw}{965622c08593069c56fc552919702187}
+      \strng{editorbibnamehash}{1d2c6ed3d85d7c78792706fc4c20f4cf}
+      \strng{editornamehash}{1d2c6ed3d85d7c78792706fc4c20f4cf}
+      \strng{editorfullhash}{1d2c6ed3d85d7c78792706fc4c20f4cf}
+      \strng{editorfullhashraw}{1d2c6ed3d85d7c78792706fc4c20f4cf}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The {{Essence}} of {{Software Engineering}}}
+      \field{isbn}{978-3-319-73897-0}
+      \field{langid}{english}
+      \field{title}{Software {{Product Lines}}}
+      \field{year}{2018}
+      \field{pages}{185\bibrangedash 201}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1007/978-3-319-73897-0_11
+      \endverb
+    \endentry
+    \entry{apelSoftwareProductLines2013}{incollection}{}{}
+      \name{author}{4}{}{%
+        {{hash=a4f57072771b98df56b8f8205f384d00}{%
+           family={Apel},
+           familyi={A\bibinitperiod},
+           given={Sven},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ca905abe1dc0ab0f9307c7b01721b65f}{%
+           family={Batory},
+           familyi={B\bibinitperiod},
+           given={Don},
+           giveni={D\bibinitperiod}}}%
+        {{hash=f0fe27e2b5f525a3b4c50ce35e1a7cee}{%
+           family={Kästner},
+           familyi={K\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=2a5ae6c3a7deb62e4508c393839b89cc}{%
+           family={Saake},
+           familyi={S\bibinitperiod},
+           given={Gunter},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{051c49bf21dc0ed69a84fb6df6f8b7c0}
+      \strng{fullhash}{ac027c3c5130b8434cdabe7f07d18fc4}
+      \strng{fullhashraw}{ac027c3c5130b8434cdabe7f07d18fc4}
+      \strng{bibnamehash}{ac027c3c5130b8434cdabe7f07d18fc4}
+      \strng{authorbibnamehash}{ac027c3c5130b8434cdabe7f07d18fc4}
+      \strng{authornamehash}{051c49bf21dc0ed69a84fb6df6f8b7c0}
+      \strng{authorfullhash}{ac027c3c5130b8434cdabe7f07d18fc4}
+      \strng{authorfullhashraw}{ac027c3c5130b8434cdabe7f07d18fc4}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Software product lines aim at empowering software vendors to tailor software products to the requirements of individual customers. In this sense, software product lines follow a development that emerged in industrial manufacturing over the last 200 years. Starting with handcrafting of individual goods, the advent of mass production scaled the production process to large quantities, but neglected individualism, as all products were the same. With mass customization, individualism got back into the focus of attention. Manufacturers systematically planned and designed product lines to cover a whole spectrum of possible products and variations thereof, serving the individual needs and wishes of many customers. Software product lines take the same line and reconcile mass production and mass customization in software engineering.}
+      \field{isbn}{978-3-642-37520-0}
+      \field{month}{10}
+      \field{title}{Software {{Product Lines}}}
+      \field{year}{2013}
+      \field{pages}{3\bibrangedash 15}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1007/978-3-642-37521-7_1
+      \endverb
+    \endentry
+    \entry{uaListeRatificationsMalabo2023}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=c7dec8a009b96692276075a3850bcaf7}{%
+           family={{Union africaine}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{c7dec8a009b96692276075a3850bcaf7}
+      \strng{fullhash}{c7dec8a009b96692276075a3850bcaf7}
+      \strng{fullhashraw}{c7dec8a009b96692276075a3850bcaf7}
+      \strng{bibnamehash}{c7dec8a009b96692276075a3850bcaf7}
+      \strng{authorbibnamehash}{c7dec8a009b96692276075a3850bcaf7}
+      \strng{authornamehash}{c7dec8a009b96692276075a3850bcaf7}
+      \strng{authorfullhash}{c7dec8a009b96692276075a3850bcaf7}
+      \strng{authorfullhashraw}{c7dec8a009b96692276075a3850bcaf7}
+      \field{extraname}{2}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Union africaine}
+      \field{note}{État des signatures et ratifications au 12~mai~2023 ; 55~États membres, 19~signatures, 15~ratifications, 15~dépôts}
+      \field{title}{List of Countries Which Have Signed, Ratified/Acceded to the {African} {Union} Convention on Cyber Security and Personal Data Protection}
+      \field{urlday}{12}
+      \field{urlmonth}{5}
+      \field{urlyear}{2023}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+    \endentry
+    \entry{maliLoi2013015Protection2013}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=4c81b6c45bb7e8b3909632e7240334e4}{%
+           family={{République du Mali}},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{4c81b6c45bb7e8b3909632e7240334e4}
+      \strng{fullhash}{4c81b6c45bb7e8b3909632e7240334e4}
+      \strng{fullhashraw}{4c81b6c45bb7e8b3909632e7240334e4}
+      \strng{bibnamehash}{4c81b6c45bb7e8b3909632e7240334e4}
+      \strng{authorbibnamehash}{4c81b6c45bb7e8b3909632e7240334e4}
+      \strng{authornamehash}{4c81b6c45bb7e8b3909632e7240334e4}
+      \strng{authorfullhash}{4c81b6c45bb7e8b3909632e7240334e4}
+      \strng{authorfullhashraw}{4c81b6c45bb7e8b3909632e7240334e4}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Journal Officiel de la République du Mali}
+      \field{note}{Institue le cadre malien de protection des données personnelles, indépendamment de la Convention de Malabo, à laquelle le Mali n'est pas partie}
+      \field{title}{Loi n\textsuperscript{o}~2013-015 du 21~mai~2013 portant protection des données à caractère personnel en République du Mali}
+      \field{year}{2013}
+    \endentry
+    \entry{maliLoi2019056Cybercriminalite2019}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=4c81b6c45bb7e8b3909632e7240334e4}{%
+           family={{République du Mali}},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{4c81b6c45bb7e8b3909632e7240334e4}
+      \strng{fullhash}{4c81b6c45bb7e8b3909632e7240334e4}
+      \strng{fullhashraw}{4c81b6c45bb7e8b3909632e7240334e4}
+      \strng{bibnamehash}{4c81b6c45bb7e8b3909632e7240334e4}
+      \strng{authorbibnamehash}{4c81b6c45bb7e8b3909632e7240334e4}
+      \strng{authornamehash}{4c81b6c45bb7e8b3909632e7240334e4}
+      \strng{authorfullhash}{4c81b6c45bb7e8b3909632e7240334e4}
+      \strng{authorfullhashraw}{4c81b6c45bb7e8b3909632e7240334e4}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Journal Officiel de la République du Mali}
+      \field{note}{Transpose la Directive C/DIR/1/08/11 du 19~août~2011 de la CEDEAO portant lutte contre la cybercriminalité dans l'espace CEDEAO}
+      \field{title}{Loi n\textsuperscript{o}~2019-056 du 5~décembre~2019 portant répression de la cybercriminalité}
+      \field{year}{2019}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

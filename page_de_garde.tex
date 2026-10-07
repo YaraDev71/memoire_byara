@@ -1,0 +1,100 @@
+% ATTENTION : ce fichier n'est plus utilisé pour générer page_de_garde.pdf.
+% Depuis le 29/09/2026, page_de_garde.pdf est le PDF officiel envoyé par
+% l'école (voir _backup_page_de_garde/ pour la version maison précédente,
+% conservée ici uniquement à titre d'archive). NE PAS recompiler ce fichier
+% isolément : cela écraserait page_de_garde.pdf avec l'ancienne maquette.
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{tikz}
+
+% Configuration des marges
+\geometry{top=2cm, bottom=2cm, left=2.5cm, right=2.5cm}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    
+    % --- DOUBLE CADRE DE BORDURE EN TIKZ ---
+    \begin{tikzpicture}[overlay,remember picture]
+        % Cadre extérieur épais
+        \draw[line width=3pt]
+            ([shift={(0.8cm,-0.8cm)}]current page.north west)
+            rectangle
+            ([shift={(-0.8cm,0.8cm)}]current page.south east);
+        % Cadre intérieur fin
+        \draw[line width=1pt]
+            ([shift={(0.95cm,-0.95cm)}]current page.north west)
+            rectangle
+            ([shift={(-0.95cm,0.95cm)}]current page.south east);
+    \end{tikzpicture}
+
+    % --- EN-TÊTE ---
+    {\bfseries\large REPUBLIQUE DU SENEGAL}\\[0.3cm]
+    
+    % Emplacement du drapeau (Remplacez par votre fichier image si disponible)
+    \begin{center}
+        \includegraphics[height=1.8cm]{drapeau_de_senegal.png} % À remplacer
+    \end{center}
+    \vspace{-0.2cm}
+    
+    {\small\itshape Un peuple - Un but - Une foi}\\[0.4cm]
+    {\bfseries\small Ministère de l'Enseignement Supérieur et de la Recherche}\\[0.1cm]
+    {\bfseries\small Direction Générale de l'Enseignement Supérieur Privé}\\[0.1cm]
+    {\bfseries\large Université Dakar Bourguiba}\\[0.5cm]
+    {\bfseries\large UFR Sciences et Technologies}\\[0.5cm]
+    {\bfseries\large Département Génie Informatique}\\[0.5cm]
+
+    
+    % Emplacement du logo ISI
+    \begin{center}
+        \includegraphics[height=2.2cm]{logo_udb.png} % À remplacer
+    \end{center}
+    \vspace{0.3cm}
+
+    % --- TITRE DU DIPLÔME ---
+    {\bfseries\large MEMOIRE}\\[0.2cm]
+    {\small Présenté et soutenu par :}\\[0.1cm]
+    {\bfseries\large M. BRAHIMA MAMADOU YARANAGORE}\\[0.2cm]
+    {\small Pour l'obtention du diplôme de :}\\[0.1cm]
+    {\bfseries\large Master Professionnel : Génie Logiciel}\\[0.1cm]
+
+    % --- SECTION SUJET (CADRE STYLE PARCHEMIN/BOÎTE ARRONDIE) ---
+    \raggedright{\bfseries\itshape\large Sujet :}\\[0.2cm]
+    \centering
+    \begin{tikzpicture}
+        \node[draw, line width=1pt, rounded corners=5pt, inner sep=15pt, text width=14cm, align=center] {
+            {\bfseries\large « Architecture hybride pour la digitalisation des PME d'import-export en Afrique subsaharienne : conception, déploiement et validation sur le cas SOYAFF (corridor Dakar–Bamako) »}
+        };
+    \end{tikzpicture}
+    \vfill
+
+    % --- DATE DE SOUTENANCE ---
+    \hfill{\bfseries\small Soutenu à Dakar, le 3 octobre 2026}\\[0.8cm]
+
+    % --- TABLEAU DES MEMBRES DU JURY ---
+    {\bfseries\large Membres du Jury}\\[0.2cm]
+    \small
+    \begin{tabular}{|l|m{6.5cm}|l|}
+        \hline
+        \textbf{Statut} & \textbf{NOM et Prénom} & \textbf{Grade} \\ \hline
+        Président & & \\ \hline
+        Superviseur de mémoire & & \\ \hline
+        Superviseur de mémoire & & \\ \hline
+        Directeur de mémoire & M. Massamba LO & Ingénieur \\ \hline
+        Examinateur 1 : & & \\ \hline
+        Examinateur 2 : & & \\ \hline
+    \end{tabular}
+    \vfill
+
+    % --- ANNÉE ACADÉMIQUE ---
+    {\bfseries\large Année académique : 2025-2026}
+
+\end{titlepage}
+
+\end{document}

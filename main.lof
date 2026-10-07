@@ -1,0 +1,79 @@
+\babel@toc {french}{}\relax 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Corridor logistique Dakar--Bamako : axes routiers, ponts de pesage (Afrique Pesage S.A.) et checkpoints officiels et frontaliers (Kidira/Diboli pour l'axe nord, Moussala pour l'axe sud).}}{7}{figure.1.1}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagramme de cas d'utilisation, modules M1 à M3 (Ingestion, Validation, Reporting), plateforme SOYAFF}}{39}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Diagramme de cas d'utilisation, modules M4 à M6 (Tableau de bord, RAG, Administration), plateforme SOYAFF}}{40}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagramme de classes du domaine métier, plateforme SOYAFF}}{42}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Séquence : saisie d'une dépense avec contrôles}}{44}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Séquence : requête RAG avec routage hybride}}{46}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Activité : circuit de validation actuel (papier)}}{48}{figure.3.6}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Activité : circuit de validation cible (dématérialisé)}}{49}{figure.3.7}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Diagramme de contexte (C4 niveau 1), plateforme SOYAFF}}{51}{figure.3.8}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Diagramme de conteneurs (C4 niveau 2), plateforme SOYAFF}}{53}{figure.3.9}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Diagramme de composants (C4 niveau 3), service RAG local}}{54}{figure.3.10}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Diagramme de déploiement (1/2) : serveur de production et services externes}}{56}{figure.3.11}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Diagramme de déploiement (2/2) : conteneurs du réseau Docker \texttt {soyaff\_network}}}{57}{figure.3.12}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Configuration du serveur retenu à la commande}}{63}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Partitionnement des trois disques à l'installation d'Ubuntu 24.04 LTS}}{63}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Arborescence du dépôt \texttt {assistant-soyaff} déployé sur le serveur}}{64}{figure.4.3}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Arborescence du dépôt \texttt {assistant-soyaff-app} déployé sur le serveur}}{64}{figure.4.4}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces DAG Airflow \texttt {etl\_excel\_to\_postgres}, deux tâches orchestrées, quatre étapes logiques}}{66}{figure.4.5}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Référentiel \texttt {camions} en base, classé par pays et type de propriété (extrait)}}{68}{figure.4.6}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Transactions chargées dans PostgreSQL (extrait)}}{68}{figure.4.7}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Vecteurs d'embedding stockés dans \texttt {transport\_embeddings} (extrait)}}{69}{figure.4.8}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Rejeu de contrôle du 10~juillet~2026 dans Airflow : les deux tâches en succès}}{69}{figure.4.9}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Journal de la tâche \texttt {run\_excel\_etl} au rejeu : 0 transaction insérée, 4~755 doublons ignorés}}{70}{figure.4.10}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Journal de la tâche \texttt {generate\_embeddings} au rejeu : 4~776 embeddings insérés ou mis à jour}}{70}{figure.4.11}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Tableau de bord : solde, entrées, dépenses, flotte active et répartition des coûts}}{73}{figure.4.12}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Vue de la flotte par camion}}{73}{figure.4.13}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Formulaire de saisie d'une opération de caisse}}{73}{figure.4.14}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Page de connexion}}{74}{figure.4.15}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Compte verrouillé après cinq échecs}}{74}{figure.4.16}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Frais de route saisi deux fois le même jour, profil agent de Dakar : saisie bloquée}}{75}{figure.4.17}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Même saisie, profil administrateur : forçage possible et tracé}}{75}{figure.4.18}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Séquence : contrôle d'accès RBAC et audit}}{77}{figure.4.19}%
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Rapport mensuel consolidé (juillet~2026)}}{78}{figure.4.20}%
+\contentsline {figure}{\numberline {4.21}{\ignorespaces Export Excel du rapport mensuel : fichier \texttt {rapport-2026-07.xlsx} généré par le serveur}}{78}{figure.4.21}%
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Démarrage du service RAG local en production et sondes de santé périodiques}}{81}{figure.4.22}%
+\contentsline {figure}{\numberline {4.23}{\ignorespaces Workflow n8n de routage hybride en production}}{83}{figure.4.23}%
+\contentsline {figure}{\numberline {4.24}{\ignorespaces Règles du classifieur de sensibilité (nœud de code n8n, extrait)}}{83}{figure.4.24}%
+\contentsline {figure}{\numberline {4.25}{\ignorespaces Question portant sur un camion identifié : traitée en local (souverain)}}{84}{figure.4.25}%
+\contentsline {figure}{\numberline {4.26}{\ignorespaces Question agrégée sur la flotte : traitée via le cloud}}{84}{figure.4.26}%
+\contentsline {figure}{\numberline {4.27}{\ignorespaces Enregistrement du \textit {runner} GitLab sur le serveur de production}}{87}{figure.4.27}%
+\contentsline {figure}{\numberline {4.28}{\ignorespaces Job \texttt {test:python} : 397 tests réussis, couverture de 97,61~\% pour un plancher de 95~\%}}{88}{figure.4.28}%
+\contentsline {figure}{\numberline {4.29}{\ignorespaces Job \texttt {test:backend} : 122 tests réussis}}{88}{figure.4.29}%
+\contentsline {figure}{\numberline {4.30}{\ignorespaces Job \texttt {test:frontend} : 44 tests réussis}}{88}{figure.4.30}%
+\contentsline {figure}{\numberline {4.31}{\ignorespaces Historique des jobs CI/CD : tests (couverture 98~\%) puis déploiement sur \texttt {main}}}{89}{figure.4.31}%
+\contentsline {figure}{\numberline {4.32}{\ignorespaces Déploiement automatique de l'application, vérifié par la sonde de santé du backend}}{89}{figure.4.32}%
+\contentsline {figure}{\numberline {4.33}{\ignorespaces Déploiement automatique de la pile IA/ETL : état des conteneurs en fin de job}}{89}{figure.4.33}%
+\contentsline {figure}{\numberline {4.34}{\ignorespaces Tableau de bord Grafana : disponibilité des trois services, disque et fraîcheur des données}}{90}{figure.4.34}%
+\contentsline {figure}{\numberline {4.35}{\ignorespaces Journaux centralisés des conteneurs dans Loki}}{90}{figure.4.35}%
+\contentsline {figure}{\numberline {4.36}{\ignorespaces Test de l'alerte disque : arrêt et redémarrage du service RAG, puis remplissage du disque à 87~\%}}{91}{figure.4.36}%
+\contentsline {figure}{\numberline {4.37}{\ignorespaces Jauge du disque à 87~\% pendant le test}}{91}{figure.4.37}%
+\contentsline {figure}{\numberline {4.38}{\ignorespaces Alerte A1 déclenchée puis résolue (service RAG arrêté)}}{92}{figure.4.38}%
+\contentsline {figure}{\numberline {4.39}{\ignorespaces Alerte A2 déclenchée puis résolue (disque à 87~\%)}}{92}{figure.4.39}%
+\contentsline {figure}{\numberline {4.40}{\ignorespaces Pare-feu UFW : seuls SSH, 80 et 443 sont ouverts}}{92}{figure.4.40}%
+\contentsline {figure}{\numberline {4.41}{\ignorespaces Chiffrement Cloudflare en mode \textit {Full (strict)} : navigateur, Cloudflare et serveur chiffrés de bout en bout}}{93}{figure.4.41}%
+\contentsline {figure}{\numberline {4.42}{\ignorespaces Configuration de la destination de sauvegarde hors site (\texttt {rclone})}}{93}{figure.4.42}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Exécution n8n n°6 (11:24:54) : question non sensible, branche cloud, succès en 2,59~s}}{96}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Exécution n8n n°7 (11:26:24) : question sensible, branche locale, succès en 61~ms}}{96}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Session du 27~septembre~2026 vue par l'utilisateur : réponse cloud, puis réponse locale}}{97}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Demande de suppression refusée par l'agent : accès en lecture seule}}{97}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Modèle de caractéristiques de la ligne de produits SOYAFF}}{111}{figure.5.5}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {D.1}{\ignorespaces Fiche du serveur dans le panneau OneProvider}}{xxix}{figure.D.1}%
+\contentsline {figure}{\numberline {D.2}{\ignorespaces Réinstallation du serveur, étape 1 : choix d'Ubuntu 24.04 LTS}}{xxix}{figure.D.2}%
+\contentsline {figure}{\numberline {D.3}{\ignorespaces Réinstallation du serveur, étape 2 : nom d'hôte et compte d'administration}}{xxx}{figure.D.3}%
+\contentsline {figure}{\numberline {D.4}{\ignorespaces Mise à jour du système}}{xxx}{figure.D.4}%
+\contentsline {figure}{\numberline {D.5}{\ignorespaces Installation de Docker et dépendance au montage de \texttt {/var/lib/docker}}}{xxx}{figure.D.5}%
+\contentsline {figure}{\numberline {D.6}{\ignorespaces État des conteneurs de la pile IA/ETL en fin de déploiement}}{xxxi}{figure.D.6}%
+\contentsline {figure}{\numberline {D.7}{\ignorespaces Arborescence détaillée du dépôt \texttt {assistant-soyaff} sur le serveur}}{xxxi}{figure.D.7}%
+\contentsline {figure}{\numberline {D.8}{\ignorespaces Démarrage de la pile IA/ETL sur le poste de développement}}{xxxii}{figure.D.8}%

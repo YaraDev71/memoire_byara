@@ -1,0 +1,159 @@
+\section{Benchmark comparatif RAG local / cloud (H2)}
+\label{chap:benchmark_rag}
+
+Cette section met à l'épreuve l'hypothèse H2 : \emph{« sur un corpus métier restreint et bien défini, le RAG auto-hébergé atteint une exactitude comparable au RAG cloud (à 90~\% près), tout en gardant les données sous le contrôle total de l'entreprise »}. Nous comparons les deux services d'inférence décrits à la section~\ref{chap:ia_rag} : le service local (\S\ref{sec:ia_local}) et l'agent cloud (\S\ref{sec:ia_cloud}). La mesure a été conduite le 27~septembre~2026 sur le serveur de production.
+
+\subsection{Protocole expérimental}
+\label{sec:bench_protocole}
+
+\textbf{Corpus.} Nous avons rédigé trente questions métier, six par catégorie fonctionnelle : suivi de flotte, gestion financière, analyse des incidents, conformité documentaire, aide à la décision stratégique. Chaque question est aussi classée selon le type de réponse attendue :
+\begin{itemize}
+    \item \textbf{T1} (15 questions) : un chiffre ou un fait, vérifiable par une requête SQL ;
+    \item \textbf{T2} (10 questions) : une liste d'éléments, comparée à la liste exacte ;
+    \item \textbf{T3} (5 questions) : une analyse, jugée sur une grille de critères explicites.
+\end{itemize}
+Deux questions sont des pièges : la bonne réponse est « aucun » (aucun camion en maintenance, aucun bon de livraison au statut « livré »). Elles vérifient qu'un système sait répondre qu'une donnée n'existe pas au lieu d'en inventer une. Le corpus, les requêtes de référence et les grilles sont reproduits en Annexe~\ref{annexe:corpus}.
+
+\textbf{Vérité-terrain.} Pour les 25 questions T1 et T2, la réponse de référence est le résultat d'une requête SQL exécutée sur la base de production, en lecture seule, le jour de la mesure. Elle n'est jamais déduite des réponses des systèmes. Pour les 5 questions T3, une grille liste les éléments attendus ; une réponse qui n'en couvre qu'une partie est notée partielle.
+
+\textbf{Harnais.} Un script dédié (\texttt{benchmark/run\_benchmark.py}), versionné à l'écart du code testé, interroge chaque service trois fois par question, soit 180 appels. Il enregistre la réponse, la latence de bout en bout et, côté cloud, les jetons consommés. Les deux services sont interrogés \emph{directement}, sans passer par n8n : H2 porte sur les services d'inférence, pas sur le classifieur qui choisit entre eux (\S\ref{sec:ia_routage}). Le service local reçoit la question par \texttt{POST~/ask}. L'agent cloud, qui n'existe que dans un nœud n8n, est reproduit par un agent Python fondé sur le SDK Anthropic, avec le même modèle, le même \textit{system prompt} (fichier versionné \texttt{n8n/system\_prompt\_agent.md}) et un accès SQL en lecture seule.
+
+\textbf{Notation.} Chaque réponse est notée correcte, partielle ou incorrecte. Nous relevons à part les \textbf{hallucinations} : une affirmation factuelle fausse présentée comme certaine. Une abstention (« l'information n'est pas disponible ») est une réponse incorrecte, mais pas une hallucination : le système se trompe sans tromper l'utilisateur. L'exactitude stricte est la part de réponses correctes ; nous donnons aussi un score où une réponse partielle compte pour moitié.
+
+\textbf{Conditions d'exécution.} Le Tableau~\ref{tab:bench_metadata} consigne l'état du système. Nous avons relevé cet état avant et après la mesure (commits déployés, empreintes du code de l'API et du \textit{prompt}, modèle local) : il n'a pas changé pendant l'exécution.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{Conditions d'exécution du benchmark (27~septembre~2026)}
+\label{tab:bench_metadata}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{4.6cm}|>{\raggedright\arraybackslash}p{8.6cm}|}
+\hline
+\rowcolor[HTML]{EFEFEF}
+\textbf{Paramètre} & \textbf{Valeur} \\ \hline
+Début et fin & 21:43:51 et 22:28:17 UTC \\ \hline
+Machine & Serveur de production (Xeon E3-1240 v6, 8 threads, 32~Go, sans GPU), Ubuntu 24.04.5 LTS \\ \hline
+Code déployé & \texttt{assistant-soyaff} \texttt{ffff082}, \texttt{assistant-soyaff-app} \texttt{2dc573b} \\ \hline
+Modèle local & \texttt{mistral:latest} (Mistral~7B, 4,4~Go, \textit{digest} \texttt{6577803a}) via Ollama \\ \hline
+Modèle cloud & \texttt{claude-sonnet-4-5-20250929} \\ \hline
+Modèle d'embeddings & \texttt{all-MiniLM-L6-v2} \\ \hline
+Base de données & 317 camions, 4~756 transactions \\ \hline
+Appels & 180 (30 questions $\times$ 2 systèmes $\times$ 3 passages), aucune erreur \\ \hline
+Réseau & Harnais exécuté sur le serveur (\textit{localhost}) \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Résultats globaux}
+\label{sec:bench_resultats_globaux}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{Résultats globaux du benchmark (90 réponses par système)}
+\label{tab:bench_resultats_globaux}
+\begin{tabular}{|l|r|r|}
+\hline
+\rowcolor[HTML]{EFEFEF}
+\textbf{Métrique} & \textbf{Local} & \textbf{Cloud} \\ \hline
+Réponses correctes & 18 & 80 \\ \hline
+Réponses partielles & 0 & 7 \\ \hline
+Réponses incorrectes & 72 & 3 \\ \hline
+\textbf{Exactitude stricte} & \textbf{20,0~\%} & \textbf{88,9~\%} \\ \hline
+Exactitude (partielles à 0,5) & 20,0~\% & 92,8~\% \\ \hline
+Taux d'hallucination & 56,7~\% & 3,3~\% \\ \hline
+Latence médiane (P50) & 0,03~s & 11,1~s \\ \hline
+Latence P95 / P99 & 55,7~s / 62,5~s & 47,5~s / 62,4~s \\ \hline
+Coût & nul & $\approx$~3,00~USD (0,033~USD par appel) \\ \hline
+Souveraineté des données & totale & nulle \\ \hline
+\end{tabular}
+\end{table}
+
+L'écart est massif. L'agent cloud répond correctement à 88,9~\% des questions ; le service local à 20,0~\%. Le rapport entre les deux est de 22~\%, loin du seuil de 90~\% posé par H2. Le taux d'hallucination aggrave le constat : plus d'une réponse locale sur deux affirme un fait faux avec assurance, contre 3,3~\% côté cloud.
+
+La latence médiane du service local (0,03~s) est trompeuse. Elle reflète les réponses calculées directement en SQL, sans modèle de langage. Dès que Mistral~7B intervient, la réponse prend en médiane 41,7~secondes sur le processeur du serveur (§\ref{sec:bench_diagnostic}). Côté cloud, les 90 appels ont consommé 593~379 jetons en entrée et 81~186 en sortie, soit environ 3~USD au tarif public du modèle.
+
+\textbf{Verdict sur H2.} \textbf{H2 est réfutée.} Sur ce corpus, le RAG auto-hébergé n'atteint pas une exactitude comparable à celle du RAG cloud : il en atteint moins du quart. La souveraineté totale du chemin local ne compense pas ce déficit pour les questions d'analyse. Ce résultat ne condamne pas l'architecture hybride ; il en précise le partage des rôles. Le cloud porte l'analyse, parce qu'il est le seul à la réussir. Le local reste le seul chemin acceptable pour les questions sensibles, et sa fiabilité doit y être construite par des règles SQL exactes plutôt que par un modèle de langage. Le §\ref{sec:bench_diagnostic} montre où ces règles échouent aujourd'hui.
+
+\subsection{Résultats détaillés}
+\label{sec:bench_detail}
+
+Le Tableau~\ref{tab:bench_par_type} ventile l'exactitude par type de question. L'écart se creuse avec la complexité : le local réussit un tiers des questions T1, une sur dix en T2 et aucune en T3. Le cloud reste au-dessus de 80~\% sur les trois types.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{Exactitude stricte et latence médiane par type de question}
+\label{tab:bench_par_type}
+\begin{tabular}{|l|r|r|r|r|}
+\hline
+\rowcolor[HTML]{EFEFEF}
+\textbf{Type} & \textbf{Local} & \textbf{Cloud} & \textbf{Latence locale} & \textbf{Latence cloud} \\ \hline
+T1 (15 q., 45 réponses) & 33,3~\% & 93,3~\% & 0,0~s & 7,9~s \\ \hline
+T2 (10 q., 30 réponses) & 10,0~\% & 80,0~\% (+6 partielles) & 18,6~s & 12,1~s \\ \hline
+T3 (5 q., 15 réponses) & 0~\% & 93,3~\% (+1 partielle) & 40,6~s & 42,3~s \\ \hline
+\end{tabular}
+\end{table}
+
+Par catégorie, le local ne réussit que le suivi de flotte (12 réponses correctes sur 18), grâce aux comptages de camions servis directement en SQL. Il échoue entièrement en gestion financière et en conformité documentaire (0 sur 18). Le cloud atteint 18 sur 18 dans trois catégories ; ses pertes se concentrent en analyse des incidents (11 sur 18), sur des listes tronquées.
+
+Les réponses du cloud sont stables d'un passage à l'autre : pour 29 questions sur 30, les trois passages reçoivent le même verdict. Ses trois erreurs portent sur une seule question (Q04, « combien de camions maliens de la société ? ») : l'agent répond 106 ou 107 au lieu de 110. Ses réponses partielles tiennent à la présentation des listes : une liste tronquée à vingt lignes quand trente sont attendues (Q14), une ligne « non identifié » comptée comme un camion (Q16), une analyse sans piste d'action (Q18, un passage sur trois). Les deux questions pièges sont réussies par les deux systèmes pour la première (aucun camion en maintenance) ; pour la seconde (aucun bon livré), seul le cloud répond « zéro ».
+
+\subsection{Diagnostic : pourquoi le service local échoue}
+\label{sec:bench_diagnostic}
+
+Le service local ne répond pas d'une seule façon. Selon la question, il emprunte l'un des trois modes décrits au §\ref{sec:ia_local}. Le Tableau~\ref{tab:bench_modes_local} les sépare.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{Réponses du service local selon le mode de traitement}
+\label{tab:bench_modes_local}
+\begin{tabular}{|l|r|r|r|}
+\hline
+\rowcolor[HTML]{EFEFEF}
+\textbf{Mode} & \textbf{Questions} & \textbf{Réponses correctes} & \textbf{Latence médiane} \\ \hline
+Calcul SQL direct, sans LLM & 16 & 15 / 48 & 0,03~s \\ \hline
+« Aucune donnée trouvée » & 3 & 3 / 9 & 0,02~s \\ \hline
+Génération par Mistral~7B & 11 & 0 / 33 & 41,7~s \\ \hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Un calcul SQL rapide, mais souvent mal ciblé}
+
+Seize questions ont reçu une réponse calculée en SQL, sans modèle de langage. Cinq sont justes : les comptages de camions (Q01, Q02, Q04, Q17) et le nombre de transactions d'un mois (Q27). Les onze autres sont fausses, et fausses avec assurance : le total affiché est exact pour la requête exécutée, mais cette requête ne correspond pas à la question. Trois causes l'expliquent :
+\begin{itemize}
+    \item \textbf{Une question de comptage reçoit une somme.} « Combien de bons de livraison en mars~2026 ? » déclenche le mot « combien », donc un total en FCFA, au lieu d'un nombre de bons (Q13, Q19, Q21, Q22). Le déclencheur est cherché comme une simple chaîne de caractères : même « quasi-totalité », dans une question d'analyse, provoque une somme (Q24).
+    \item \textbf{La plaque écrase le reste de la question.} Quand une immatriculation est citée, le filtre sur le camion est prioritaire et le mot-clé est ignoré : « dépenses de carburant du camion CA~0043~MD » renvoie toutes ses dépenses, 3~185~450~FCFA au lieu de 856~950 (Q07, Q15).
+    \item \textbf{Le vocabulaire des libellés ne recouvre pas les catégories.} « Amende » est cherché dans les libellés sous la forme « contravention », « pesage » ou « défaut de papier », alors que la référence porte sur la catégorie « amende » : 70~000~FCFA au lieu de 2~517~000 (Q08, et de même Q10, Q25, Q28).
+\end{itemize}
+Ces erreurs sont les plus dangereuses du benchmark : la réponse est instantanée, chiffrée et formulée comme un fait. Un utilisateur n'a aucun moyen de la mettre en doute.
+
+\subsubsection{Un modèle de langage qui s'abstient ou invente}
+
+Onze questions ont été confiées à Mistral~7B. Aucune réponse n'est correcte. Sur les listes (camions sans transaction, camions à plus de quinze amendes), le modèle déclare le plus souvent que l'information est absente des données fournies : c'est une abstention honnête. Sur d'autres questions, il invente : une catégorie « bureau de Dakar » qui dépasserait 100~millions (Q29), des trimestres et des montants sans existence (Q26), des dépenses présentées comme des bons de livraison (Q23).
+
+La cause est structurelle. Le service local transmet au modèle au plus dix lignes de transactions et un total. Une question qui exige de parcourir toute la base (« quels camions n'ont jamais eu de transaction ? ») ne peut pas être résolue à partir de dix lignes, quel que soit le modèle. L'agent cloud, lui, écrit sa propre requête SQL et parcourt toute la base. Les deux systèmes ne sont donc pas comparés à conditions égales : ce benchmark compare deux architectures de récupération autant que deux modèles.
+
+\subsubsection{Une latence incompatible avec l'usage}
+
+Sur le processeur du serveur, sans GPU, Mistral~7B met entre 8 et 76~secondes à répondre (médiane 41,7~s, P95 61,8~s). C'est au-delà de ce qu'un agent de saisie attend d'une question simple. Le cloud répond en 11~secondes en médiane, et en moins de 20~secondes pour toute question T1.
+
+\subsection{Limites méthodologiques}
+\label{sec:bench_limites}
+
+\begin{itemize}
+    \item \textbf{Latence mesurée sur le serveur.} Le harnais tourne sur le serveur lui-même : les latences n'incluent ni le trajet réseau du client jusqu'au serveur, ni le rendu dans le navigateur.
+    \item \textbf{Un seul annotateur.} Les verdicts ont été attribués par l'auteur seul, sur la base de références SQL et de grilles écrites avant l'exécution. Une double annotation aurait permis de mesurer l'accord entre évaluateurs, surtout sur les questions T3.
+    \item \textbf{Un corpus conçu par l'auteur.} Les trente questions couvrent les usages recueillis sur le terrain, mais elles ont été rédigées par le concepteur du système. Un corpus de questions réelles, tiré de \texttt{chat\_messages}, serait plus représentatif.
+    \item \textbf{Un agent cloud reproduit hors de n8n.} Le modèle, le \textit{prompt} et l'accès aux données sont les mêmes qu'en production, mais l'orchestration diffère ; un écart de comportement marginal n'est pas exclu.
+    \item \textbf{Trois passages par question.} Ils suffisent à observer la stabilité des réponses, pas à estimer finement la variance de la latence.
+\end{itemize}
+
+\subsection{Ce qu'il reste à mesurer}
+\label{sec:bench_dettes}
+
+Le diagnostic désigne des corrections précises, qui relèvent du code du service local et non du modèle. Distinguer une question de comptage d'une question de somme. Combiner le filtre sur la plaque avec le mot-clé au lieu de l'ignorer. Filtrer sur la catégorie de l'opération plutôt que sur le vocabulaire des libellés. Une fois ces règles corrigées, le benchmark devra être rejoué dans les mêmes conditions : seize questions sur trente passent déjà par le calcul SQL, et leur taux de réussite peut progresser sans toucher au modèle de langage. Deux mesures complémentaires restent ouvertes : la précision du classifieur de sensibilité sur un jeu de questions dédié, et la latence perçue depuis le poste de l'utilisateur.
+
+\subsection{Synthèse et transition}
+
+Le benchmark réfute H2 : 20,0~\% d'exactitude pour le service local, 88,9~\% pour l'agent cloud, avec un taux d'hallucination local de 56,7~\%. Le diagnostic montre que l'échec local tient d'abord à la récupération des données (règles SQL mal ciblées, contexte limité à dix lignes) et ensuite au modèle. La section suivante quitte le terrain technique pour mesurer l'effet de la plateforme sur le travail quotidien de SOYAFF.

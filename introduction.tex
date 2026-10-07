@@ -1,0 +1,79 @@
+% --- INTRODUCTION (sans numérotation) ---
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+
+\section*{Contexte et motivation}
+\label{sec:contexte}
+
+SOYAFF est une entreprise malienne qui a son siège à Bamako, elle a une filiale à Dakar qui gère toute la logistique sur le territoire du Sénégal. En étant employé de l'entreprise comme informaticien au bureau de Dakar j'ai remarqué qu'elle avait un vrai souci de digitalisation car l'entreprise s'appuyait sur des fichiers Excel pour gérer ses opérations logistiques. Le bureau de Dakar a un agent de saisie qui saisit les opérations quotidiennes sur des fichiers Excel appelés \og RECAP-JOURNALIER \fg{} et ces récap-journaliers sont envoyés par WhatsApp sous 24~h normalement. J'ai observé qu'il pouvait y avoir des retards car l'envoi des fichiers sous 24~h était conditionné aux journées types, c'est-à-dire les journées où il peut y avoir 30 à 50 opérations, les journées dites non types comptent peu d'opérations. L'agent attendait alors plusieurs jours pour avoir plus d'opérations et cela pouvait prendre de 48 à 72~h avant d'être envoyé. Cela favorisait la double saisie car le chef logistique résidant à Bamako attend ces informations pour les ressaisir dans sa base de données, il fait ses analyses, consolide et envoie à la comptabilité générale. La lenteur de l'information était aussi un vrai problème car les décideurs n'avaient aucune visibilité en temps réel sur les opérations.
+
+Quand j’avais un projet à rendre pour le module introduction à l’IA avec mon binôme, M. Idrissa Diallo, nous avons décidé de créer un assistant IA pour SOYAFF comme j’avais accès aux données de l’entreprise, après ce projet les données qui étaient autrefois dans des fichiers Excel se retrouvaient dans une base de données relationnelle et vectorielle avec PostgreSQL et pgvector, je me suis dit que je vais pallier ce problème en concevant une application Web fullstack pour la gestion des opérations de SOYAFF. J’ai présenté le MVP au chef logistique. Il était d’accord avec moi pour continuer sur le projet mais il y avait certaines préoccupations qui étaient : il craignait la sécurité de l’application, il ne voulait pas que nos données partent chez un tiers car elles contenaient des données personnelles et monétaires, d’où mon idée de faire coexister deux approches d’IA Cloud avec Claude pour sa capacité de raisonnement pour les requêtes complexes et non sensibles et l’autre locale Ollama/Mistral pour les requêtes sensibles contenant des données personnelles.
+
+Mon travail s'inscrit dans le sens où je veux aider SOYAFF à augmenter sa productivité car selon un article de blog de F. Bandia~\cite{fatimaAfriqueLOuestPME}, les PME représentent plus de 80~\% du tissu économique de la plupart des pays africains, seules 23~\% des PME ouest-africaines ont réellement intégré le numérique alors que celles qui passent ce cap enregistrent une hausse en moyenne d'environ 32~\%. Je me devais ainsi de concevoir une application basée sur les réalités géographiques des pays ouest-africains, car ces pays souffrent du manque de haut débit de connectivité dû à la fracture territoriale et l'exposition aux ruptures de câbles sous-marins \cite{cariolleInfrastructuresEconomieNumeriques2018}. Et le cas SOYAFF n'est pas un cas isolé quand on sait que jusqu'à 80~\% du commerce du Mali, pays enclavé, transite par le corridor Dakar--Bamako \cite{byiersActeursInteretsLong2022}.
+
+\section*{Contexte spécifique du projet SOYAFF}
+\label{sec:contexte_soyaff}
+
+SOYAFF produit et importe des produits de première nécessité, et exporte aussi ses propres produits. Le bureau de Dakar gère au quotidien le suivi et les plans de chargement des camions, les contraventions, les rations des chauffeurs qui restent plus de cinq jours au Sénégal, les primes de liaison, les frais mécaniques et les achats de pièces. Tout ça sur Excel ou à la main, ça ralentissait l'entreprise et ça nuisait à la prise de décision. D'où la nécessité de digitaliser ces opérations.
+
+Notre travail préliminaire a abouti à la mise en place d'une première plateforme de gestion logistique, déjà déployée en production sur le domaine \url{soyaff-logstique.com} (orthographe exacte du domaine), qui intègre un pipeline ETL traitant 16 mois de données réelles (4~755 transactions, 319 camions) et une base PostgreSQL (\texttt{pgvector}).
+
+On qualifie notre architecture d'\textbf{hybride} parce qu'elle fait coexister deux façons de traiter les requêtes par IA générative : un service cloud, l'API propriétaire de Claude (Anthropic), pour les requêtes complexes qui demandent une bonne capacité de raisonnement, et un service local auto-hébergé, Mistral via Ollama, pour les requêtes sensibles qui doivent rester sous le contrôle de l'entreprise.
+
+\section*{Problématique}
+\label{sec:problematique}
+
+Le cas SOYAFF, et plus généralement celui des PME d'import-export ouest-africaines, soulève la question suivante :
+
+\begin{quote}
+    \textbf{Comment concevoir, déployer et valider une architecture logicielle hybride et réplicable pour digitaliser les processus opérationnels d'une PME d'import-export ouest-africaine ? L'architecture doit intégrer un pipeline ETL automatisé et une IA générative souveraine pour l'aide à la décision, tourner sur une infrastructure DevOps solide, et tenir compte des contraintes du terrain : budget serré, connectivité limitée, souveraineté des données.}
+\end{quote}
+
+\section*{Questions de recherche}
+\label{sec:questions_recherche}
+
+Cette problématique se décompose en quatre questions de recherche structurées comme suit :
+\begin{itemize}
+    \item \textbf{Q1}~: Quelle architecture logicielle adopter pour digitaliser un processus logistique transfrontalier, avec une connectivité limitée et un budget contraint, dans une PME ouest-africaine ?
+    \item \textbf{Q2}~: Un système RAG cloud (API Claude Anthropic) donne-t-il des résultats comparables à un système RAG auto-hébergé (Ollama/Mistral) sur un corpus métier en langue française ? Je compare leur performance, leur exactitude, leur coût et leur niveau de souveraineté des données.
+    \item \textbf{Q3}~: Comment mesurer l'impact métier et le coût réel d'une digitalisation assistée par IA dans une PME logistique africaine ? Je regarde le temps gagné, les erreurs évitées, le coût et l'adoption par les utilisateurs.
+    \item \textbf{Q4}~: L'architecture conçue pour SOYAFF est-elle généralisable à d'autres PME d'import-export d'Afrique subsaharienne ? Et si oui, qu'est-ce qui reste stable d'un cas à l'autre, et qu'est-ce qu'il faut reconfigurer ?
+\end{itemize}
+
+\section*{Hypothèses scientifiques}
+\label{sec:hypotheses}
+
+Afin de répondre à ces interrogations, quatre hypothèses scientifiques sont posées et seront mises à l'épreuve par les expérimentations conduites dans la suite de ce travail :
+
+\begin{itemize}
+    \item \textbf{H1 (coût maîtrisé)}~: L'architecture complète (pipeline ETL, application web full-stack, IA générative) peut tourner et être maintenue pour moins de 50~€/mois, un coût à la portée d'une PME africaine.
+    \item \textbf{H2 (le RAG local tient la comparaison)}~: Sur un corpus métier restreint et bien défini, le RAG auto-hébergé atteint une exactitude comparable au RAG cloud (à 90~\% près), tout en gardant les données sous le contrôle total de l'entreprise.
+    \item \textbf{H3 (moins de saisie, moins d'erreurs)}~: Supprimer la double saisie entre les sites distants réduit le temps de traitement journalier des opérations d'au moins 70~\% et le taux d'erreur de saisie d'au moins 80~\%.
+    \item \textbf{H4 (ça se réplique ailleurs)}~: L'architecture a un noyau d'invariants assez stables et des points de variation identifiables pour être reprise par d'autres PME d'import-export en Afrique subsaharienne, sans refonte structurelle majeure.
+\end{itemize}
+
+\section*{Contributions attendues}
+\label{sec:contributions}
+
+Ce travail devrait apporter quatre choses :
+\begin{enumerate}
+    \item \textbf{Une plateforme} livrée et opérationnelle en production réelle chez SOYAFF, documentée et maintenue sous gestion de version.
+    \item \textbf{Une étude comparative}, sur un terrain africain encore peu documenté, entre un RAG cloud et un RAG local sur un corpus métier en langue française.
+    \item \textbf{Un cadre d'évaluation} à trois dimensions (technique, métier, adoption), pensé pour mesurer l'impact d'une digitalisation dans une PME africaine.
+    \item \textbf{Un référentiel d'architecture} réplicable, construit sur une analyse par lignes de produits logiciels, pour faciliter la digitalisation d'autres PME du même secteur.
+\end{enumerate}
+
+\section*{Plan du mémoire}
+\label{sec:plan_memoire}
+
+Le mémoire compte trois parties et six chapitres.
+
+\textbf{La Partie I} pose le cadre théorique et méthodologique. Le chapitre~\ref{chap:contexte} décrit le corridor Dakar--Bamako et la société SOYAFF, pose le diagnostic de son système d'information, puis fixe les objectifs (\S\ref{sec:objectifs}) et la méthodologie (\S\ref{sec:methodologie}).
+
+\textbf{La Partie II} forme le cadre conceptuel. Le chapitre~\ref{chap:etat_art} passe en revue la littérature sur la digitalisation des PME africaines, les architectures ETL, les systèmes RAG et la souveraineté numérique. Le chapitre~\ref{chap:conception} en tire la conception : analyse des besoins, modélisation UML et architecture C4, chaque choix critique étant justifié par un \textit{Architecture Decision Record}.
+
+\textbf{La Partie III} porte la mise en œuvre. Le chapitre~\ref{chap:realisation} décrit la réalisation : pipeline ETL sous Airflow, application web, module d'IA hybride, infrastructure DevOps. Le chapitre~\ref{chap:evaluation} évalue la plateforme : test de bout en bout, benchmark RAG, impact métier, adoption, généralisation, retour sur investissement. Le chapitre~\ref{chap:discussion_perspectives} discute les résultats et trace les perspectives, dont une plateforme SaaS multi-tenant.
+
+Une conclusion referme le mémoire en reprenant les questions de recherche et en synthétisant les apports.
+
+%   FIN DE L'INTRODUCTION ---

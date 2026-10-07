@@ -1,0 +1,205 @@
+\section{Analyse des besoins}
+\label{chap:besoins}
+L'analyse des besoins fait le lien entre le diagnostic du chapitre~\ref{chap:contexte} et la conception qui suit. Elle pose un cahier des charges clair et vérifiable, qui guide les choix de conception de l'architecture hybride : ce que le système doit faire, et avec quelle qualité. Les choix technologiques, eux, sont justifiés plus loin.
+
+\subsection{Démarche d'analyse et recueil des besoins}
+\label{sec:recueil}
+Cette spécification s'appuie sur une démarche d'ingénierie des exigences (\textit{requirements engineering}) qualitative, que nous avons menée au bureau de Dakar. Quatre sources d'information l'alimentent :
+
+\begin{enumerate}
+    \item \textbf{L'observation participante} des processus quotidiens au bureau de Dakar, pour voir les pratiques réelles au-delà des procédures déclarées ;
+    \item \textbf{L'analyse des documents} produits par l'entreprise (fichiers \texttt{RECAP-*}, fiches d'autorisation de dépenses \texttt{AUT-DEP}), qui révèle la structure implicite des données métier ;
+    \item \textbf{Les entretiens semi-directifs} avec les acteurs clés (agent de saisie, assistant principal, chef de bureau, chef logistique), pour recueillir leurs objectifs et leurs frustrations ;
+    \item \textbf{L'analyse rétrospective} de seize mois de données historiques (4\,755 transactions, 319 camions, 727 bons de chargement), qui donne la volumétrie réelle à traiter.
+\end{enumerate}
+
+Nous formalisons les besoins en exigences numérotées et priorisées, réparties en deux catégories : les \emph{exigences fonctionnelles} (\texttt{EF}) décrivent les services rendus par le système, les \emph{exigences non fonctionnelles} (\texttt{ENF}) en encadrent la qualité avec des métriques chiffrées et vérifiables. Nous priorisons chaque exigence selon \textbf{MoSCoW} (\textit{Must have} : indispensable, \textit{Should have} : souhaitable, \textit{Could have} : optionnel, \textit{Won't have} : hors périmètre), et la rattachons en fin de chapitre aux limites du chapitre~\ref{chap:contexte} et aux hypothèses H1 à~H4.
+
+Cette analyse confirme et prolonge le diagnostic du chapitre~\ref{chap:contexte} (\S1.3.3) : ses quatre catégories de limites (opérationnelles, qualitatives, décisionnelles, stratégiques) restent le point d'ancrage des exigences qui suivent. Notre présence sur le terrain a surtout précisé trois choses concrètes. La redondance de saisie entre le cahier manuscrit de l'Assistant Principal et le tableur de l'Agent de Saisie génère des doublons différés, difficiles à détecter. Le circuit de validation par signatures manuscrites ajoute de la latence. Et le suivi de caisse reste opaque : l'Assistant Principal n'a aucun accès autonome au solde disponible. L'analyse de l'existant a aussi permis de cerner le périmètre de \texttt{kiri.app}, déjà en usage : cantonnée à la conformité administrative (pièces signées par les représentants logistiques), elle n'a aucun module analytique ou décisionnel.
+
+\subsection{Parties prenantes et personas}
+\label{sec:personas}
+Concevoir une plateforme alignée sur le terrain suppose de savoir \emph{qui} va l'utiliser, et \emph{pourquoi}. On distingue trois catégories de parties prenantes. Les \textbf{utilisateurs directs} (Agent de Saisie, Assistant Principal, Chef de Bureau, Chef Logistique, Administrateur Système) manipulent l'application au quotidien. Les \textbf{utilisateurs indirects} en profitent sans l'utiliser eux-mêmes, au premier rang desquels la direction de SOYAFF à Bamako, qui reçoit le reporting consolidé. Les \textbf{parties prenantes contextuelles}, elles, n'utilisent jamais le système mais pèsent sur sa conception : la réglementation sénégalaise sur la protection des données (loi 2008-12), les autorités douanières, les tutelles communautaires (UEMOA, CEDEAO).
+
+Nous avons caractérisé cinq profils d'utilisateurs directs (P1 à~P5) selon leur rôle, leur localisation et leur maturité numérique. Côté applicatif, ces cinq personas se rattachent à trois rôles RBAC (cf. ENF-SEC-03) : P1, P2 et P3, tous basés à Dakar, partagent le rôle \texttt{DAKAR\_AGENT} avec des périmètres fonctionnels distincts ; P4 porte le rôle \texttt{BAMAKO\_CHEF} ; P5 porte le rôle \texttt{ADMIN}. Ce mapping (dernière colonne du tableau~\ref{tab:cartographie_acteurs}) structurera les acteurs des diagrammes de cas d'utilisation de la section suivante.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{Cartographie des acteurs et profils numériques du corridor SOYAFF}
+\label{tab:cartographie_acteurs}
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}p{0.8cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}p{2.0cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}p{2.3cm}|}
+\hline
+\rowcolor[HTML]{EFEFEF}
+\textbf{ID} & \textbf{Acteur / Fonction} & \textbf{Rôle Opérationnel} & \textbf{Localisation} & \textbf{Maturité Numérique} & \textbf{Rôle RBAC} \\ \hline
+\textbf{P1} & Agent de Saisie & Saisie des dépenses, édition des récaps journaliers. & Dakar & Intermédiaire (maîtrise d'Excel et de WhatsApp). & \texttt{DAKAR\_AGENT} \\ \hline
+\textbf{P2} & Assistant Principal & Gestion directe de la caisse, supervision de premier niveau. & Dakar & Basique (pratique exclusive des supports physiques). & \texttt{DAKAR\_AGENT} \\ \hline
+\textbf{P3} & Chef de Bureau & Validation finale des opérations, supervision générale. & Dakar & Basique (validation par signature manuscrite). & \texttt{DAKAR\_AGENT} \\ \hline
+\textbf{P4} & Chef Logistique & Arbitrage, décision stratégique, reporting financier. & Bamako & Orienté reporting (consommateur de KPIs et d'analyses). & \texttt{BAMAKO\_CHEF} \\ \hline
+\textbf{P5} & Administra\-teur Système & Conception, déploiement et maintenance de la solution. & Dakar (déporté) & Spécialisé en génie logiciel. & \texttt{ADMIN} \\ \hline
+\end{tabularx}
+\end{table}
+
+Chaque profil fait face à des contraintes spécifiques qui dictent les exigences fonctionnelles de la future plateforme :
+
+\begin{enumerate}
+    \item \textbf{P1, l'Agent de Saisie (Dakar) :} sa frustration vient de la double saisie (cahier manuscrit vers Excel) et de la lenteur des signatures physiques du Chef de Bureau et de l'Assistant Principal. Il ne peut pas non plus requêter rapidement l'historique des dépenses pour répondre à sa hiérarchie.
+    \item \textbf{P2, l'Assistant Principal (Dakar) :} responsable de la caisse, il a besoin de connaître en temps réel le solde disponible (approvisionnements de Bamako moins dépenses locales). Sans outil de synchronisation, il dépend du poste de l'agent de saisie pour suivre ses flux financiers.
+    \item \textbf{P3, le Chef de Bureau (Dakar) :} son rôle se limite à valider des documents imprimés. Son passage au numérique doit rester simple, vu sa maîtrise informatique basique.
+    \item \textbf{P4, le Chef Logistique (Bamako) :} le plus touché par les défaillances actuelles, il loue une flotte de \textit{camions particuliers} en plus de la flotte SOYAFF. Il gère à la main un double flux financier : une \textbf{avance} au départ, un \textbf{reliquat} au déchargement à Bamako (ou géré par Dakar si le camion s'arrête à la frontière). Sans automatisation, il doit tout ressaisir pour avoir la moindre visibilité.
+    \item \textbf{P5, l'Administrateur Système (Dakar, déporté) :} garant de la disponibilité et de la sécurité de la plateforme, il a besoin de gérer les comptes et les rôles, de consulter les journaux d'audit et de superviser l'état des services (ETL, RAG, application web). Sa préoccupation : garder la solution opérationnelle et souveraine avec peu de ressources.
+\end{enumerate}
+
+Cette diversité de profils, du terrain à maturité numérique basique jusqu'à l'administrateur technique, impose une plateforme multi-rôles avec un contrôle d'accès finement différencié.
+
+\subsection{Besoins fonctionnels}
+\label{sec:besoins_fonctionnels}
+Nous organisons les besoins fonctionnels en six modules : ingestion et saisie (\texttt{EF-ETL} / \texttt{EF-SDR}), validation hiérarchique (\texttt{EF-VAL}), consolidation et reporting (\texttt{EF-REP}), tableau de bord décisionnel (\texttt{EF-DSH}), module conversationnel hybride (\texttt{EF-RAG}), administration (\texttt{EF-ADM}). Chaque exigence est rattachée à un ou plusieurs personas, priorisée par MoSCoW et tracée vers la limite du chapitre~\ref{chap:contexte} (\S1.3.3) dont elle vient.
+
+\begin{longtable}{|>{\raggedright\arraybackslash}p{1.5cm}|>{\raggedright\arraybackslash}p{5.2cm}|>{\raggedright\arraybackslash}p{1.6cm}|>{\raggedright\arraybackslash}p{1.7cm}|>{\raggedright\arraybackslash}p{2.8cm}|}
+\caption{Matrice de spécification des exigences fonctionnelles (SOYAFF)}
+\label{tab:exigences_fonctionnelles} \\
+\hline
+\rowcolor[HTML]{EFEFEF}
+\textbf{ID} & \textbf{Description de l'exigence fonctionnelle} & \textbf{Persona} & \textbf{Priorité} & \textbf{Origine (\S1.3.3)} \\ \hline
+\endfirsthead
+
+\multicolumn{5}{c}{\tablename\ \thetable\ -- suite de la page précédente} \\
+\hline
+\rowcolor[HTML]{EFEFEF}
+\textbf{ID} & \textbf{Description de l'exigence fonctionnelle} & \textbf{Persona} & \textbf{Priorité} & \textbf{Origine (\S1.3.3)} \\ \hline
+\endhead
+
+\hline
+\multicolumn{5}{r}{\textit{Suite page suivante}} \\
+\endfoot
+
+\hline
+\endlastfoot
+
+\multicolumn{5}{|l|}{\cellcolor[HTML]{DDEBF7}\textbf{M1. Ingestion et saisie unifiée des données}} \\ \hline
+\textbf{EF-ETL-01} & \textbf{Importation des données historiques :} le système doit permettre l'importation des fichiers tableurs (Excel) de suivi opérationnel existants. & P1, P2 & Must & Opérationnelle \\ \hline
+\textbf{EF-ETL-02} & \textbf{Détection des doublons temporels :} lors de l'importation ou de la saisie, le système doit repérer une dépense potentiellement dupliquée sur une fenêtre temporelle configurable, émettre une alerte et exiger une confirmation explicite de l'opérateur avant enregistrement. & Système, P2 & Must & Qualitative \\ \hline
+\textbf{EF-SDR-01} & \textbf{Saisie directe via formulaires :} le système doit fournir des formulaires d'insertion directe centralisant la logique métier, afin de remplacer progressivement les fichiers Excel. & P1 & Should & Opérationnelle \\ \hline
+\textbf{EF-SDR-02} & \textbf{Contrôle métier des rations :} le système doit contrôler l'intervalle entre deux rations octroyées à un même chauffeur. En deçà de deux jours, l'octroi est bloqué (rejet automatique) ; entre deux et cinq jours, une alerte est levée et une confirmation explicite de l'opérateur est exigée avant enregistrement. & Système & Must & Qualitative \\ \hline
+\textbf{EF-SDR-03} & \textbf{Journalisation de l'historique :} le système doit conserver et rendre consultable l'intégralité de l'historique des opérations, levant la crainte de perte de données exprimée par P1. & P1, P2 & Must & Opérationnelle \\ \hline
+
+\multicolumn{5}{|l|}{\cellcolor[HTML]{DDEBF7}\textbf{M2. Validation hiérarchique}} \\ \hline
+\textbf{EF-VAL-01} & \textbf{Traçabilité de la validation :} le système doit consigner l'état de validation de chaque transaction. Dans le périmètre du présent mémoire, le circuit s'appuie sur les visas papier existants, dont la référence est enregistrée. & P2, P3 & Must & Opérationnelle \\ \hline
+\textbf{EF-VAL-02} & \textbf{Workflow de validation numérique :} le système devrait offrir un circuit de validation dématérialisé (soumission, approbation ou rejet motivé, notification des acteurs) remplaçant les signatures manuscrites. & P1, P2, P3 & Should & Opérationnelle \\ \hline
+
+\multicolumn{5}{|l|}{\cellcolor[HTML]{DDEBF7}\textbf{M3. Consolidation et reporting}} \\ \hline
+\textbf{EF-REP-01} & \textbf{Génération automatique du récapitulatif journalier :} le système doit produire automatiquement le récapitulatif journalier, remplaçant le fichier \texttt{RECAP-JOURNALIERE}. & P1, P4 & Must & Opérationnelle \\ \hline
+\textbf{EF-REP-02} & \textbf{Consolidation mensuelle :} le système doit générer le récapitulatif mensuel consolidé, supprimant la ressaisie effectuée à Bamako. & P4 & Must & Décisionnelle \\ \hline
+\textbf{EF-REP-03} & \textbf{Export des rapports :} le système doit permettre l'export des récapitulatifs et analyses aux formats PDF et Excel. & P4 & Should & Décisionnelle \\ \hline
+\textbf{EF-REP-04} & \textbf{Recherche multi-critères :} le système doit permettre de filtrer et rechercher les opérations selon plusieurs critères (période, camion, chauffeur, catégorie de dépense). & P1, P4 & Should & Qualitative \\ \hline
+
+\multicolumn{5}{|l|}{\cellcolor[HTML]{DDEBF7}\textbf{M4. Tableau de bord décisionnel}} \\ \hline
+\textbf{EF-DSH-01} & \textbf{Suivi de caisse en temps réel :} le système doit calculer et restituer instantanément le solde de caisse sur le tableau de bord de l'assistant. & P2 & Must & Décisionnelle \\ \hline
+\textbf{EF-DSH-02} & \textbf{Visualisation de la flotte :} le système doit intégrer un onglet « Camions » répertoriant l'ensemble de la flotte logistique connectée. & P4 & Must & Décisionnelle \\ \hline
+\textbf{EF-DSH-03} & \textbf{Classification de la flotte :} le système doit catégoriser visiblement les camions par étiquettes distinctives (\texttt{camions\_societe} ou \texttt{particuliers}). & P4 & Should & Décisionnelle \\ \hline
+\textbf{EF-DSH-04} & \textbf{Consultation du profil véhicule :} au clic sur un camion, le système doit afficher l'historique de ses dépenses et ses dernières positions géographiques. & P4 & Should & Décisionnelle \\ \hline
+\textbf{EF-DSH-05} & \textbf{Signalement des anomalies :} le système devrait détecter et signaler les dépenses hors normes (dérive de coût par camion, montants aberrants). & P4 & Could & Stratégique \\ \hline
+
+\multicolumn{5}{|l|}{\cellcolor[HTML]{DDEBF7}\textbf{M5. Module conversationnel hybride (RAG)}} \\ \hline
+\textbf{EF-RAG-01} & \textbf{Interface en langage naturel :} le système doit embarquer un agent conversationnel interprétant des requêtes analytiques formulées en langage naturel (français) sur les données synchronisées. & P4 & Should & Décisionnelle \\ \hline
+\textbf{EF-RAG-02} & \textbf{Analyse décisionnelle des reliquats :} l'agent doit calculer automatiquement le montant total des reliquats à payer pour les camions particuliers arrivés à Bamako sur le mois en cours. & P4 & Should & Décisionnelle \\ \hline
+\textbf{EF-RAG-03} & \textbf{Routage hybride cloud / local :} le système doit orienter les requêtes selon leur sensibilité : traitement local souverain pour les données confidentielles, service cloud pour les requêtes complexes non sensibles. & Système, P4 & Must & Stratégique \\ \hline
+\textbf{EF-RAG-04} & \textbf{Citation des sources :} l'agent doit citer explicitement les sources documentaires ou les enregistrements ayant fondé chaque réponse. & P4 & Should & Décisionnelle \\ \hline
+\textbf{EF-RAG-05} & \textbf{Journalisation des requêtes IA :} le système doit journaliser l'ensemble des requêtes adressées aux modules d'IA à des fins d'audit et d'évaluation. & Système, P5 & Should & Stratégique \\ \hline
+
+\multicolumn{5}{|l|}{\cellcolor[HTML]{DDEBF7}\textbf{M6. Administration}} \\ \hline
+\textbf{EF-ADM-01} & \textbf{Gestion des utilisateurs et des rôles :} le système doit permettre de créer, modifier et désactiver les comptes et d'affecter les rôles (RBAC). & P5 & Must & Stratégique \\ \hline
+\textbf{EF-ADM-02} & \textbf{Consultation des journaux d'audit :} le système doit donner accès aux journaux des actions sensibles et des requêtes IA. & P5 & Should & Stratégique \\ \hline
+\textbf{EF-ADM-03} & \textbf{Sauvegarde et restauration :} le système doit permettre la sauvegarde et la restauration de la base de données. & P5 & Must & Stratégique \\ \hline
+\textbf{EF-ADM-04} & \textbf{Supervision de l'état des services :} le système doit permettre de superviser l'état de santé des services (ETL, RAG, application web). & P5 & Should & Stratégique \\ \hline
+\end{longtable}
+
+La plateforme doit aussi satisfaire des exigences de qualité, présentées ci-après.
+
+\subsection{Besoins non fonctionnels}
+\label{sec:besoins_non_fonctionnels}
+La plateforme doit aussi tenir des contraintes de qualité : les exigences non fonctionnelles (ENF), qui conditionnent la viabilité de l'architecture hybride dans un corridor Dakar--Bamako au réseau instable et aux ressources limitées. Nous les organisons en sept catégories (performance, disponibilité et fiabilité, sécurité, souveraineté et conformité, ergonomie, maintenabilité, frugalité), chacune avec une métrique chiffrée, vérifiable au chapitre~\ref{chap:evaluation}.
+
+\begin{longtable}{|>{\raggedright\arraybackslash}p{2.0cm}|>{\raggedright\arraybackslash}p{2.3cm}|>{\raggedright\arraybackslash}p{5.3cm}|>{\raggedright\arraybackslash}p{2.8cm}|}
+\caption{Matrice des exigences non fonctionnelles (Qualité et Contraintes)}
+\label{tab:exigences_non_fonctionnelles} \\
+\hline
+\rowcolor[HTML]{EFEFEF}
+\textbf{ID} & \textbf{Catégorie} & \textbf{Description de l'exigence} & \textbf{Métrique / Cible} \\ \hline
+\endfirsthead
+
+\multicolumn{4}{c}{\tablename\ \thetable\ -- suite de la page précédente} \\
+\hline
+\rowcolor[HTML]{EFEFEF}
+\textbf{ID} & \textbf{Catégorie} & \textbf{Description de l'exigence} & \textbf{Métrique / Cible} \\ \hline
+\endhead
+
+\hline
+\multicolumn{4}{r}{\textit{Suite page suivante}} \\
+\endfoot
+
+\hline
+\endlastfoot
+
+\textbf{ENF-PERF-01} & Performance & Le chargement et l'affichage des indicateurs du tableau de bord doivent rester fluides. & $< 5$~s (P95) \\ \hline
+\textbf{ENF-PERF-02} & Performance & Le RAG \textbf{cloud} doit restituer l'analyse d'une requête complexe dans un délai maîtrisé. & $< 5$~s (P95) \\ \hline
+\textbf{ENF-PERF-03} & Performance & Le RAG \textbf{local souverain} doit restituer une réponse dans un délai tolérable, malgré la contrainte matérielle. & $< 15$~s (P95) \\ \hline
+\textbf{ENF-DISP-01} & Disponibilité & L'application de saisie doit intégrer un mode dégradé (hors-ligne) avec mise en cache locale des saisies. & 0 perte de saisie ; resynchro. $< 5$~min après retour réseau \\ \hline
+\textbf{ENF-DISP-02} & Disponibilité & Les services critiques doivent garantir une disponibilité opérationnelle mensuelle élevée. & $\geq 99~\%$ / mois \\ \hline
+\textbf{ENF-VOL-01} & Volumétrie & Le pipeline ETL doit ingérer le corpus historique existant sans échec ni saturation mémoire. & $\geq 4\,500$ transactions \\ \hline
+\textbf{ENF-VOL-02} & Évolutivité & La base de données doit supporter une montée en charge progressive sans refonte structurelle. & $> 50\,000$ lignes / an \\ \hline
+\textbf{ENF-SEC-01} & Sécurité & L'authentification des utilisateurs doit être obligatoire et reposer sur des jetons signés. & JWT ; expiration $\leq 24$~h \\ \hline
+\textbf{ENF-SEC-02} & Sécurité & Les mots de passe doivent être hachés selon l'état de l'art. & bcrypt, coût $\geq 12$ \\ \hline
+\textbf{ENF-SEC-03} & Sécurité & L'accès aux modules doit être cloisonné par contrôle d'accès basé sur les rôles. & RBAC : DAKAR\_AGENT, BAMAKO\_CHEF, ADMIN \\ \hline
+\textbf{ENF-SEC-04} & Sécurité & Les actions sensibles doivent être journalisées (piste d'audit). & Audit trail horodaté, 100~\% des actions sensibles \\ \hline
+\textbf{ENF-SEC-05} & Sécurité & Toutes les communications réseau doivent être chiffrées. & TLS $\geq 1.2$ \\ \hline
+\textbf{ENF-SOUV-01} & Souveraineté & Les données interrogées par l'agent IA local ne doivent transiter vers aucun service tiers externe. & Rétention 100~\% locale \\ \hline
+\textbf{ENF-SOUV-02} & Conformité & Le traitement des données personnelles doit respecter le cadre légal sénégalais. & Conformité loi 2008-12 (CDP) \\ \hline
+\textbf{ENF-ERG-01} & Ergonomie & L'interface doit être en français et exploitable par des utilisateurs non techniques. & Français ; validation par P1--P4 \\ \hline
+\textbf{ENF-ERG-02} & Ergonomie & L'utilisabilité perçue doit atteindre un niveau satisfaisant, mesuré par questionnaire standardisé. & Score SUS $\geq 70/100$ \\ \hline
+\textbf{ENF-ERG-03} & Ergonomie & L'interface doit être responsive (poste fixe et mobile) et compatible avec les navigateurs récents. & Chrome, Firefox, Edge (versions récentes) \\ \hline
+\textbf{ENF-MAINT-01} & Maintenabilité & L'architecture doit être modulaire, autorisant le remplacement des modèles LLM sans refonte. & Couplage faible ; interface d'inférence abstraite \\ \hline
+\textbf{ENF-MAINT-02} & Maintenabilité & Les choix structurants doivent être documentés et le code testé. & ADR par décision majeure ; tests unitaires $\geq 60~\%$ \\ \hline
+\textbf{ENF-FRUG-01} & Frugalité & L'infrastructure de déploiement doit rester accessible budgétairement pour une PME subsaharienne (H1). & $< 50$~\texteuro{} / mois \\ \hline
+\end{longtable}
+
+Ces besoins, fonctionnels et non fonctionnels, forment le cahier des charges dont voici la synthèse.
+
+\subsection{Synthèse et matrice de traçabilité}
+\label{sec:synthese_tracabilite}
+Le cahier des charges compte \textbf{25 exigences fonctionnelles} réparties en six modules applicatifs et \textbf{20 exigences non fonctionnelles} réparties en sept catégories de qualité, soit \textbf{45 exigences au total}. Les exigences non fonctionnelles sont transversales, elles contraignent tout le système et ne sont donc pas priorisées individuellement par MoSCoW ; seules les 25 exigences fonctionnelles le sont. Sur ces 25 : \textbf{12 sont \textit{Must have}} (indispensables pour SOYAFF, traitées dans le mémoire), \textbf{12 sont \textit{Should have}} (souhaitables, traitées si le calendrier le permet), et \textbf{1 est \textit{Could have}} (EF-DSH-05, renvoyée aux perspectives). Aucune n'est classée \textit{Won't have}. La dématérialisation complète du circuit de validation (EF-VAL-02), bien que spécifiée, reste priorisée \textit{Should} : le circuit papier existant reste juridiquement valable pendant la transition.
+
+La matrice de traçabilité (Tableau~\ref{tab:matrice_tracabilite}) relie chaque famille d'exigences à l'origine de son besoin terrain (limites du chapitre~\ref{chap:contexte}, \S1.3.3), à l'hypothèse de recherche qu'elle éprouve (H1 à~H4), et aux chapitres de conception et d'évaluation concernés. Chaque exigence part donc d'un problème industriel concret, et sera validée empiriquement.
+
+\begin{longtable}{|>{\raggedright\arraybackslash}p{2.9cm}|>{\raggedright\arraybackslash}p{4.7cm}|>{\centering\arraybackslash}p{1.2cm}|>{\centering\arraybackslash}p{2.0cm}|>{\centering\arraybackslash}p{1.9cm}|}
+\caption{Matrice de traçabilité macroscopique du cahier des charges}
+\label{tab:matrice_tracabilite} \\
+\hline
+\rowcolor[HTML]{EFEFEF}
+\textbf{Origine du besoin} & \textbf{Exigences associées (EF / ENF)} & \textbf{Hypo\-thèse} & \textbf{Concep\-tion} & \textbf{Évalua\-tion} \\ \hline
+\endfirsthead
+
+\multicolumn{5}{c}{\tablename\ \thetable\ -- suite de la page précédente} \\
+\hline
+\rowcolor[HTML]{EFEFEF}
+\textbf{Origine du besoin} & \textbf{Exigences associées (EF / ENF)} & \textbf{Hypo\-thèse} & \textbf{Concep\-tion} & \textbf{Évalua\-tion} \\ \hline
+\endhead
+
+\hline
+\multicolumn{5}{r}{\textit{Suite page suivante}} \\
+\endfoot
+
+\hline
+\endlastfoot
+
+\textbf{Opérationnelle} (double saisie, rupture de charge, peur de perte de l'historique) & EF-ETL-01, EF-SDR-01, EF-SDR-03, EF-VAL-01, EF-VAL-02, EF-REP-01, ENF-DISP-01, ENF-VOL-01 & H3 & §~\ref{chap:modelisation}, \ref{chap:architecture}, \ref{chap:etl} & §~\ref{chap:impact_metier} \\ \hline
+\textbf{Qualitative} (erreurs, doublons, ruptures de formules) & EF-ETL-02, EF-SDR-02, EF-REP-04, ENF-MAINT-02 & H3 & §~\ref{chap:modelisation}, \ref{chap:etl} & §~\ref{chap:impact_metier} \\ \hline
+\textbf{Décisionnelle} (absence de tableau de bord temps réel, opacité de la caisse) & EF-DSH-01 à EF-DSH-04, EF-REP-02, EF-REP-03, EF-RAG-01, EF-RAG-02, EF-RAG-04, ENF-PERF-01, ENF-PERF-02, ENF-PERF-03 & H2, H3 & §~\ref{chap:architecture}, \ref{chap:webapp}, \ref{chap:ia_rag} & §~\ref{chap:benchmark_rag}, \ref{chap:impact_metier} \\ \hline
+\textbf{Stratégique} (absence d'historique, dépendance aux personnes clés) & EF-DSH-05, EF-RAG-03, EF-RAG-05, EF-ADM-01 à EF-ADM-04, ENF-VOL-02, ENF-MAINT-01 & H4 & §~\ref{chap:architecture}, \ref{chap:ia_rag} & §~\ref{chap:benchmark_rag}, \ref{chap:generalisation_spl} \\ \hline
+\textbf{Souveraineté et infrastructure locale} & EF-RAG-03, ENF-SEC-01 à ENF-SEC-05, ENF-SOUV-01, ENF-SOUV-02 & H2 & §~\ref{chap:architecture}, \ref{chap:ia_rag} & §~\ref{chap:benchmark_rag} \\ \hline
+\textbf{Frugalité budgétaire} & ENF-FRUG-01, ENF-DISP-02 & H1 & §~\ref{chap:architecture}, \ref{chap:devops} & §~\ref{chap:impact_metier} \\ \hline
+\textbf{Adoption utilisateur} (maturité numérique hétérogène) & ENF-ERG-01, ENF-ERG-02, ENF-ERG-03 & H3 & §~\ref{chap:modelisation}, \ref{chap:webapp} & §~\ref{chap:adoption} \\ \hline
+\end{longtable}
+
+Ce cahier des charges fixe le cadre de la conception. Les sections suivantes y répondent : cas d'utilisation en UML, architecture applicative en C4, choix technologiques justifiés chacun par un ADR. Chaque exigence reste reliée à la limite qui la motive et à l'hypothèse qu'elle éprouve, jusqu'à l'évaluation empirique du chapitre~\ref{chap:evaluation}.

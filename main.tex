@@ -1,0 +1,144 @@
+\documentclass[12pt,a4paper]{report}
+
+% --- Encodage et langue ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{amsmath}
+\setlength{\emergencystretch}{3em}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+
+% --- Mise en page ---
+\usepackage{geometry}
+\geometry{top=2.5cm, bottom=2.5cm, left=3cm, right=2.5cm}
+
+% --- Packages visuels et techniques ---
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage[table]{xcolor}
+\usepackage{tikz}
+\usepackage{forest}
+\usepackage{pdfpages}
+\usepackage{pdflscape}
+\usepackage{tablefootnote}
+\usepackage{shorttoc} % sommaire court au début, table détaillée en fin
+
+% --- Index ---
+\usepackage{makeidx}
+\makeindex
+
+% --- Bibliographie (biblatex + biber) ---
+% references.bib est regenere automatiquement par Zotero (ne pas editer
+% a la main : ce sera ecrase). corrections.bib contient des versions
+% corrigees a cles stables pour les items dont les metadonnees Zotero
+% sont mal formees (cf. en-tete de corrections.bib) ; ce fichier n'est
+% jamais touche par l'export.
+\usepackage{csquotes}
+\usepackage[style=ieee, backend=biber]{biblatex}
+\addbibresource{references.bib}
+\addbibresource{corrections.bib}
+\setcounter{biburlnumpenalty}{100}
+\setcounter{biburlucpenalty}{100}
+\setcounter{biburllcpenalty}{100}
+% La date de consultation (urldate) n'a de sens que pour une ressource en
+% ligne : on la retire des livres, articles, theses, rapports, etc. Fait
+% ici plutot que dans references.bib, qui est ecrase a chaque export Zotero.
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map{
+      \pertype{article}\pertype{book}\pertype{incollection}
+      \pertype{inproceedings}\pertype{phdthesis}\pertype{techreport}
+      \step[fieldset=urldate, null]
+    }
+  }
+}
+
+% --- Liens cliquables (toujours en dernier) ---
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+
+\newcommand{\source}[1]{%
+  \par\vspace{2pt}%
+  {\footnotesize\textit{Source :} #1}%
+}
+\begin{document}
+\raggedbottom
+
+% Page de garde (hors numérotation)
+\begingroup
+\hypersetup{pageanchor=false}
+\includepdf[pages=-,noautoscale=true,pagecommand={\thispagestyle{empty}}]{page_de_garde}
+\endgroup
+
+% ===== PIÈCES LIMINAIRES (numérotation en chiffres romains, à partir de i) =====
+\pagenumbering{roman}
+\input{dedicaces}
+\input{remerciements}
+\input{resume_abstract}
+
+\shorttoc{Sommaire}{0} % parties et chapitres ; table détaillée en fin de document
+\listoffigures
+\listoftables
+\input{glossaire}
+\clearpage
+
+% Mémorise la dernière page romaine des pièces liminaires, pour reprendre
+% exactement à cette valeur après la bibliographie (évite un chiffre codé
+% en dur qui se décale à chaque modification du contenu liminaire).
+\newcounter{derniere_page_romaine}
+\setcounter{derniere_page_romaine}{\value{page}}
+
+% ===== CORPS DU MÉMOIRE (numérotation en chiffres arabes, reprise à 1) =====
+\pagenumbering{arabic}
+
+% ===== INTRODUCTION =====
+\input{introduction}
+
+% ===== PARTIE I : CADRE THÉORIQUE ET MÉTHODOLOGIQUE =====
+\part{Cadre théorique et méthodologique}
+
+\input{Contexte_de_l_etude}
+
+% ===== PARTIE II : CADRE CONCEPTUEL =====
+\part{Cadre conceptuel}
+
+\input{etat_de_l_art}
+\input{ch3_conception}
+
+% ===== PARTIE III : MISE EN ŒUVRE =====
+\part{Mise en œuvre}
+
+\input{ch4_realisation}
+\input{ch5_evaluation}
+\input{ch6_discussion}
+
+% ===== CONCLUSION =====
+\input{conclusion}
+\clearpage
+
+% ===== BIBLIOGRAPHIE ET ANNEXES (reprise de la numérotation romaine, là où =====
+% ===== les pièces liminaires s'étaient arrêtées) =====
+\pagenumbering{roman}
+\setcounter{page}{\value{derniere_page_romaine}}
+
+% ===== BIBLIOGRAPHIE =====
+\defbibnote{datesconsultation}{Les dates de consultation (« visité le ») indiquées pour les ressources en ligne sont les dates où j'ai saisi les références dans Zotero, pendant une phase de mise au propre de la bibliographie. Elles ne correspondent pas aux dates de lecture.\par\medskip}
+\printbibliography[heading=bibintoc, title={Références bibliographiques}, prenote=datesconsultation]
+
+% ===== ANNEXES =====
+\input{annexes}
+
+% ===== INDEX =====
+\printindex
+
+% ===== TABLE DES MATIÈRES DÉTAILLÉE (en fin de document) =====
+\tableofcontents
+
+\end{document}

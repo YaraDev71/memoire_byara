@@ -1,0 +1,230 @@
+\chapter{État de l'art}
+\label{chap:etat_art}
+
+\section{Digitalisation des PME en Afrique subsaharienne}
+\label{sec:Digitalisation_PME_Afrique}
+
+\subsection{Le paradoxe macro-économique : connectivité infrastructurelle versus « digital divide »}
+
+En Afrique de l'Ouest, le numérique est passé d'un avantage concurrentiel à une condition de survie pour les entreprises privées. Les infrastructures de télécommunication progressent : au Sénégal, les prix des services mobiles ont baissé de 10,9~\% au premier trimestre 2026 \cite{artpNOTETRIMESTRIELLELINDICE2026}. Mais cette expansion technique ne se traduit pas automatiquement par une inclusion économique. 
+
+Le Rapport sur le développement dans le monde de la Banque mondiale note que la révolution numérique se diffuse vite sur le plan matériel, mais que ses retombées économiques et sociales tardent, faute de « compléments analogiques » : cadres réglementaires, compétences humaines, institutions publiques agiles \cite{worldbankgroupWorldDevelopmentReport2016}. En Afrique, le taux de pénétration d'Internet atteint 40~\% en 2024 \cite{AccelererRevolutionNumerique}. Le \textit{digital divide} change de nature : au déficit de couverture s'ajoute désormais un « écart d'usage » (\textit{usage gap}). Des zones bien couvertes en 3G, 4G, voire 5G restent hors du cyberespace, faute de moyens financiers, de compétences numériques ou d'offres adaptées.
+
+\subsection{Modélisation théorique de l'adoption technologique : TAM et UTAUT en environnement contraint}
+
+Les modèles théoriques d'acceptation technologique éclairent cette adoption limitée. Le Modèle d'Acceptation de la Technologie (TAM, \textit{Technology Acceptance Model}), proposé par Davis \cite{davisTechnologyAcceptanceModel1989}, retient deux facteurs qui gouvernent l'intention d'adopter un système : l'utilité perçue (\textit{perceived usefulness}) et la facilité d'utilisation perçue (\textit{perceived ease of use}). Pour une PME subsaharienne, l'utilité perçue dépend surtout de la capacité de l'outil à résoudre des problèmes immédiats (pertes de traçabilité logistique, coûts de transaction non officiels), tandis que la facilité d'utilisation reste bridée par le niveau d'alphabétisation numérique des équipes.
+
+Venkatesh et al. \cite{venkateshUserAcceptanceInformation2003} ont unifié ce modèle dans la Théorie Unifiée de l'Acceptation et de l'Utilisation de la Technologie (UTAUT), qui ajoute plusieurs dimensions : l'attente de performance, l'attente d'effort, l'influence sociale et, surtout, les conditions facilitatrices. Dans le contexte ouest-africain, ces conditions facilitatrices deviennent le facteur décisif : le coût des infrastructures serveur, l'approvisionnement énergétique instable et la connectivité intermittente pèsent plus sur l'adoption que la volonté des dirigeants. Cela justifie une architecture logicielle capable de fonctionner en mode dégradé, adaptée à des infrastructures contraintes.
+
+\subsection{Analyse empirique de la maturité numérique des PME et le déploiement des ERP}
+
+Les études empiriques confirment cet écart entre volonté de numérisation et réalité opérationnelle. Selon l'Observatoire de la Francophonie Économique \cite{IMPACTLADOPTIONTECHNOLOGIES2025}, 88~\% des PME d'Afrique francophone déclarent avoir amorcé une transition numérique, mais 77~\% d'entre elles s'en tiennent à des outils de base (réseaux sociaux, messageries grand public). Seules 11~\% utilisent des technologies avancées de gestion de données, d'automatisation ou de Cloud. L'Afrique de l'Ouest fait un peu mieux, avec un taux d'adoption des technologies avancées de 14~\% \cite{IMPACTLADOPTIONTECHNOLOGIES2025}. 
+
+Cette montée en maturité passe par les progiciels de gestion intégrés (ERP). Un ERP marque le passage d'une numérisation de surface à une restructuration profonde des flux d'information. Teuguia Tadjuidje \cite{tadjuidjeTechnologiesLeadershipRevolutionner2024} montre que ce déploiement exige l'implication directe des dirigeants : sans ce portage, l'outil reste sous-utilisé, perçu par les employés comme une contrainte de plus plutôt qu'un gain d'efficacité. 
+
+Les bénéfices restent réels : les PME qui adoptent des solutions de gestion centralisées gagnent en productivité, avec un écart mesuré à 130 000 FCFA par employé face à celles qui s'en tiennent aux outils de communication de base \cite{IMPACTLADOPTIONTECHNOLOGIES2025}. Ces systèmes décloisonnent les fonctions comptables, logistiques et commerciales, et appuient la décision sur des données consolidées.
+
+\subsection{Barrières à l'adoption, facteurs clés de succès et le risque de colonialisme numérique}
+
+Malgré ces gains, la littérature identifie plusieurs obstacles à l'adoption (\textit{adoption barriers}). Au-delà du coût des licences et des infrastructures, les PME subsahariennes manquent de main-d'œuvre qualifiée sur le marché local. L'offre technologique internationale, standardisée, colle aussi mal aux réalités des petites structures logistiques et artisanales ouest-africaines.
+
+Cette inadéquation rejoint un concept plus large de la littérature : le colonialisme numérique (\textit{digital colonialism}). Nothias \cite{nothiasIntellectualHistoryDigital2025} montre comment les multinationales technologiques du Nord reproduisent, sur le plan sémantique et infrastructurel, des dynamiques de domination proches de celles des anciennes puissances coloniales. Sa typologie éclaire trois défis concrets des PME subsahariennes :
+\begin{itemize}
+    \item \textbf{L'exclusion linguistique :} Les grands assistants numériques ignorent la quasi-totalité des langues africaines locales, ce qui freine l'adoption chez les employés de l'économie informelle.
+    \item \textbf{L'extraction de valeur :} Comme pour les ressources minières (le cobalt), les données économiques et comportementales des acteurs subsahariens sont captées par des plateformes propriétaires étrangères (par exemple \textit{Free Basics}), sans retour de valeur ni transfert de compétences vers les acteurs locaux.
+    \item \textbf{L'aliénation des processus métiers :} Les modèles de données et architectures conçus par des ingénieurs occidentaux imposent aux PME des standards rigides, mal adaptés aux réalités des marchés locaux.
+\end{itemize}
+
+Les PME se retrouvent ainsi captives de solutions logicielles fermées, dépendantes de facturations en devises étrangères (modèles SaaS), ce qui accentue leur vulnérabilité macro-économique.
+
+Pour contourner ces écueils, la littérature identifie trois leviers pour une transformation numérique durable et souveraine des PME subsahariennes :
+\begin{enumerate}
+    \item \textbf{L'adaptation locale des technologies :} Privilégier des architectures modulaires et open-source, pour réduire la dépendance aux grands éditeurs et permettre une maintenance et une gouvernance locales des données.
+    \item \textbf{La formation itérative et inclusive :} Mettre en place un accompagnement au changement adapté au niveau initial des utilisateurs, pour réduire l'attente d'effort théorisée par l'UTAUT.
+    \item \textbf{L'optimisation des flux d'intégration de données :} Concevoir des systèmes légers capables de collecter, nettoyer et consolider des données hétérogènes issues d'outils de base (tableurs, messageries), pour alimenter progressivement des briques applicatives plus avancées.
+\end{enumerate}
+
+La littérature établit que la digitalisation reste un vecteur de productivité, de résilience et d'internationalisation pour les PME subsahariennes. Mais passer d'une numérisation de surface à une numérisation transformationnelle reste difficile, freiné par des contraintes infrastructurelles et financières. Cette transition demande une couche logicielle intermédiaire capable de collecter, standardiser et intégrer des données opérationnelles hétérogènes. Les architectures ETL, objet de la section suivante, en sont le premier maillon.
+
+\section{Architectures ETL et pipelines de données}
+\label{sec:Architectures_ETL_pipelines_donnees} 
+
+\subsection{Concepts fondamentaux du Data Engineering : de l'ETL traditionnel à l'ELT}
+
+Le \textit{data engineering}, selon Reis et Housley \cite{reisFundamentalsDataEngineering2022}, couvre tout le cycle de vie de la donnée : de sa capture brute à sa mise à disposition pour l'analyse. Au centre de cette discipline, le pipeline de données déplace et transforme l'information entre systèmes opérationnels et structures analytiques. L'architecture de référence reste le paradigme ETL (\textit{Extract, Transform, Load}), popularisé par Kimball et Ross \cite{kimballDataWarehouseToolkit2013} : les données sont extraites des bases transactionnelles, nettoyées et restructurées sur un serveur de \textit{staging} (\textit{Transform}), puis écrites dans un \textit{data warehouse} structuré en schéma étoile ou flocon. 
+
+Le cloud et les architectures distribuées ont ensuite fait émerger le paradigme ELT (\textit{Extract, Load, Transform}), qui découple stockage et calcul \cite{reisFundamentalsDataEngineering2022} : les données brutes sont ingérées telles quelles dans un \textit{data lake}, ou dans un \textit{lakehouse} (qui combine la souplesse du \textit{data lake} et la gouvernance ACID du \textit{data warehouse}), et transformées plus tard, directement par la puissance de calcul de la destination. 
+
+Ces flux d'intégration s'exécutent selon deux modes. Le traitement par lots (\textit{batch}) traite les données à intervalles réguliers (chaque nuit, chaque fin de mois) : c'est la norme pour les rapports financiers ou logistiques. Le traitement en flux (\textit{streaming}) traite les données dès leur génération, utile pour la détection de fraude ou le suivi d'appareils connectés, mais avec un coût d'infrastructure souvent trop élevé pour une structure de taille intermédiaire.
+
+\subsection{Outils d'orchestration modernes : analyse comparative des frameworks}
+
+Quand les pipelines se complexifient (multiplication des tâches d'ingestion, dépendances logiques), un outil d'orchestration devient nécessaire. Il planifie, exécute et surveille les flux en modélisant les pipelines sous forme de graphes orientés acycliques (DAG) : chaque nœud est une tâche (extraction d'un fichier, exécution d'un script SQL), chaque arête une contrainte d'ordre.
+
+Trois frameworks dominent le marché de l'orchestration, chacun avec sa propre philosophie :
+
+\begin{itemize}
+    \item \textbf{Apache Airflow :} Développé par Airbnb puis repris par la fondation Apache, Airflow est le standard de l'industrie grâce à sa maturité et son approche \textit{Configuration as Code} \cite{fix_airflowDocumentation2026}. Écrit en Python, il définit des DAG de complexité arbitraire et dispose d'un catalogue d'opérateurs pré-intégrés pour la quasi-totalité des technologies du marché.
+    \item \textbf{Prefect :} Framework \textit{cloud-native} plus récent, Prefect remplace les DAG rigides d'Airflow par des graphes dynamiques. Sa philosophie de « succès par défaut » fait que l'orchestrateur n'intervient qu'en cas d'anomalie, ce qui facilite le déploiement sur des infrastructures distribuées.
+    \item \textbf{Dagster :} Dagster suit une approche \textit{data-aware} : au-delà de l'exécution des tâches, il trace le cycle de vie et le lignage des données (\textit{data lineage}) produites à chaque étape, ce qui facilite les tests unitaires et la validation de la qualité des données.
+\end{itemize}
+
+Le tableau \ref{tab:comparatif_orchestrateurs} compare ces trois solutions selon des critères techniques et opérationnels clés.
+
+\begin{table}[htbp]
+\centering
+\caption{Tableau comparatif des frameworks d'orchestration modernes}
+\label{tab:comparatif_orchestrateurs}
+\small
+\begin{tabular}{|p{2.5cm}|p{3.2cm}|p{3.2cm}|p{3.2cm}|}
+\hline
+\textbf{Critères} & \textbf{Apache Airflow} & \textbf{Prefect} & \textbf{Dagster} \\ \hline
+\textbf{Maturité} & Très élevée (Standard de l'industrie) & Élevée (Moderne) & Moyenne (Émergent) \\ \hline
+\textbf{Modélisation} & DAG statiques explicitement définis en Python & Graphes dynamiques basés sur des décorateurs Python & Orienté actifs de données (\textit{Data Assets} et \textit{Lineage}) \\ \hline
+\textbf{Courbe d'apprentissage} & Modérée à difficile (Architecture complexe) & Facile à modérée (Approche intuitive) & Difficile (Nécessite un changement de paradigme) \\ \hline
+\textbf{Communauté} & Massive, des milliers de contributeurs actifs & Importante, forte croissance & Spécialisée, en pleine expansion \\ \hline
+\textbf{Coût et Licence} & Open-source gratuit (Apache 2.0) & Open-source avec modèle commercial Cloud & Open-source avec modèle commercial Cloud \\ \hline
+\textbf{Cas d'usage cible} & Grands groupes, pipelines complexes & Environnements Cloud, applications conteneurisées & Projets centrés sur la gouvernance de données \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Enjeux spécifiques des données hétérogènes en contexte PME}
+
+Même avec des orchestrateurs modernes, leur déploiement dans une PME d'Afrique subsaharienne se heurte à ce que Pervaiz appelle le « \textit{Development Data Pipeline} » \cite{pervaizUnderstandingChallengesData2019}. Premier verrou : l'extraction depuis des sources non standardisées. Contrairement aux grandes entreprises, une PME s'appuie surtout sur des fichiers Excel saisis à la main, des PDF ou des messages asynchrones \cite{pervaizUnderstandingChallengesData2019}. Ces fichiers changent souvent de structure (colonnes modifiées, lignes vides, types incohérents), ce qui rend le nettoyage long et itératif.
+
+Avec une qualité de données médiocre et une énergie instable, le pipeline doit être idempotent et gérer les erreurs par des mécanismes de \textit{retry} (tentatives de réexécution) \cite{reisFundamentalsDataEngineering2022}. Un pipeline est idempotent si le rejouer avec les mêmes données produit exactement le même résultat, sans doublons ni corruption des agrégats. Cette propriété est indispensable pour le \textit{backfill} (rattrapage historique) après une panne réseau ou une correction de code. L'orchestrateur doit isoler les anomalies, alerter sans bloquer tout le flux, et garantir que les transformations restent reproductibles.
+
+\subsection{Synthèse critique et justification du choix technologique}
+
+La littérature et les contraintes du terrain pointent vers un même besoin : un outil d'orchestration à la fois techniquement fiable et indépendant des solutions propriétaires coûteuses, pour limiter le risque de \textit{digital colonialism} décrit par Nothias \cite{nothiasIntellectualHistoryDigital2025}.
+
+Apache Airflow s'impose comme le choix le plus pertinent pour SOYAFF. Sa licence Apache 2.0 garantit une liberté totale d'utilisation sans dépendance à un éditeur commercial, ce qui répond au premier facteur clé de succès identifié en §2.1.4 (adaptation locale et open-source). Sa maturité et sa large communauté assurent aussi des connecteurs natifs pour les sources hétérogènes des PME (Excel, PDF, PostgreSQL), sans développement spécifique coûteux. Et ses pipelines idempotents, avec gestion du \textit{backfill}, conviennent bien aux environnements à connectivité intermittente comme le corridor Dakar--Bamako. Les alternatives (Prefect, Dagster) reposent sur des modèles commerciaux cloud, qui réintroduiraient la dépendance logicielle que l'architecture cherche à éviter. La section~\ref{chap:etl} détaille l'implémentation de ces pipelines Airflow.
+
+Une fois les données consolidées, normalisées et rendues accessibles par les pipelines ETL, la question se pose de leur exploitation directe par des utilisateurs métier, souvent non techniciens, dans un contexte d'aide à la décision opérationnelle. Les systèmes de génération augmentée par récupération (RAG), présentés dans la section suivante, offrent une modalité d'interaction en langage naturel bien adaptée aux corpus documentaires de taille réduite et aux équipes peu familiarisées avec les interfaces techniques.
+
+\section{Systèmes RAG et IA générative}
+\label{sec:Systemes_RAG_IA_Generative}
+
+\subsubsection{De l'architecture attentionnelle aux Large Language Models}
+
+L'IA générative moderne part de la rupture introduite par Vaswani et al. \cite{vaswaniAttentionAllYou2017} avec l'architecture Transformer. En s'affranchissant des contraintes séquentielles des réseaux récurrents (RNN, LSTM) et des convolutions, le mécanisme d'auto-attention (\textit{self-attention}) calcule en temps constant les dépendances entre tokens, quelle que soit leur distance dans le texte \cite{vaswaniAttentionAllYou2017}. Cette parallélisation a permis le changement d'échelle (\textit{scaling}) des modèles de langage. Avec GPT-3, Brown et al. \cite{brownLanguageModelsAre2020} ont mis en évidence l'\textit{in-context learning} : un grand modèle de langage (LLM), entraîné sur des centaines de milliards de tokens, n'a plus besoin d'un \textit{fine-tuning} par tâche, il peut suivre des instructions à partir de simples exemples donnés dans le prompt.
+
+Deux familles de modèles se distinguent. D'un côté, les modèles fermés (GPT-4 d'OpenAI, Claude d'Anthropic, Gemini de Google) offrent des capacités de raisonnement élevées, avec de très bons scores sur les benchmarks HELM ou MMLU \cite{touvronLlamaOpenEfficient2023}. De l'autre, les modèles \textit{open-weights} (poids publics, mais pas forcément les données d'entraînement) offrent une alternative performante et souveraine. LLaMA de Touvron et al. \cite{touvronLlamaOpenEfficient2023} a montré qu'un modèle de taille modérée (7B à 65B paramètres) pouvait égaler ou dépasser des modèles propriétaires géants comme GPT-3. Mistral 7B de Jiang et al. \cite{fix_jiangMistral7B2023} a accéléré cette tendance en optimisant l'inférence via l'attention par requêtes groupées (GQA) et l'attention par fenêtre glissante (SWA), pour surpasser des modèles ouverts deux fois plus gros \cite{fix_jiangMistral7B2023}.
+
+\subsubsection{Le paradigme originel du Retrieval-Augmented Generation (RAG)}
+
+Mais les LLM ont des limites qui pèsent sur leur déploiement en production. L'hallucination pousse le modèle à générer des affirmations fausses avec une assurance trompeuse, un effet direct de la prédiction purement probabiliste du token suivant \cite{gaoRetrievalAugmentedGenerationLarge2024}. Ses connaissances restent aussi « gelées » (\textit{parametric knowledge}) à la date de fin du pré-entraînement, donc aveugles aux informations récentes \cite{lewisRetrievalaugmentedGenerationKnowledgeintensive2020}. Et il ne peut pas accéder nativement aux données confidentielles d'une organisation sans un réentraînement lourd, exposé à l'oubli catastrophique.
+
+Pour combler ces lacunes sans toucher aux poids du modèle, Lewis et al. \cite{lewisRetrievalaugmentedGenerationKnowledgeintensive2020} ont proposé le \textit{Retrieval-Augmented Generation} (RAG) : une mémoire externe (un corpus de documents) vient compléter la mémoire interne du LLM \cite{lewisRetrievalaugmentedGenerationKnowledgeintensive2020}. Un système RAG classique fonctionne en trois étapes \cite{gaoRetrievalAugmentedGenerationLarge2024} :
+\begin{enumerate}
+    \item \textbf{Le Retriever (Récupération) :} La requête de l'utilisateur est convertie en vecteur dense par un modèle d'\textit{embedding}, comme Sentence-BERT \cite{reimersSentencebertSentenceEmbeddings2019}. Ce vecteur est comparé à un index où les documents ont été découpés en segments (\textit{chunks}) et vectorisés \cite{karpukhinDensePassageRetrieval2020}. Une similarité cosinus ou un algorithme MIPS (\textit{Maximum Inner Product Search}) extrait les $k$ segments les plus pertinents \cite{karpukhinDensePassageRetrieval2020}.
+    \item \textbf{L'Augmentation (Enrichissement) :} Les segments extraits sont injectés dans le prompt de l'utilisateur, par des techniques de \textit{prompt engineering}, pour créer un contexte enrichi.
+    \item \textbf{Le Generator (Génération) :} Le LLM reçoit ce prompt enrichi et formule une réponse ancrée (\textit{grounded}) dans les documents fournis, ce qui réduit l'hallucination et permet de citer les sources \cite{lewisRetrievalaugmentedGenerationKnowledgeintensive2020}.
+\end{enumerate}
+
+Le déploiement industriel de cette architecture s'appuie sur des bases de données vectorielles, comme FAISS pour l'indexation en mémoire distribuée \cite{karpukhinDensePassageRetrieval2020}, pgvector comme extension SQL, ou des solutions dédiées telles que Pinecone, Qdrant, Weaviate et Chroma.
+
+\subsubsection{Évolution des architectures : de Naive RAG aux configurations avancées}
+
+Gao et al. \cite{gaoRetrievalAugmentedGenerationLarge2024} montrent que le domaine a vite évolué du \textit{Naive RAG} vers des approches plus élaborées, pour corriger les défauts d'une recherche purement sémantique : bruit, manque de précision. 
+
+L'\textit{Advanced RAG} optimise en amont (\textit{pre-retrieval}) et en aval (\textit{post-retrieval}) \cite{gaoRetrievalAugmentedGenerationLarge2024}. En amont, le \textit{query rewriting} utilise un LLM secondaire pour reformuler la requête et l'aligner sur le corpus documentaire ; la recherche hybride combine les embeddings denses avec les index lexicaux classiques (BM25) \cite{karpukhinDensePassageRetrieval2020}. En aval, le \textit{re-ranking}, via des \textit{cross-encoders}, réévalue la pertinence des segments extraits pour ne garder que l'essentiel dans la fenêtre de contexte du LLM, ce qui évite la surcharge d'information et le problème du « \textit{lost in the middle} » \cite{gaoRetrievalAugmentedGenerationLarge2024}.
+
+Plus récemment, les architectures convergent vers l'\textit{Agentic AI} et le \textit{GraphRAG}. L'Agentic RAG transforme le pipeline statique en agent autonome : équipé d'outils (\textit{tool use}), il évalue la qualité de sa propre récupération et peut relancer une sous-requête ou itérer (\textit{adaptive retrieval}) jusqu'à obtenir des preuves cohérentes \cite{gaoRetrievalAugmentedGenerationLarge2024}. Le GraphRAG, lui, relie le RAG sémantique à des graphes de connaissances (\textit{Knowledge Graphs}), pour répondre à des questions de synthèse qui couvrent tout un corpus documentaire \cite{gaoRetrievalAugmentedGenerationLarge2024}.
+
+\subsubsection{Arbitrage infrastructurel : Cloud souverain versus Inférence locale}
+
+Concrètement, ces architectures imposent un arbitrage entre services cloud managés et infrastructures d'inférence locales. Le tableau \ref{tab:rag_cloud_local} compare les deux selon des critères industriels.
+
+\begin{table}[H]
+  \centering
+  \caption{Analyse comparative des infrastructures d'inférence pour l'IA générative}
+  \label{tab:rag_cloud_local}
+  \small
+  \begin{tabular}{|p{3cm}|p{5.5cm}|p{5.5cm}|}
+    \hline
+    \textbf{Critères} & \textbf{Cloud (ex. OpenAI, Anthropic)} & \textbf{Local (ex. Ollama, vLLM, llama.cpp)} \\
+    \hline
+    \textbf{Puissance et raisonnement} &
+      Exceptionnelle (modèles frontières propriétaires, fenêtres de contexte massives). &
+      Limitée à modérée (modèles contraints par la VRAM locale disponible). \\
+    \hline
+    \textbf{Coût opérationnel} &
+      Variable au jeton (facturation au token, risque d'explosion budgétaire à grande échelle). &
+      CapEx initial (GPU), OpEx quasi nul (coût électrique uniquement). \\
+    \hline
+    \textbf{Latence et débit} &
+      Dépendante du réseau et des surcharges serveur ; variable et non maîtrisée. &
+      Faible et prévisible ; pas de goulot réseau, débit stable. \\
+    \hline
+    \textbf{Souveraineté des données} &
+      Nulle à limitée : données transitent et sont traitées sur des serveurs tiers, soumis au Cloud Act américain \cite{anssibsiCloudSovereignty2025}. &
+      Totale : les données ne quittent jamais le périmètre de l'organisation. \\
+    \hline
+    \textbf{Conformité réglementaire} &
+      Risque d'incompatibilité avec la Loi 2008-12 (Sénégal) \cite{senegalLoi200812} et la Convention de Malabo \cite{uaConventionMalabo2014} pour les données sensibles. &
+      Pleine conformité : maîtrise locale des clés de chiffrement et de la localisation des données. \\
+    \hline
+    \textbf{Résilience hors-ligne} &
+      Nulle : toute panne réseau ou coupure de câble sous-marin \cite{cariolleInfrastructuresEconomieNumeriques2018} interrompt le service. &
+      Totale : fonctionne en mode déconnecté, critique pour les zones à connectivité instable. \\
+    \hline
+    \textbf{Cas d'usage cible} &
+      Requêtes complexes, raisonnement multi-étapes, volume de requêtes faible à moyen. &
+      Données confidentielles, déploiements en environnement contraint, résilience offline. \\
+    \hline
+  \end{tabular}
+\end{table}
+
+La littérature sur les RAG et l'IA générative révèle une tension entre deux logiques complémentaires. D'un côté, les modèles cloud propriétaires (GPT-4, Claude) offrent des capacités de raisonnement inégalées, validées sur les benchmarks de référence \cite{touvronLlamaOpenEfficient2023}. De l'autre, les modèles \textit{open-weights} auto-hébergés (Mistral 7B \cite{fix_jiangMistral7B2023}, LLaMA \cite{touvronLlamaOpenEfficient2023}), exécutables via Ollama ou vLLM, garantissent la souveraineté totale des données. Ces deux logiques sont plus complémentaires qu'opposées : l'architecture hybride de ce mémoire tire parti des deux, selon la sensibilité de chaque requête. Pour SOYAFF, où les données financières et logistiques sont confidentielles et la connectivité intermittente, ce choix répond directement à Q2 (benchmark comparatif) et Q1 (architecture résiliente en environnement contraint).
+
+\section{Souveraineté numérique et contraintes africaines}
+\label{sec:Souveraineté_numérique_contraintes_africaines} 
+
+\subsubsection{Le concept de souveraineté numérique : dimensions théoriques et initiatives mondiales}
+
+La souveraineté numérique désigne la capacité d'un État, d'une organisation ou d'une entreprise à contrôler ses infrastructures, ses couches logicielles et ses données dans le cyberespace, sans dépendance subie envers des acteurs technologiques ou juridiques étrangers \cite{anssibsiCloudSovereignty2025}. À l'échelle d'une entreprise, cela passe par trois choses : la localisation des données (\textit{data residency}), le contrôle des clés de chiffrement, et la transparence de la chaîne d'approvisionnement logicielle (\textit{software supply chain}), pour se prémunir des portes dérobées (\textit{backdoors}) ou des ruptures de service unilatérales. 
+
+Face au duopole des \textit{hyperscalers} américains (AWS, Azure, Google Cloud) et des géants asiatiques (BATX : Baidu, Alibaba, Tencent, Xiaomi), qui captent près des deux tiers du marché mondial du stockage distribué, des ripostes ont émergé \cite{anssibsiCloudSovereignty2025}. L'Union européenne a lancé Gaia-X pour un cloud souverain basé sur l'interopérabilité, la portabilité des architectures et le rejet des lois extraterritoriales \cite{anssibsiCloudSovereignty2025}. Des alliances comme l'ESTIA (\textit{European Sovereign Tech Industry Alliance}) cherchent aussi une immunité juridique contre le \textit{Cloud Act} américain, qui permet aux autorités fédérales de saisir des données hébergées chez un prestataire américain, même si les serveurs sont en Europe ou en Afrique \cite{anssibsiCloudSovereignty2025}.
+
+\subsubsection{Le paysage juridique et réglementaire en Afrique de l'Ouest}
+
+Face à ces vulnérabilités et au risque de colonialisme numérique formalisé par Nothias \cite{nothiasIntellectualHistoryDigital2025}, le continent africain a construit son propre cadre réglementaire. Au niveau continental, le texte de référence est la Convention de l'Union africaine sur la cybersécurité et la protection des données personnelles (« Convention de Malabo »), adoptée en 2014 et entrée en vigueur en juin 2023 \cite{uaConventionMalabo2014}. Elle impose aux États signataires de poser les bases civiles et pénales d'un espace numérique de confiance, en harmonisant le commerce électronique et en encadrant les flux transfrontaliers de données personnelles \cite{uaConventionMalabo2014}.
+
+Au niveau sous-régional, cette dynamique s'appuie sur les directives de l'UEMOA et de la CEDEAO \cite{cariolleInfrastructuresEconomieNumeriques2018}. Les prélèvements illicites documentés par l'OPA/UEMOA montrent bien l'écart entre les textes et les pratiques réelles sur le terrain. Le Sénégal a été précurseur avec la Loi n° 2008-12 du 25 janvier 2008 sur la protection des données personnelles \cite{senegalLoi200812}, qui institue la Commission de protection des Données Personnelles (CDP), une autorité indépendante dotée de pouvoirs d'investigation, de contrôle et de sanction \cite{senegalLoi200812}. Elle anticipe même le RGPD européen en soumettant tout transfert de données vers un pays tiers à une autorisation préalable \cite{senegalLoi200812}. Mais son application se heurte à une asymétrie de puissance technique : tant que les infrastructures d'hébergement restent à l'étranger, le contrôle légal de la CDP reste séparé du contrôle physique de la donnée \cite{anssibsiCloudSovereignty2025}.
+
+\subsubsection{Contraintes structurelles et environnementales du contexte subsaharien}
+
+L'autonomie numérique (\textit{digital autonomy}) des PME subsahariennes se heurte à des contraintes environnementales sévères. Cariolle et Goujon \cite{cariolleInfrastructuresEconomieNumeriques2018} montrent que la connectivité de la sous-région dépend presque exclusivement des câbles sous-marins à fibre optique (SAT-3, ACE, WACS). Leurs ruptures accidentelles, souvent causées par des ancres de navires ou des filets de pêche, coûtent des millions de dollars par jour et saturent les liaisons satellite de secours \cite{cariolleInfrastructuresEconomieNumeriques2018}. Pour une PME dépendante d'un cloud hébergé en Europe ou aux États-Unis, ces pannes coupent instantanément l'accès aux outils de production et aux données opérationnelles \cite{cariolleInfrastructuresEconomieNumeriques2018}.
+
+S'ajoutent des barrières économiques et linguistiques. La dépendance aux solutions SaaS occidentales impose une facturation en devises étrangères fluctuantes (Dollar, Euro), un risque pour des PME dont les revenus sont en Franc CFA. Les grands fournisseurs d'IA ignorent aussi la quasi-totalité des langues africaines locales et limitent leurs interfaces au français ou à l'anglais \cite{nothiasIntellectualHistoryDigital2025}, ce qui freine la diffusion du numérique dans un tissu économique largement informel.
+
+\subsubsection{Synthèse critique et justification de l'architecture logicielle hybride}
+
+Au vu de l'état de l'art, la souveraineté numérique est une contrainte de conception technique (\textit{design constraint}), pas seulement une exigence juridique. L'asymétrie du colonialisme numérique, l'instabilité de la connectivité terrestre et le coût des jetons d'API cloud en devises étrangères disqualifient toute architecture reposant uniquement sur des dépendances logicielles centralisées hors du continent \cite{anssibsiCloudSovereignty2025, nothiasIntellectualHistoryDigital2025}.
+
+Cette double contrainte justifie le choix architectural de ce travail : un modèle d'intégration de données hybride, avec des pipelines locaux fiables et une mémoire de travail hébergée sur des serveurs locaux ou privés (\textit{self-hosting}). En privilégiant l'inférence locale de modèles RAG \textit{open-weights} (LLaMA, Mistral) via des runtimes open-source (Ollama, vLLM), l'organisation s'affranchit de la dépendance réseau transfrontalière et du risque d'exposition au \textit{Cloud Act} américain \cite{anssibsiCloudSovereignty2025}. C'est ce compromis, entre performance et étanchéité souveraine des données, qui rend possible une transformation numérique durable pour les organisations subsahariennes.
+
+Ces quatre dimensions (digitalisation des PME africaines, architectures de données, systèmes RAG, souveraineté numérique) nourrissent chacune une partie de notre problématique. Elles permettent maintenant d'identifier la contribution que ce mémoire entend apporter à la littérature.
+
+
+\section{Synthèse et positionnement}
+\label{sec:Synthèse_positionnement} 
+
+\subsubsection{Synthèse des acquis de la littérature}
+
+Cette revue de littérature dégage un fil conducteur pour la transformation numérique en Afrique subsaharienne. La numérisation des organisations dépend de facteurs d'adoption (utilité perçue, conditions facilitatrices) modélisés par TAM et UTAUT, au-delà du seul déploiement d'infrastructures \cite{davisTechnologyAcceptanceModel1989, venkateshUserAcceptanceInformation2003}. Le passage d'une numérisation de surface à une intégration profonde, via des systèmes ERP, produit des gains de productivité mesurables \cite{IMPACTLADOPTIONTECHNOLOGIES2025, tadjuidjeTechnologiesLeadershipRevolutionner2024}. L'ingénierie des données privilégie de plus en plus le paradigme ELT, mieux adapté aux flux hétérogènes et asynchrones \cite{akindemowoConceptualFrameworkAutomating2021, reisFundamentalsDataEngineering2022}. Et les architectures RAG offrent une interaction en langage naturel pour valoriser ces données, tout en posant des questions de souveraineté et de conformité réglementaire \cite{lewisRetrievalaugmentedGenerationKnowledgeintensive2020, anssibsiCloudSovereignty2025, nothiasIntellectualHistoryDigital2025}.
+
+\subsubsection{Identification des lacunes de la recherche}
+
+Malgré cette richesse, l'état de l'art laisse trois zones d'ombre que ce travail se propose d'explorer :
+\begin{enumerate}
+    \item \textbf{Peu d'études sectorielles sur les flux logistiques internationaux :} La littérature couvre la transition numérique globale des PME ouest-africaines, mais peu la digitalisation logicielle des PME de l'import-export et de la logistique portuaire, pourtant centrales dans la réduction des barrières commerciales visée par l'UEMOA.
+    \item \textbf{Pas de benchmark Cloud/Local sur des corpus francophones métier :} L'évaluation des systèmes RAG se concentre sur des infrastructures cloud payantes et des bases de connaissances anglophones. Aucun comparatif rigoureux n'existe entre un RAG cloud et un RAG local \textit{open-weights} sur des corpus d'entreprise en français.
+    \item \textbf{Pas de référentiel d'architecture réplicable en environnement contraint :} Les guides de conception logicielle actuels supposent une connectivité stable et continue. Aucun cadre architectural standardisé et validé empiriquement ne permet à une PME subsaharienne de déployer un pipeline de données souverain, capable d'absorber l'informalité des données locales.
+\end{enumerate}
+
+\subsubsection{Positionnement de la contribution}
+
+Notre travail de recherche entend contribuer à combler ces trois lacunes de la littérature scientifique. Ce mémoire apporte d'abord une contribution empirique, en modélisant et en analysant les processus de gestion de données spécifiques d'une PME d'import-export ouest-africaine à travers le projet SOYAFF. Nous apportons ensuite une contribution expérimentale, en réalisant un benchmark technique complet et reproductible, qui évalue les performances réelles (latence, précision factuelle, dégradation de la perplexité suite à la quantification) d'un système RAG local basé sur Ollama/vLLM face aux solutions API cloud courantes, sur un corpus documentaire métier exclusivement en français. Ce travail formule enfin une contribution d'ingénierie logicielle, en concevant, déployant et documentant un référentiel d'architecture décisionnelle hybride et souverain, qui combine l'orchestration de pipelines de données idempotents sous Apache Airflow et l'accès à une interface IA locale, et démontre la viabilité technique d'un système d'information résilient face au colonialisme numérique.
+On peut relier chaque lacune à une question de recherche : la lacune~1 (études sectorielles sur la logistique import-export) répond à \textbf{Q1} (architecture adaptée au contexte PME ouest-africain) ; la lacune~2 (benchmark Cloud/Local sur corpus francophone) répond à \textbf{Q2} (apports comparés du RAG cloud vs local) ; la lacune~3 (référentiel d'architecture réplicable) alimente \textbf{Q4} (généralisation à d'autres PME d'Afrique subsaharienne). \textbf{Q3} (impact métier et coût réel de la digitalisation) s'appuie sur la synthèse empirique de la maturité numérique des PME (\S~2.1.3) et sur les cadres d'évaluation RAG (\S~2.3).

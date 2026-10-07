@@ -1,0 +1,88 @@
+\chapter{Réalisation de la solution}
+\label{chap:realisation}
+
+Ce chapitre décrit la mise en œuvre de la plateforme, brique par brique. Pour chacune, nous indiquons ce que nous avons déployé et une capture en apporte la preuve. Les captures établissent l'existence et le fonctionnement du système ; sa valeur est mesurée au chapitre~\ref{chap:evaluation}. La configuration détaillée figure en annexe~\ref{annexe:deploiement}.
+
+\section{Environnement de réalisation}
+\label{sec:env_realisation}
+
+Nous avons déployé toute la plateforme sur un seul serveur dédié, loué chez OneProvider à Paris (ADR-03, \S\ref{sec:adr}). Le tableau~\ref{tab:env_serveur} en donne les caractéristiques et la Figure~\ref{fig:real_serveur} montre la configuration retenue à la commande.
+
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Caractéristiques du serveur de production}
+\label{tab:env_serveur}
+\begin{tabularx}{0.85\linewidth}{|l|X|}
+\hline
+\rowcolor[HTML]{EFEFEF}
+\textbf{Élément} & \textbf{Valeur} \\ \hline
+Hébergeur et localisation & OneProvider, Paris \\ \hline
+Processeur & Intel Xeon E3-1240 v6, 4 cœurs / 8 threads, 3,7~GHz \\ \hline
+Mémoire vive & 32~Go DDR3 \\ \hline
+Stockage & 3~$\times$~256~Go SSD SATA \\ \hline
+Réseau & 1~Gbit/s, trafic illimité \\ \hline
+Sauvegarde externe & 100~Go (FTP), incluse dans l'offre \\ \hline
+Système d'exploitation & Ubuntu 24.04 LTS \\ \hline
+Coût & 30,23~USD/mois, sans frais d'installation \\ \hline
+\end{tabularx}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/captures/real_serveur_offre.png}
+    \caption{Configuration du serveur retenu à la commande}
+    \label{fig:real_serveur}
+\end{figure}
+
+À l'installation du système, nous avons réservé le premier disque au système (\texttt{/boot}, 8~Go de \textit{swap}, racine). Les deux autres disques reçoivent les données Docker et les fichiers Excel importés (Figure~\ref{fig:real_partitionnement}). Un disque saturé par les images Docker ne bloque donc pas le système.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{figures/captures/real_partitionnement.png}
+    \caption{Partitionnement des trois disques à l'installation d'Ubuntu 24.04 LTS}
+    \label{fig:real_partitionnement}
+\end{figure}
+
+Le tableau~\ref{tab:env_versions} liste les composants logiciels en production et leur version, relevées directement sur le serveur. Les commandes de relevé figurent en annexe~\ref{annexe:deploiement}.
+
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Composants logiciels en production (relevé du 27~septembre~2026)}
+\label{tab:env_versions}
+\begin{tabularx}{\linewidth}{|l|X|l|}
+\hline
+\rowcolor[HTML]{EFEFEF}
+\textbf{Composant} & \textbf{Rôle} & \textbf{Version} \\ \hline
+Docker Engine / Compose & Conteneurisation et orchestration mono-hôte & 29.8.1 / 5.5.1 \\ \hline
+PostgreSQL + pgvector & Base relationnelle et vectorielle & 16.15 / 0.8.6 \\ \hline
+Apache Airflow & Orchestration du pipeline ETL & 2.7.3 \\ \hline
+Python & Service RAG local (FastAPI) et ETL & 3.11.16 \\ \hline
+Ollama / Mistral~7B & Inférence locale & 0.34.4 / 7B \\ \hline
+n8n & Orchestration du routage hybride & 2.40.7 \\ \hline
+Node.js & Backend Express & 20.20.2 \\ \hline
+GitLab Runner & Exécution des pipelines CI/CD & 19.4.1 \\ \hline
+\end{tabularx}
+\end{table}
+
+Le code est réparti en deux dépôts GitLab. Le premier, \texttt{assistant-soyaff}, porte le DAG Airflow, l'API RAG, le workflow n8n et les migrations de la base (Figure~\ref{fig:real_arbo_ia}). Le second, \texttt{assistant-soyaff-app}, porte le backend Express et le frontend React (Figure~\ref{fig:real_arbo_app}). Chaque dépôt a son propre pipeline de déploiement (\S\ref{sec:devops_cicd}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/captures/real_arbo_ia.png}
+    \caption{Arborescence du dépôt \texttt{assistant-soyaff} déployé sur le serveur}
+    \label{fig:real_arbo_ia}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/captures/real_arbo_app.png}
+    \caption{Arborescence du dépôt \texttt{assistant-soyaff-app} déployé sur le serveur}
+    \label{fig:real_arbo_app}
+\end{figure}
+
+\input{etl}
+\input{webapp}
+\input{ia_rag}
+\input{devops}

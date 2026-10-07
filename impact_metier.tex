@@ -1,0 +1,112 @@
+\section{Mesure de l'impact métier avant/après (H3, H1)}
+\label{chap:impact_metier}
+
+Cette section passe du technique au métier : la plateforme fait-elle gagner du temps, réduit-elle les erreurs, et à quel coût ? Elle statue sur \emph{H3} (« la suppression de la double saisie réduit le temps de traitement journalier d'au moins 70~\% et le taux d'erreur de saisie d'au moins 80~\% ») et sur \emph{H1}, en chiffrant le coût réel de la plateforme. Chaque chiffre est qualifié : \textbf{mesuré} (observé sur des données réelles), \textbf{structurel} (garanti par construction) ou \textbf{reconstitué} (déduit de témoignages, faute de mesure dédiée). H3 a trois volets (temps, erreurs, latence), jugés séparément.
+
+\subsection{Protocole de mesure}
+\label{sec:impact_protocole}
+
+\textbf{Le temps : cinq sessions appariées.} Chaque session rejoue le même lot d'opérations, le même jour, dans les deux mondes : la saisie réelle sur la plateforme, puis une ressaisie Excel du même lot par le même agent. On compare ainsi des journées de charge identique. L'agent chronométré est l'agent de saisie de Dakar : le gain mesuré est celui de la saisie à Dakar. La fin de la ressaisie à Bamako n'a pas été chronométrée ; elle n'est documentée que par les entretiens.
+
+\textbf{Les erreurs : un échantillon tiré au hasard.} La mesure porte sur l'import Excel par l'ETL. Quatre récapitulatifs mensuels (1~240 lignes) ont été tirés au hasard parmi les quinze disponibles, avec une graine fixe : choisir des fichiers connus pour leurs erreurs aurait produit une démonstration, pas une mesure. Un script appelle directement les fonctions de production, sans toucher à une base. La saisie directe est hors périmètre : ses contrôles de délai (\S\ref{sec:webapp_delais}) ont été déployés en septembre, après ces mesures de juillet.
+
+\subsection{Gain de temps (H3, volet temps)}
+\label{sec:impact_temps}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{Chronométrage apparié du temps de saisie, 5 sessions}
+\label{tab:impact_chrono}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{2.3cm}|r|>{\raggedleft\arraybackslash}p{3.6cm}|>{\raggedleft\arraybackslash}p{3.6cm}|r|}
+\hline
+\rowcolor[HTML]{EFEFEF}
+\textbf{Session (date)} & \textbf{Nb opé.} & \textbf{Avant (Excel)} & \textbf{Après (plateforme)} & \textbf{Réduction} \\ \hline
+1 (24/07/2026) & 40 & 480~min (12,00~min/opé) & 69,0~min (1,73~min/opé) & 85,6~\% \\ \hline
+2 (27/07/2026) & 35 & 360~min (10,29~min/opé) & 76,3~min (2,18~min/opé) & 78,8~\% \\ \hline
+3 (28/07/2026) & 14 & 112~min (8,00~min/opé) & 16,1~min (1,15~min/opé) & 85,6~\% \\ \hline
+4 (29/07/2026) & 21 & 210~min (10,00~min/opé) & 30,6~min (1,46~min/opé) & 85,4~\% \\ \hline
+5 (30/07/2026) & 23 & 322~min (14,00~min/opé) & 35,0~min (1,52~min/opé) & 89,1~\% \\ \hline
+\textbf{Total / moyenne pondérée} & \textbf{133} & \textbf{1~484~min (11,16~min/opé)} & \textbf{227,0~min (1,71~min/opé)} & \textbf{84,7~\%} \\ \hline
+\end{tabular}
+\end{table}
+
+Sur 133 opérations, le temps moyen passe de 11,16~min à 1,71~min (Tableau~\ref{tab:impact_chrono}). Un chronométrage manuel ne justifie pas une décimale : nous retenons \textbf{une réduction de l'ordre de 85~\%}, stable d'une session à l'autre (de 78,8 à 89,1~\%). L'écart entre sessions a une cause identifiée par l'agent lui-même : une opération simple se saisit en 1 à 2~minutes, une opération qui exige un bon de livraison ou une quantité en demande 2 à 4.
+
+\textbf{Verdict.} Le volet temps de H3 est \textbf{confirmé} : le seuil de 70~\% est dépassé de quinze points. Cette marge absorbe les biais de mesure discutés au §\ref{sec:impact_limites}.
+
+\subsection{Réduction des erreurs (H3, volet erreurs)}
+\label{sec:impact_erreurs}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{Taux d'erreur par classe, échantillon de 1~240 lignes (4 fichiers RECAP-MENSUEL, graine 2026)}
+\label{tab:impact_erreurs}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{4.6cm}|r|r|>{\raggedright\arraybackslash}p{5.0cm}|}
+\hline
+\rowcolor[HTML]{EFEFEF}
+\textbf{Classe d'erreur} & \textbf{Occurrences} & \textbf{Taux} & \textbf{Statut après ETL} \\ \hline
+Doublons (lignes identiques) & 0 & 0,0~\% & \textbf{Structurellement nul} : garanti par construction \\ \hline
+Dates illisibles & 0 & 0,0~\% & --- \\ \hline
+Dates inversées (rupture chronologique) & 1 & 0,1~\% & Non corrigé : le format est interprété, l'ordre ne l'est pas \\ \hline
+Montants non interprétables & 0 & 0,0~\% & --- \\ \hline
+Montants négatifs suspects & 0 & 0,0~\% & Non détecté : aucune validation de signe \\ \hline
+Ruptures de formule (chaîne de solde) & 4 & 0,3~\% & Non détecté : aucune vérification de cohérence \\ \hline
+\end{tabular}
+\end{table}
+
+L'échantillon est \textbf{très propre} : cinq erreurs sur 1~240 lignes, aucun doublon (Tableau~\ref{tab:impact_erreurs}). On ne peut pas mesurer une réduction de 80~\% sur une quantité proche de zéro. Deux constats restent possibles. Pour les doublons, la réduction est une \textbf{garantie de conception} : la contrainte d'unicité sur \texttt{source\_key} les rend impossibles, et le test de rejeu l'a démontré (\S\ref{sec: validation}). Pour les autres classes (dates inversées, ruptures de formule), l'ETL ne corrige rien : c'est une limite, pas une performance.
+
+Cet échantillon propre ne contredit pas le diagnostic du chapitre~\ref{chap:contexte}, qui décrivait des erreurs fréquentes. Le diagnostic rapportait le coût du contrôle manuel, fait chaque jour à Bamako ; l'échantillon mesure les erreurs qui restent \emph{après} ce contrôle.
+
+\textbf{Verdict.} Le volet erreurs est \textbf{partiellement étayé} : garanti pour les doublons, la classe la plus citée au diagnostic, mais le seuil global de 80~\% n'est pas vérifiable sur cet échantillon.
+
+\subsection{Latence d'information et bénéfice de réactivité}
+\label{sec:impact_latence}
+
+Ce volet est \textbf{reconstitué} à partir des observations de terrain et des entretiens. Avant la plateforme, quand la journée comptait moins d'une trentaine d'opérations, l'agent n'envoyait pas le récapitulatif : il attendait d'en cumuler davantage, ce qui pouvait retarder l'information de plusieurs jours, au-delà des 24 à 48~heures habituelles. Désormais, chaque opération est visible dès son enregistrement. Le chef logistique dit ne « plus avoir besoin d'attendre les fichiers Excel » ; l'assistant principal de Dakar dispose, « même absent, d'une vue globale de la journée ».
+
+Le bénéfice se lit sur les amendes pour défaut de papier. La plateforme n'évite pas la première pénalité, infligée au contrôle à l'aller. Mais informé aussitôt, le chef logistique peut faire renouveler la pièce manquante avant le retour du camion, et éviter une seconde sanction. Nous ne chiffrons pas ce gain : aucune donnée n'a été recueillie sur le nombre de pénalités évitées.
+
+\subsection{Limites de la mesure}
+\label{sec:impact_limites}
+
+\begin{itemize}
+    \item \textbf{Effet de rejeu.} La ressaisie Excel a été faite par un agent qui n'utilise plus Excel au quotidien. Le biais peut jouer dans les deux sens : la perte d'habitude allonge le temps « avant », la recopie de données déjà connues le raccourcit. La marge de quinze points absorbe l'un comme l'autre.
+    \item \textbf{Effet d'observation.} L'agent a pu changer de rythme en se sachant chronométré.
+    \item \textbf{Un seul opérateur.} Les cinq sessions reposent sur le même agent : la variation entre opérateurs n'est pas connue.
+    \item \textbf{Gain de Bamako non chronométré}, documenté seulement par entretien.
+    \item \textbf{Échantillon d'erreurs trop propre} pour établir un ratio.
+\end{itemize}
+Ces limites bornent la précision des chiffres, pas leur sens.
+
+\subsection{Coût réel de la plateforme et disponibilité (H1, \texttt{ENF-DISP-02})}
+\label{sec:impact_cout}
+
+Le Tableau~\ref{tab:impact_cout} additionne les dépenses récurrentes. Les montants facturés en dollars sont convertis au taux du 27~septembre~2026 (1~USD~=~598,02~FCFA), puis en euros à la parité fixe du franc CFA (1~€~=~655,957~FCFA).
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{Coût mensuel récurrent de la plateforme en production}
+\label{tab:impact_cout}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{4.2cm}|>{\raggedleft\arraybackslash}p{2.4cm}|>{\raggedright\arraybackslash}p{5.4cm}|}
+\hline
+\rowcolor[HTML]{EFEFEF}
+\textbf{Poste} & \textbf{Coût mensuel} & \textbf{Détail} \\ \hline
+Serveur dédié OneProvider & 30,23~USD & Xeon E3-1240 v6, 32~Go, 3~$\times$~256~Go SSD SATA, sauvegarde de 100~Go incluse, quatorze conteneurs \\ \hline
+API cloud Anthropic & $\approx$~10~USD & Agent cloud (\texttt{claude-sonnet-4-5}), usage réel \\ \hline
+Nom de domaine & 0,83~USD & \texttt{soyaff-logstique.com}, 10~USD par an ; certificat Cloudflare gratuit \\ \hline
+Inférence locale (Ollama, Mistral~7B) & 0 & Auto-hébergée sur le serveur déjà compté \\ \hline
+Logiciels (PostgreSQL, Airflow, n8n, Grafana, Docker) & 0 & Open source, sans licence \\ \hline
+\textbf{Total mensuel} & \textbf{41,06~USD} & \textbf{24~557~FCFA, soit 37,4~€} \\ \hline
+\end{tabular}
+\end{table}
+
+Le temps de développement n'entre pas dans ce total : \texttt{ENF-FRUG-01} porte sur le coût de l'infrastructure. Il est traité comme un investissement au §\ref{sec:roi}. Le benchmark a mesuré 0,033~USD par question cloud : 10~USD par mois correspondent à environ 300 questions analytiques.
+
+\textbf{Verdict H1.} Le coût s'établit à 37,4~€ par mois, sous le seuil de 50~€ : \textbf{H1 est confirmée}, avec une marge d'un quart du seuil. Il faudrait environ 400 questions cloud de plus par mois pour l'atteindre. Le cours du dollar reste un facteur de variation, le franc CFA étant arrimé à l'euro. La sauvegarde hors site est déjà incluse dans l'offre du serveur.
+
+\textbf{Disponibilité (\texttt{ENF-DISP-02}).} Les sondes \texttt{blackbox} (\S\ref{sec:devops_observabilite}) enregistrent en continu la disponibilité de trois services. Le calcul du taux sur une période significative n'a pas encore été fait : l'exigence est \textbf{rendue mesurable, mais pas encore mesurée}.
+

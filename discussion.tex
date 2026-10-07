@@ -1,0 +1,58 @@
+\section{Discussion des résultats}
+\label{chap:discussion}
+
+Cette section ne produit aucune mesure nouvelle. Elle croise les résultats du chapitre~\ref{chap:evaluation} pour dire ce qu'ils signifient ensemble, prend position sur le sens de la contribution après la réfutation de H2, revient sur le risque de sécurité découvert pendant la réalisation, puis examine la validité de l'ensemble. Les limites propres à chaque mesure ne sont pas répétées : elles sont rassemblées au §\ref{sec:limites_solution}.
+
+\subsection{Bilan croisé des quatre hypothèses}
+\label{sec:disc_bilan}
+
+\textbf{Le récit d'ensemble.} Prises une à une, les hypothèses donnent chacune un verdict. La plateforme est frugale : 37,4~€ par mois, sous le seuil de 50~€ avec une marge d'un quart (H1, §\ref{sec:impact_cout}). Elle transforme le travail quotidien : environ 85~\% de temps de saisie en moins (H3, §\ref{sec:impact_temps}). Elle est adoptée par tous ses utilisateurs, avec un score SUS moyen de 88,1 (§\ref{sec:adoption_resultats}). Son architecture est réplicable en théorie (H4, §\ref{sec:spl_limites}). Prises ensemble, elles racontent une histoire plus précise : la plateforme réussit sur presque tous les plans, \emph{sauf} sur celui qui portait sa promesse la plus originale. Le RAG local n'atteint que 20~\% d'exactitude contre 88,9~\% pour le cloud (H2, §\ref{sec:bench_resultats_globaux}). C'est cette tension qui fait la matière de cette discussion.
+
+\textbf{Les résultats s'éclairent mutuellement.} Le faible coût du chemin cloud, 0,033~USD par question (§\ref{sec:bench_resultats_globaux}), amortit l'échec de H2 : la marge de H1 permet d'envoyer environ 400 questions de plus par mois vers le cloud avant d'atteindre le seuil. Ensuite, le seul volet de H2 qui survit à la réfutation, la souveraineté du chemin local, devient la seule raison de conserver ce chemin : sans elle, rien ne justifierait un service aussi en retrait. Enfin, l'adoption mesurée porte surtout sur le chemin cloud, qui répond à l'essentiel des questions analytiques : elle valide la plateforme telle qu'elle est utilisée, pas l'ambition initiale d'un RAG local à parité. Les hypothèses forment ainsi un système, où la solidité des unes compense la fragilité de l'autre.
+
+\subsection{Le sens de la contribution : la thèse hybride à l'épreuve}
+\label{sec:disc_sens}
+
+\textbf{Ce que « hybride » signifiait, et ce que les résultats en font.} L'introduction présentait l'hybride cloud/local comme le meilleur des deux mondes : la souveraineté du local et la puissance du cloud, arbitrées selon la sensibilité de chaque question. Le benchmark oblige à reformuler cette promesse. Sur des questions structurées et quantitatives, qui forment l'essentiel des besoins de SOYAFF, le chemin local ne rivalise pas. L'hybride tient, mais comme un arbitrage explicite entre souveraineté et exactitude, et non comme deux chemins équivalents. La thèse est plus étroite que celle de départ ; elle est aussi plus juste.
+
+\textbf{Ce que l'échec de H2 enseigne.} Le diagnostic du §\ref{sec:bench_diagnostic} montre que l'échec ne vient pas d'abord du modèle. Il vient de la façon de récupérer les données. Les règles SQL du chemin local sont rapides mais mal ciblées : elles renvoient une somme quand on demande un nombre, ou ignorent le mot-clé quand une plaque est citée. La recherche par similarité sémantique, elle, ne peut pas produire un \texttt{COUNT} ou un \texttt{SUM} exact sur une base relationnelle, quel que soit le modèle qui exploite ensuite le résultat. L'agent cloud réussit parce qu'il écrit lui-même sa requête SQL sur toute la base. Ce diagnostic est en lui-même une contribution : il sera plus utile au concepteur d'un système similaire qu'une parité confirmée.
+
+\textbf{La conséquence de conception.} Si l'écart tient à la récupération et non au modèle, un meilleur \textit{prompt} ou un modèle local plus gros n'y changeront rien. Il faut donner au chemin local la méthode qui réussit côté cloud : traduire la question en requête SQL (\textit{text-to-SQL}), avec un modèle exécuté sur le serveur et un accès en lecture seule. C'est la principale perspective de ce travail (§\ref{sec:persp_moyen}). Le benchmark l'a révélée en échouant.
+
+\textbf{Ce que ce travail démontre malgré H2.} La réfutation de H2 ne doit pas masquer le reste. Une PME d'import-export ouest-africaine peut exploiter, pour 37,4~€ par mois, une plateforme qui supprime une double saisie coûteuse (chapitre~\ref{chap:contexte}, §\ref{sec:diagnostic_si}), qui est adoptée par tous ses utilisateurs et qui garde sur le serveur les questions sensibles. Ce résultat ne dépend pas de H2 : il tient même si le chemin local reste durablement en retrait.
+
+\subsection{Un risque de sécurité identifié, puis corrigé}
+\label{sec:disc_risque}
+
+\textbf{Le risque composé.} Pendant la réalisation, nous avions relevé deux écarts du module IA qui, combinés, formaient un risque plus grave que chacun pris seul. D'une part, le classifieur de sensibilité envoyait au cloud une question d'agrégat même quand elle nommait un chauffeur ou un camion (« le total des rations du chauffeur du camion AA~085~AH »). D'autre part, l'outil SQL de l'agent cloud n'avait aucune contrainte technique : seule la consigne du \textit{system prompt} limitait ce qu'il pouvait exécuter. Ensemble, ces deux écarts permettaient qu'une question sensible mal classée fasse exécuter, côté cloud, une requête non contrainte sur la base, dont le résultat sortait de l'infrastructure.
+
+\textbf{La correction.} Nous avons traité les deux causes avant la mesure finale. L'identité l'emporte désormais sur l'agrégat : toute mention d'un chauffeur ou d'une plaque reste locale (§\ref{sec:ia_routage}). L'agent cloud se connecte avec un rôle PostgreSQL en lecture seule, sans accès aux données des chauffeurs (§\ref{sec:ia_cloud}). Le test du §\ref{sec:test_refus} le montre : une demande de suppression est refusée, et la base la rejetterait même si le modèle la générait. Le risque n'est pas nul pour autant : un nom de chauffeur cité seul échappe encore au classifieur. Mais la base empêche l'agent de le relier à des données personnelles.
+
+\textbf{La portée exacte de la souveraineté.} Ce qui est garanti par construction, c'est que le chemin local ne fait sortir aucune donnée du serveur. Le chemin cloud, lui, traite par nature des données chez un tiers, limitées aux questions non sensibles et aux tables métier. La formulation juste est donc que la souveraineté est garantie sur le chemin local et bornée sur le chemin cloud, pas qu'elle vaut globalement pour tout le système.
+
+\subsection{Limites transversales de la démarche}
+\label{sec:disc_limites}
+
+Deux limites dépassent une mesure particulière et bornent l'ensemble du travail.
+
+\textbf{Le chercheur intégré.} L'auteur est à la fois le concepteur de la plateforme, son administrateur, un collègue des utilisateurs interrogés et l'unique annotateur du benchmark. Cette position touche plusieurs résultats : un biais de complaisance possible dans l'étude SUS (§\ref{sec:adoption_biais}), atténué par la dispersion des scores et la précision des critiques recueillies, et une annotation non croisée du benchmark (§\ref{sec:bench_limites}). Elle appelle une lecture prudente de tout résultat qui repose sur un jugement humain plutôt que sur une référence objective.
+
+\textbf{Des mesures prises sur deux états du système.} Le chronométrage et l'étude d'adoption ont été conduits en juillet~2026 (le questionnaire SUS le 22~juillet). Le benchmark et le test de bout en bout l'ont été le 27~septembre, après des évolutions du code : contrôle des délais de saisie, correction du classifieur, rôle en lecture seule, calcul SQL des totaux. Les chiffres de temps et d'adoption décrivent donc la version de juillet. Le contrôle des délais ajoute une vérification à la saisie ; son effet sur le temps de saisie et sur la satisfaction des utilisateurs n'a pas été mesuré.
+
+\subsection{Menaces à la validité}
+\label{sec:disc_validite}
+
+Nous reprenons ici, selon le cadre classique des quatre types de validité, des réserves posées au fil du chapitre~\ref{chap:evaluation}.
+
+\textbf{Validité de construit : les mesures mesurent-elles ce qu'elles prétendent ?} Le temps « avant » n'est pas celui d'une saisie Excel d'époque, mais celui d'une ressaisie rejouée par un agent qui ne pratique plus Excel au quotidien (§\ref{sec:impact_limites}). Le questionnaire SUS est une traduction française non revalidée : rien ne garantit qu'il mesure l'utilisabilité exactement comme l'instrument original \cite{brookeSUSAQuickDirty1996}.
+
+\textbf{Validité interne : les conclusions causales tiennent-elles ?} Le gain de temps pourrait devoir une part à l'apprentissage et au rejeu. Mais la marge de quinze points au-dessus du seuil de H3 absorbe toute correction plausible de ce biais (§\ref{sec:impact_limites}).
+
+\textbf{Validité externe : les résultats se généralisent-ils ?} Un seul cas, quatre utilisateurs et un corpus propre au transport Dakar--Bamako interdisent toute généralisation statistique. H4, étayée par un raisonnement plutôt que par une réplication (§\ref{sec:spl_limites}), est la seule réponse, partielle, à cette limite.
+
+\textbf{Validité de conclusion : les chiffres soutiennent-ils les verdicts ?} Le verdict sur H2 repose sur 180 réponses, trois passages par question et une référence SQL calculée le jour de la mesure : l'écart entre 20~\% et 88,9~\% est trop large pour qu'une erreur d'annotation l'inverse. Le seuil de 80~\% de réduction des erreurs de H3, à l'inverse, n'a pas pu être vérifié : l'échantillon était trop propre pour qu'un ratio soit calculable, et le verdict a été requalifié plutôt que forcé (§\ref{sec:impact_erreurs}).
+
+\subsection{Synthèse et transition}
+\label{sec:disc_synthese}
+
+Ce que ce travail établit solidement ne dépend pas de H2 : une plateforme frugale, qui supprime une double saisie mesurée, adoptée par tous ses utilisateurs et réplicable en théorie. Ce qu'il nuance est assumé : l'hybride tient comme arbitrage entre souveraineté et exactitude, et l'échec du chemin local désigne précisément la méthode à changer. Ce qu'il ne peut pas conclure est nommé : la réplicabilité au-delà d'un cas, la disponibilité réelle, le seuil de réduction des erreurs. Ces questions ouvertes tracent un programme de travail, objet de la section suivante.
